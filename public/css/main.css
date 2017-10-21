@@ -1,0 +1,21 @@
+.navigation{
+    height: 17vh;
+
+}
+
+.havbar-logo{
+    height: 17vh;
+    width: 33vw;
+    padding: 2vh 0 2vh 3vw;
+    margin: 0;
+    border: 1px solid black;
+}
+
+.havbar-search{
+    width: 33vw;
+    height:  17vh;
+    padding: 10px 0 10px 0;
+    margin: 0;
+    border: 1px solid black;
+    color: red;
+}
