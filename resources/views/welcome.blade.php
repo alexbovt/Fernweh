@@ -1,51 +1,8 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Fernweh</title>
-    <link rel="icon" href="{{asset('/png/LogoInTab.png')}}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{asset('/css/app.css') }}">
-    <link rel="stylesheet" href="{{asset('/css/main.css')}}">
-    <script src="https://use.fontawesome.com/5f00eddeaf.js"></script>
-</head>
-<body>
-<nav class="navbar navbar-default">
-    <div class=" navbar-collapse">
-        <div class="col-xs-6 col-sm-6 col-md-3 ">
-            @if (Auth::guest())
-                <a href="/"> <img src="{{asset('img/logo.png')}}"></a>
-            @else
-                <a href="/home"> <img src="{{asset('img/logo.png')}}"></a>
-            @endif
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-3 col-md-push-6">
-            <ul class="navbar-user nav navbar-nav">
-                @if (Auth::guest())
-                    <a href="/profile"><span class="glyphicon glyphicon-user glyphicon-icons"></span></a>
-                    <a href="/messeges"><span class="glyphicon glyphicon-envelope glyphicon-icons"></span></a>
-                    <a href="/settings"><span class="glyphicon glyphicon-cog glyphicon-icons"></span></a>
-                @endif
-            </ul>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-6 col-md-pull-3">
-            <form class="navbar-form" role="search">
-                <div class="input-group col-sm-12">
-                    <input type="text" class="search-query form-control" placeholder="Search"/>
-                    <span class="input-group-btn">
-                        <button class="btn btn-search" type="button"><span class="glyphicon glyphicon-search"
-                                                                           aria-hidden="true"></span></button>
-                    </span>
-                </div>
-            </form>
-        </div>
-
-    </div>
-</nav>
-
-<div class="container">
+@extends('layouts.index')
+@section('title')
+    Welocome
+@endsection
+@section('left-block')
     <div class="info col-md-7">
         <div class="content">
             <h3>Fernweh for mobile devices</h3>
@@ -53,6 +10,8 @@
             <img src="{{asset('/img/phone.png')}}" alt="">
         </div>
     </div>
+@endsection
+@section('right-block')
     <div class="forms col-md-5">
         <div class="login-form content col-md-12">
             <h3>Sign in</h3>
@@ -67,7 +26,7 @@
                     <input type="password" class="form-control" id="InputPassword" placeholder="Password">
                 </div>
                 <div class="col-md-5">
-                    <button type="submit" class="btn btn-primary">Log in</button>
+                    <button type="submit" formaction="login/InputLogin/InputPassword" class="btn btn-primary">Log in</button>
                 </div>
                 <div class="col-md-7">
                     <a href="">Forgot your password?</a>
@@ -119,17 +78,4 @@
             </form>
         </div>
     </div>
-</div>
-<div class="footer-top-line"></div>
-<div class="footer">
-    <div class="container">
-        <div class="col-md-9">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, facere.
-        </div>
-        <div class="col-md-3">
-            Lorem ipsum dolor sit amet.
-        </div>
-    </div>
-</div>
-</body>
-</html>
+@endsection

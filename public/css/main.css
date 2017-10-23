@@ -5,7 +5,7 @@ html {
 body {
     background: #fffede;
     margin-bottom: 60px;
-
+    font-family: Helvetica, Arial, Sans-Serif;
 }
 
 .glyphicon-icons {
@@ -66,10 +66,88 @@ body {
     background-color: #fffede;
 }
 
-.footer-top-line {
+.top-line {
     border: 0;
     height: 1px;
     margin-top: 0px;
     background-image: -webkit-linear-gradient(left, #d1d0b6, #a5a488, #d1d0b3);
 }
 
+.user-image{
+    padding: 10px;
+    border: 1px solid #eae9c2;
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
+    background: white;
+    margin: 0;
+}
+
+.user-image img{
+    border: 1px solid black;
+    height: auto;
+    width: 95%;
+    margin: 2.5%;
+}
+
+.user-info-col{
+    height: 340px;
+    border: 1px solid #eae9c2;
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+.user-fullname{
+    font-size: 30px;
+}
+
+.user-about{
+    margin-top: 20px;
+}
+
+.user-friends-title,
+.user-events-title{
+    margin: 5%;
+    font-size: 12px;
+    color: #a4a388;
+}
+
+.user-friends{
+    border: 1px solid #eae9c2;
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
+    background: white;
+    margin-top: 3%;
+    width: 100%;
+    height: 200px;
+}
+
+.user-friends .col-md-4{
+    padding:7px;
+}
+
+.user-friends img{
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 100%;
+    height:60px;
+}
+
+.user-events{
+    margin-top: 3%;
+    border: 1px solid #eae9c2;
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
+    background: white;
+    margin-top: 5%;
+    width: 100%;
+    height: 200px;
+}
+
+.user-event-img{
+    padding:7px;
+}
+
+.user-event-name{font-size: 16px}
+.user-event-descr{font-size: 12px}
+
+.user-events img{
+    height: auto;
+    width: 100%;
+}

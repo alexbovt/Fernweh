@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
@@ -19,6 +20,7 @@ class LoginController extends Controller
     */
 
     use AuthenticatesUsers;
+    use App\User;
 
     /**
      * Where to redirect users after login.
@@ -35,5 +37,13 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function authenticate()
+    {
+        $user = User::where('id_user','=','2');
+        if (Auth::attempt(['login' => $user->login, 'password' => $user->password])) {
+
+        }else return redirect()->intended('/');
     }
 }
