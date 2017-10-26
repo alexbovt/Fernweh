@@ -1,18 +1,20 @@
-<nav class="navbar navbar-default">
+<nav id="top" class="navbar navbar-default">
     <div class=" navbar-collapse">
         <div class="col-xs-6 col-sm-6 col-md-3 ">
             @if (Auth::guest())
                 <a href="/"> <img src="{{asset('img/logo.png')}}"></a>
             @else
-                <a href="/home"> <img src="{{asset('img/logo.png')}}"></a>
+                <a href="/profile/"> <img src="{{asset('img/logo.png')}}"></a>
             @endif
         </div>
         <div class="col-xs-6 col-sm-6 col-md-3 col-md-push-6">
             <ul class="navbar-user nav navbar-nav">
                 @if (Auth::guest())
-                    <a href="/profile"><span class="glyphicon glyphicon-user glyphicon-icons"></span></a>
-                    <a href="/messeges"><span class="glyphicon glyphicon-envelope glyphicon-icons"></span></a>
-                    <a href="/settings"><span class="glyphicon glyphicon-cog glyphicon-icons"></span></a>
+                    <a href="/"><span class="glyphicon glyphicon-log-in glyphicon-icons"></span></a>
+                @else
+                    <a href="/id{{$user->id_user}}"><span class="glyphicon glyphicon-user glyphicon-icons"></span></a>
+                    <a href="/profile"><span class="glyphicon glyphicon-envelope glyphicon-icons"></span></a>
+                    <a href="/profile"><span class="glyphicon glyphicon-cog glyphicon-icons"></span></a>
                 @endif
             </ul>
         </div>

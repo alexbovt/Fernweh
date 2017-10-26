@@ -53,17 +53,32 @@ body {
 .content {
     margin: 10px;
     padding: 10px;
-    border: 1px solid #a5a488;
+    border: 1px solid #eae9c2;
     box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
     background: white;
+}
+
+.welcome-info img {
+    width: 55%;
+    margin-top: 1%;
+}
+
+.forms h3 {
+    margin: 1%;
+}
+
+.login-form form,
+.registration-form form {
+    margin: 3%;
 }
 
 .footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 60px;
+    height: auto;
     background-color: #fffede;
+    border-top: 1px solid #eae9c2;;
 }
 
 .top-line {
@@ -82,14 +97,14 @@ body {
 }
 
 .user-image img {
-    border: 1px solid black;
+    border: 1px solid #eae9c2;
     height: auto;
     width: 95%;
     margin: 2.5%;
 }
 
 .user-info-col {
-    height: 340px;
+    height: auto;
     border: 1px solid #eae9c2;
     box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
     background: white;
@@ -97,6 +112,7 @@ body {
 
 .user-fullname {
     font-size: 30px;
+    margin: 2%;
 }
 
 .user-about {
@@ -140,24 +156,42 @@ body {
 }
 
 .user-event-img {
-    padding: 7px;
+    padding: 3%;
 }
 
 .user-event-name {
     font-size: 1vw;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow:ellipsis;
+    text-overflow: ellipsis;
 }
 
 .user-event-descr {
     font-size: 0.7vw;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow:ellipsis;
+    text-overflow: ellipsis;
 }
 
 .user-events img {
     height: auto;
     width: 100%;
+}
+
+.user-info {
+    border-bottom: 1px solid #eae9c2;
+    vertical-align: bottom;
+}
+
+.user-info-title {
+    font-size: 14px;
+    margin: 2%;
+}
+
+.user-info-info {
+    height: auto;
+    margin: 2% 2% 2% 5%;
+    font-size: 16px;
+    white-space: normal;
+
 }

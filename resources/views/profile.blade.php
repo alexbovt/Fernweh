@@ -1,5 +1,4 @@
 @extends('layouts.index')
-@foreach ($users as $user)
 @section('title')
     {{ucfirst($user->name)}}
     {{ucfirst($user->surname)}}
@@ -7,15 +6,33 @@
 @section('left-block')
     <div class="container">
         <div class="user-col col-xs-12 col-sm-4 col-md-3">
-            <div class="user-image"><img src="{{asset('img/man.jpg')}}" ></div>
+            <div class="user-image"><img src="{{asset('img/man.jpg')}}"></div>
             <div class="user-friends col-xs-12 col-sm-12 col-md-12">
                 <div class="user-friends-title col-xs-12 col-sm-12 col-md-12">Friends</div>
-                <div class="col-xs-4 col-sm-4 col-md-4"><img src="{{asset('img/woman.jpg')}}"class="img-circle" ></div>
-                <div class="col-xs-4 col-sm-4 col-md-4"><img src="{{asset('img/man.jpg')}}" class="img-circle"></div>
-                <div class="col-xs-4 col-sm-4 col-md-4"><img src="{{asset('img/woman.jpg')}}" class="img-circle"></div>
-                <div class="col-xs-4 col-sm-4 col-md-4"><img src="{{asset('img/man.jpg')}}" class="img-circle"></div>
-                <div class="col-xs-4 col-sm-4 col-md-4"><img src="{{asset('img/woman.jpg')}}" class="img-circle"></div>
-                <div class="col-xs-4 col-sm-4 col-md-4"><img src="{{asset('img/man.jpg')}}" class="img-circle"></div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                <a href="" class="col-md-12"><img src="{{asset('img/woman.jpg')}}" class="img-circle"></a>
+                    <a href="" class="col-md-12">Name Surname</a>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                    <a href="" class="col-md-12"><img src="{{asset('img/woman.jpg')}}" class="img-circle"></a>
+                    <a href="" class="col-md-12">Name Surname</a>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                    <a href="" class="col-md-12"><img src="{{asset('img/woman.jpg')}}" class="img-circle"></a>
+                    <a href="" class="col-md-12">Name Surname</a>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                    <a href="" class="col-md-12"><img src="{{asset('img/woman.jpg')}}" class="img-circle"></a>
+                    <a href="" class="col-md-12">Name Surname</a>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                    <a href="" class="col-md-12"><img src="{{asset('img/woman.jpg')}}" class="img-circle"></a>
+                    <a href="" class="col-md-12">Name Surname</a>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                    <a href="" class="col-md-12"><img src="{{asset('img/woman.jpg')}}" class="img-circle"></a>
+                    <a href="" class="col-md-12">Name Surname</a>
+                </div>
             </div>
             <div class="user-events col-xs-12 col-sm-12 col-md-12">
                 <div class="user-events-title col-xs-12 col-sm-12 col-md-12">Events</div>
@@ -39,18 +56,40 @@
             </div>
         </div>
         @endsection
-@section('right-block')
-    <div class="user-info-col col-xs-8 col-sm-8 col-md-9">
-        <div class="user-fullname">
-            {{ucfirst($user->name)}}
-            {{ucfirst($user->surname)}}
-        </div>
-        <div class="top-line"></div>
-        <div class="user-about">
-            {{$user->email}}<br>
-            {{$user->birth_date}}<br>
-        </div>
-    </div>
-    @endforeach
+        @section('right-block')
+            <div class="user-info-col col-xs-8 col-sm-8 col-md-9">
+                <div class="user-fullname">
+                    {{ucfirst($user->name)}}
+                    {{ucfirst($user->surname)}}
+                </div>
+                <div class="top-line"></div>
+                <div class="user-info col-md-12">
+                    <div class="user-info-title col-md-2">Date of birth</div>
+                    <div class="user-info-info col-md-8">{{$user->birth_date}}</div>
+                </div>
+                <div class="user-info col-md-12">
+                    <div class="user-info-title col-md-2">Address</div>
+                    <div class="user-info-info col-md-8"></div>
+                </div>
+                <div class="user-info col-md-12">
+                    <div class="user-info-title col-md-2">Languages</div>
+                    <div class="user-info-info col-md-8">{{ucfirst($user->languages)}}</div>
+                </div>
+                <div class="user-info col-md-12">
+                    <div class="user-info-title col-md-2">Education</div>
+                    <div class="user-info-info col-md-8">{{ucfirst($user->education)}}</div>
+                </div>
+                <div class="user-info col-md-12">
+                    <div class="user-info-title col-md-2">Job</div>
+                    <div class="user-info-info col-md-8">{{ucfirst($user->job)}}</div>
+                </div>
+                <div class="user-info col-md-12">
+                    <div class="user-info-title col-md-2">Countries</div>
+                    <div class="user-info-info col-md-8">{{ucfirst($user->countries)}}</div>
+                </div>
+                <div class="user-info col-md-12">
+                    <div class="user-info-title col-md-2">About me</div>
+                    <div class="user-info-info col-md-8">{{ucfirst($user->notes)}}</div>
+                </div>
+            </div>
 @endsection
-

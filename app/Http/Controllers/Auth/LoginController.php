@@ -4,7 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redirect;
+use Validator;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -20,14 +25,13 @@ class LoginController extends Controller
     */
 
     use AuthenticatesUsers;
-    use App\User;
 
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -39,11 +43,41 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function authenticate()
+    public function getLogin()
     {
-        $user = User::where('id_user','=','2');
-        if (Auth::attempt(['login' => $user->login, 'password' => $user->password])) {
-
-        }else return redirect()->intended('/');
+        echo 'getLogin';
     }
+
+    public function postLogin(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'inputLogin' => 'required|max:255',
+            'inputPassword' => 'required|min:6',
+        ]);
+        if ($validator->fails()) {
+            return redirect('/')
+                ->withErrors($validator)
+                ->withInput();
+        } else {
+            //$user = User::where('login', $request->input('inputLogin'))->where('password', $request->input('inputPassword'))->first();
+            $user_data = ['login' => $request->input('inputLogin'), 'password' => $request->input('inputPassword')];
+            if (Auth::attempt($user_data)) {
+                $user = Auth::user();
+                if(Auth::guest()){
+                    echo 'eba';
+                    die();
+                }
+                return redirect("/id$user->id_user");
+            } else
+                return redirect('/');
+        }
+        //echo Redirect::back()->withErrors('msg', 'Wrong login or password');
+    }
+
+    public function getLogout()
+    {
+        Auth::logout();
+        return redirect('/');
+    }
+
 }
