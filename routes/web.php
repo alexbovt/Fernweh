@@ -11,27 +11,57 @@
 |
 */
 
+
+use Illuminate\Support\Facades\Auth;
+
 Route::get('/', function () {
-    if (Auth::guest()) {
-        return view('welcome');
-    } else return redirect("id2)");
+    if ($user = session()->get('user')) return redirect()->to("id$user->id_user");
+    else return view('welcome')->with('msg','');
 });
 
-
 Route::get('/id{id}', [
-   'uses' => 'UserController@getUsers'
+    'uses' => 'UserController@getUsers'
 ]);
 
-Route::post('/login',[
+Route::get('/dashboard', [
+    'as' => 'dashboard',
+    'uses' => 'UserController@dashboard'
+]);
+
+Route::get('/login', function () {
+    return redirect('/');
+});
+
+Route::post('/login', [
     'as' => 'login',
-   'uses' =>'Auth\LoginController@postLogin'
+    'uses' => 'Auth\LoginController@postLogin'
 ]);
 
+Route::get('/logout', [
+    'as' => 'logout',
+    'uses' => 'Auth\LoginController@getLogout'
+]);
 
-Route::post('/register',[
+Route::get('/register', function () {
+    return redirect('/');
+});
+
+Route::post('/register', [
     'as' => 'register',
-    'uses' =>'Auth\RegisterController@postRegister'
+    'uses' => 'Auth\RegisterController@postRegister'
 ]);
+
+Route::get('/registration', function () {
+    return redirect()->to('/');
+});
+
+Route::post('/registration', [
+    'as' => 'registration',
+    'uses' => 'Auth\RegisterController@create'
+]);
+
+
+
 
 
 

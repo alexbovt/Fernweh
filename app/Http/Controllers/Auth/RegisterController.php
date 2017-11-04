@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Validator;
+use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redirect;
+use Validator;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -20,7 +25,7 @@ class RegisterController extends Controller
     |
     */
 
-    use RegistersUsers;
+    // use RegistersUsers;
 
     /**
      * Where to redirect users after registration.
@@ -42,34 +47,64 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
     {
         return Validator::make($data, [
+            'login' => 'required|string|max:255|unique:user',
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'surname' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:user',
             'password' => 'required|string|min:6|confirmed',
+            'password_confirmation' => 'required|string|min:6',
+            'birth_date' => 'required|date',
+            'sex' => 'required',
         ]);
     }
 
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \App\User
      */
-    protected function create(array $data)
+    protected function create(Request $request)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
+        $data = [
+            'login' => $request->input('inputLogin'),
+            'name' => $request->input('inputFirstName'),
+            'surname' => $request->input('inputLastName'),
+            'email' => $request->input('inputEmail'),
+            'password' => $request->input('inputPassword'),
+            'password_confirmation' => $request->input('inputConfirmPassword'),
+            'birth_date' => $request->input('inputDateOfBirth'),
+            'sex' => $request->input('inputGender')
+        ];
+        $validator = $this->validator($data);
+        if ($validator->fails()) {
+            return redirect()->action('Auth\RegisterController@create')->withErrors($validator)->withInput();
+        } else {
+            User::create([
+                'login' => $data['login'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+                'name' => $data['name'],
+                'surname' => $data['surname'],
+                'birth_date' => $data['birth_date'],
+                'sex' => $data['sex'],
+            ]);
+            return redirect()->to('/');
+        }
     }
 
-    public function postRegister(){
-        echo 'hello';
+    public function postRegister(Request $request)
+    {
+        $fullName = [
+            'firstName' => $request->input('inputFirstName'),
+            'lastName' => $request->input('inputLastName')
+        ];
+        return view('auth.register')->with('fullName', $fullName);
     }
 }

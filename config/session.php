@@ -176,8 +176,8 @@ return [
     | the HTTP protocol. You are free to modify this option if needed.
     |
     */
-
-    'http_only' => true,
+    //https protocol
+    'http_only' => false,
 
     /*
     |--------------------------------------------------------------------------

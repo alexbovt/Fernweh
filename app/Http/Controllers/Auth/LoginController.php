@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\User;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 use Validator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -43,39 +43,46 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'inputLogin' => 'required|string|max:255',
+            'inputPassword' => 'required|min:6',
+        ]);
+    }
+
     public function getLogin()
     {
-        echo 'getLogin';
+        return view('auth.login');
     }
 
     public function postLogin(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'inputLogin' => 'required|max:255',
-            'inputPassword' => 'required|min:6',
-        ]);
+        $data = $request->all();
+        $validator = $this->validator($data);
         if ($validator->fails()) {
             return redirect('/')
                 ->withErrors($validator)
                 ->withInput();
         } else {
-            //$user = User::where('login', $request->input('inputLogin'))->where('password', $request->input('inputPassword'))->first();
-            $user_data = ['login' => $request->input('inputLogin'), 'password' => $request->input('inputPassword')];
-            if (Auth::attempt($user_data)) {
-                $user = Auth::user();
-                if(Auth::guest()){
-                    echo 'eba';
-                    die();
-                }
-                return redirect("/id$user->id_user");
-            } else
-                return redirect('/');
+            $credentials = ['login' => $request->input('inputLogin'), 'password' => $request->input('inputPassword')];
+            if (Auth::attempt($credentials)) {
+                $user = auth::user();
+                Auth::login($user);
+                Session::put('user', $user);
+                Session::save();
+                return redirect()->to('dashboard');
+            } else {
+                $msg = 'Wrong login or password';
+                return back()->with('msg',$msg);
+            }
         }
-        //echo Redirect::back()->withErrors('msg', 'Wrong login or password');
     }
 
     public function getLogout()
     {
+        session()->forget('user');
         Auth::logout();
         return redirect('/');
     }

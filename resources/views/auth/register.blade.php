@@ -1,77 +1,101 @@
 @extends('layouts.index')
-
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
-
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('register') }}">
-                        {{ csrf_field() }}
-
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Name</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
-
-                                @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="registration-form content col-md-8">
+                <h3>Registration</h3>
+                <form method="POST">
+                    {{ csrf_field() }}
+                    <div class="form-group {{ $errors->has('inputFirstName') ? ' has-error' : '' }}">
+                        <label for="inputFirstName">First name</label>
+                        <input type="text" class="form-control" id="inputFirstName" name="inputFirstName"
+                               aria-describedby="inputFirstName" value="{{$fullName['firstName']}}">
+                        @if ($errors->has('inputFirstName'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('inputFirstName') }}</strong>
                                     </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                        @endif
+                    </div>
+                    <div class="form-group  {{ $errors->has('inputLastName') ? ' has-error' : '' }}">
+                        <label for="inputLastName">Last name</label>
+                        <input type="text" class="form-control" id="inputLastName" name="inputLastName"
+                               aria-describedby="inputLastName" value="{{$fullName['lastName']}}">
+                        @if ($errors->has('inputLastName'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('inputLastName') }}</strong>
                                     </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
+                        @endif
+                    </div>
+                    <div class="form-group {{ $errors->has('inputEmail') ? ' has-error' : '' }}">
+                        <label for="inputEmail">Email</label>
+                        <input type="email" class="form-control" id="inputEmail" name="inputEmail"
+                               aria-describedby="inputEmail"
+                               placeholder="Input Email" value="{{ old('inputEmail') }}">
+                        @if ($errors->has('inputEmail'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('inputEmail') }}</strong>
                                     </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Register
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                        @endif
+                    </div>
+                    <div class="form-group {{ $errors->has('inputLogin') ? ' has-error' : '' }}">
+                        <label for="inputLogin">Login</label>
+                        <input type="text" class="form-control" id="inputLogin" name="inputLogin"
+                               aria-describedby="inputLogin"
+                               placeholder="Input login" value="{{ old('inputLogin') }}">
+                        @if ($errors->has('inputLogin'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('inputLogin') }}</strong>
+                                    </span>
+                        @endif
+                    </div>
+                    <div class="form-group  {{ $errors->has('inputDateOfBirth') ? ' has-error' : '' }}">
+                        <label for="inputDateOfBirth">Date of birth</label>
+                        <input type="date" class="form-control" id="date_of_birth" name="inputDateOfBirth"
+                               placeholder="Your date of birth"
+                               aria-describedby="inputDateOfBirth" value="{{old('inputDateOfBirth')}}">
+                        @if ($errors->has('inputDateOfBirth'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('date_of_birth') }}</strong>
+                                    </span>
+                        @endif
+                    </div>
+                    <div class="form-group  {{ $errors->has('inputGender') ? ' has-error' : '' }}">
+                        <input type="radio" name="inputGender" id="male" value="male"/>
+                        <label for="male">Male</label>
+                        <input type="radio" name="inputGender" id="female" value="female"/>
+                        <label for="female">Female</label>
+                    </div>
+                    <div class="form-group  {{ $errors->has('inputPassword') ? ' has-error' : '' }}">
+                        <label for="inputPassword">Password</label>
+                        <input type="password" class="form-control" id="inputPassword" name="inputPassword"
+                               placeholder="Input password"
+                               aria-describedby="inputPassword" value="">
+                        @if ($errors->has('inputPassword'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('inputPassword') }}</strong>
+                                    </span>
+                        @endif
+                    </div>
+                    <div class="form-group  {{ $errors->has('inputConfirmPassword') ? ' has-error' : '' }}">
+                        <label for="inputConfirmPassword">Confirm password</label>
+                        <input type="password" class="form-control" id="inputConfirmPassword"
+                               name="inputConfirmPassword"
+                               placeholder="Confirm password"
+                               aria-describedby="inputConfirmPassword" value="">
+                        @if ($errors->has('inputConfirmPassword'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('inputConfirmPassword') }}</strong>
+                                    </span>
+                        @endif
+                    </div>
+                    <div class="col-md-5">
+                        <button type="submit" formaction="{{route('registration')}}" class="btn btn-primary">Sign up
+                        </button>
+                    </div>
+                </form>
             </div>
+            <div class="col-md-2"></div>
         </div>
     </div>
-</div>
 @endsection

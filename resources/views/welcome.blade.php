@@ -18,8 +18,8 @@
             <h3>Sign in</h3>
             <form method="POST">
                 {{ csrf_field() }}
-                @if($errors->any())
-                    <h4>{{$errors->first()}}</h4>
+                @if($msg)
+                    <h4>{{$msg}}</h4>
                 @endif
                 @if (Session::has('message'))
                     <div class="alert alert-info">{{ Session::get('message') }}</div>
@@ -41,7 +41,7 @@
                            aria-describedby="Password" value="{{old('inputPassword')}}">
                     @if ($errors->has('inputPassword'))
                         <span class="help-block">
-                                        <strong>{{ $errors->first('inputLogin') }}</strong>
+                                        <strong>{{ $errors->first('inputPassword') }}</strong>
                                     </span>
                     @endif
                 </div>
