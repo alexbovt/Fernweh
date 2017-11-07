@@ -8,7 +8,7 @@
                 @if ($user = session()->get('user'))
                     <a href="/id{{$user->id_user}}"><span class="glyphicon glyphicon-user glyphicon-icons"></span></a>
                     <a href="/m"><span class="glyphicon glyphicon-envelope glyphicon-icons"></span></a>
-                    <a href="/s"><span class="glyphicon glyphicon-cog glyphicon-icons"></span></a>
+                    <a href="/settings"><span class="glyphicon glyphicon-cog glyphicon-icons"></span></a>
                     <a href="/logout"><span class="glyphicon glyphicon-log-out glyphicon-icons"></span></a>
                 @else
                     <a href="/login"><span class="glyphicon glyphicon-log-in glyphicon-icons"></span></a>

@@ -9,7 +9,6 @@
     @yield('right-block')
 </div>
 <div class="footer-top-line"></div>
-@include('components.footer')
 <script type="text/javascript" src="{{asset('/js/main.js')}}"></script>
 </body>
 </html>

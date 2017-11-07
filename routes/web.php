@@ -60,8 +60,14 @@ Route::post('/registration', [
     'uses' => 'Auth\RegisterController@create'
 ]);
 
+Route::get('/settings',[
+    'uses' => 'ProfileController@getSettings'
+]);
 
-
+Route::post('/settings',[
+    'as' => 'changeUserData',
+    'uses' => 'ProfileController@changeData'
+]);
 
 
 
