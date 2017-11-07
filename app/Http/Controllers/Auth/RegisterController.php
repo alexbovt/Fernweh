@@ -95,7 +95,7 @@ class RegisterController extends Controller
                 'birth_date' => $data['birth_date'],
                 'sex' => $data['sex'],
             ]);
-            return redirect()->to('/');
+            return redirect()->refresh()->with('status', 'You are signed up!');;
         }
     }
 

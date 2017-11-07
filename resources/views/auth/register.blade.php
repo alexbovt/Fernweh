@@ -1,6 +1,11 @@
 @extends('layouts.index')
 @section('content')
     <div class="container">
+        @if (session('status'))
+            <div class="alert alert-link">
+                {{ session('status') }}
+            </div>
+        @endif
         <div class="row">
             <div class="col-md-2"></div>
             <div class="registration-form content col-md-8">
@@ -77,7 +82,7 @@
                                     </span>
                         @endif
                     </div>
-                    <div class="form-group  {{ $errors->has('inputConfirmPassword') ? ' has-error' : '' }}">
+                    <div class="form-group  {{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
                         <label for="inputConfirmPassword">Confirm password</label>
                         <input type="password" class="form-control" id="inputConfirmPassword"
                                name="inputConfirmPassword"

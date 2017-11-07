@@ -84,7 +84,7 @@ class LoginController extends Controller
     {
         session()->forget('user');
         Auth::logout();
-        return redirect('/');
+        return redirect('/')->with('status', 'Logged out !!');
     }
 
 }

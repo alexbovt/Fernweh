@@ -14,10 +14,10 @@
 
 use Illuminate\Support\Facades\Auth;
 
-Route::get('/', function () {
+Route::get('/',['as' => 'welcome' ,function () {
     if ($user = session()->get('user')) return redirect()->to("id$user->id_user");
     else return view('welcome')->with('msg','');
-});
+}]);
 
 Route::get('/id{id}', [
     'uses' => 'UserController@getUsers'
@@ -65,9 +65,27 @@ Route::get('/settings',[
 ]);
 
 Route::post('/settings',[
-    'as' => 'changeUserData',
-    'uses' => 'ProfileController@changeData'
+    'as' => 'SettingsChangeUserData',
+    'uses' => 'ProfileController@postSettings'
 ]);
+
+Route::post('/account_delete',[
+    'as' => 'DeleteAccount',
+    'uses' => 'ProfileController@postDeleteAccount'
+]);
+
+
+Route::get('/edit',[
+    'uses' => 'ProfileController@getEdit'
+]);
+
+Route::post('/edit',[
+    'as' => 'EditChangeUserData',
+    'uses' => 'ProfileController@postEdit'
+]);
+
+
+
 
 
 
