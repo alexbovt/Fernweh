@@ -57,7 +57,7 @@ for ($i = 12; $i < 105; $i++) {
             'notes' => $user['notes'],
         ]);
 }
-/*
+
 
 for ($i = 0; $i < 10; $i++) {
     $address['country'] = $faker->randomElement(array('Ukraine', 'Poland', 'Germany', 'Netherlands', 'Denmark', 'Norway', 'Sweden', 'Spain'));
@@ -101,4 +101,3 @@ for ($i = 0; $i < 10; $i++) {
 
 }
 
-*/

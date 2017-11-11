@@ -14,10 +14,10 @@ class UserController extends Controller
     public function getUsers($id_user)
     {
         $user = User::where('id_user', $id_user)->first();
-        $address = Address::where('id_address',$user->id_address)->first();
+        if($user->id_address == null) $address = Address::where('id_address','1')->first();
+            else $address = Address::where('id_address',$user->id_address)->first();
+
         return view('profile')->with('user',$user)->with('address',$address);
-
-
     }
 
     public function dashboard(Request $request){

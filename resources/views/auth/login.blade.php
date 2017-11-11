@@ -18,8 +18,8 @@
                    placeholder="Your login" value="{{ old('inputLogin') }}">
             @if ($errors->has('inputLogin'))
                 <span class="help-block">
-                                        <strong>{{ $errors->first('inputLogin') }}</strong>
-                                    </span>
+                    <strong>{{ $errors->first('inputLogin') }}</strong>
+                </span>
             @endif
         </div>
         <div class="form-group  {{ $errors->has('inputPassword') ? ' has-error' : '' }}">

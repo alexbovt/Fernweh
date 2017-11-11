@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
-@include('components.haed')
+@include('components.head')
 <body>
 @include('components.navigation')
 <div class="container">

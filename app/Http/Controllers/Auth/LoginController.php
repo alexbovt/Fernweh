@@ -74,8 +74,7 @@ class LoginController extends Controller
                 Session::save();
                 return redirect()->to('dashboard');
             } else {
-                $msg = 'Wrong login or password';
-                return back()->with('msg',$msg);
+                return back()->with('login_status', 'Wrong login or password!');;
             }
         }
     }

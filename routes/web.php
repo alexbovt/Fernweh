@@ -85,6 +85,11 @@ Route::post('/edit',[
 ]);
 
 
+Route::get('/event',[
+    'as' => 'showEvents',
+    'uses' => 'EventController@showEvents'
+]);
+
 
 
 

@@ -1,11 +1,6 @@
 @extends('layouts.index')
 @section('content')
     <div class="container">
-        @if (session('status'))
-            <div class="alert alert-link">
-                {{ session('status') }}
-            </div>
-        @endif
         <div class="row">
             <div class="col-md-2"></div>
             <div class="registration-form content col-md-8">

@@ -74,6 +74,7 @@
                     <div class="user-info-title col-md-2">Address</div>
                     <div class="user-info-info col-md-8">{{ucfirst($address->country)}},{{ucfirst($address->city)}},{{ucfirst($address->street)}}</div>
                 </div>
+
                 @if($user->languages)
                 <div class="user-info col-md-12">
                     <div class="user-info-title col-md-2">Languages</div>

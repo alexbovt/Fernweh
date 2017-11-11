@@ -26,6 +26,11 @@
         <div class="login-form content col-md-12">
             {{ csrf_field() }}
             <h3>Sign in</h3>
+            @if (session('login_status'))
+                <div class="alert alert-warning">
+                    {{ session('login_status') }}
+                </div>
+            @endif
             <form method="POST">
                 {{ csrf_field() }}
                 @if($msg)
