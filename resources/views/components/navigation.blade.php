@@ -7,7 +7,7 @@
             <ul class="navbar-user nav navbar-nav">
                 @if ($user = session()->get('user'))
                     <a href="/messeges"><span class="glyphicon glyphicon-envelope glyphicon-icons"></span></a>
-                    <a href="/event"><span class="glyphicon glyphicon-calendar glyphicon-icons"></span></a>
+                    <a href="/events"><span class="glyphicon glyphicon-calendar glyphicon-icons"></span></a>
                     <a href="#" class="drodropdown-toggle" data-toggle="dropdown">
                         <span class="navbar-user-name">{{ucfirst($user->name)}}</span>
                         <img src="{{asset('img/man.jpg')}}" class="img-circle nav-photo">

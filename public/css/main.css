@@ -68,16 +68,16 @@ body {
     background: #fffede;
 }
 
-.navbar-user > .dropdown-menu li a{
+.navbar-user > .dropdown-menu li a {
     font-size: 14px;
     color: #636b6f;
 }
 
-.navbar-user > .dropdown-menu li a:hover{
-    background : #ffa786;
+.navbar-user > .dropdown-menu li a:hover {
+    background: #ffa786;
 }
 
-.navbar-user-name{
+.navbar-user-name {
     padding: 3%;
 }
 
@@ -146,7 +146,9 @@ body {
     margin: 2.5%;
 }
 
-.user-info-col {
+.user-info-col,
+.event-info-col,
+.user-event-info-col {
     height: auto;
     border: 1px solid #eae9c2;
     box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
@@ -184,10 +186,10 @@ body {
 }
 
 .user-friends img {
-     width: 50px;
-     height: 50px;
-     margin: 7px 0;
- }
+    width: 50px;
+    height: 50px;
+    margin: 7px 0;
+}
 
 .user-friends a {
     font-size: 12px;
@@ -232,7 +234,7 @@ body {
 
 .user-info-title {
     font-size: 14px;
-    margin: 2%;
+    padding: 0;
 }
 
 .user-info-info {
@@ -240,6 +242,109 @@ body {
     margin: 2% 2% 2% 5%;
     font-size: 16px;
     white-space: normal;
-
 }
 
+.event-info-col > .event {
+    float: left;
+    font-size: 36px;
+}
+
+.add-event {
+    float: right;
+    font-size: 30px;
+    padding: 2%;
+}
+
+.add-event:hover {
+    color: #8d0c00;
+    cursor: pointer;
+}
+
+.event-img img {
+    width: 100%;
+    height: auto;
+    margin: 5%;
+}
+
+.event-name {
+    font-size: 26px;
+    padding: 2%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.events a {
+    text-decoration: none;
+    color: #636b6f;
+}
+
+.events a:hover {
+    text-decoration: none;
+    color: #8d0c00;
+}
+
+.user-event-info-col {
+    margin: 0 1% 0.5% 1%;
+}
+
+.user-event-name {
+    margin: 2%;
+}
+
+.user-event-name > a {
+    color: #60697e;
+}
+
+#new-event-form {
+    width: 30%;
+    height: 80%;
+    border: 1px solid #eae9c2;
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
+    background: white;
+    position: fixed;
+    left: 20%;
+    margin-top: -260px;
+    display: none;
+    opacity: 0;
+    z-index: 5;
+    padding: 20px 10px;
+}
+
+#new-event-form #new-event-form-close {
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    top: 4%;
+    right: 10px;
+    cursor: pointer;
+    display: block;
+}
+
+#overlay {
+    z-index: 3;
+    position: fixed;
+    background-color: #000;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+#new-event-form {
+    padding: 0;
+}
+
+#new-event-form .event {
+    font-size: 22px;
+    margin: 2%;
+    border-bottom: 1px solid #eae9c2;
+}
+
+#new-event-form label {
+    padding: 0.5% 4%;
+
+}

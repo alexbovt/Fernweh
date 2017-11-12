@@ -20,7 +20,7 @@ Route::get('/',['as' => 'welcome' ,function () {
 }]);
 
 Route::get('/id{id}', [
-    'uses' => 'UserController@getUsers'
+    'uses' => 'UserController@getUser'
 ]);
 
 Route::get('/dashboard', [
@@ -85,10 +85,18 @@ Route::post('/edit',[
 ]);
 
 
-Route::get('/event',[
+Route::get('/events/{city?}',[
     'as' => 'showEvents',
     'uses' => 'EventController@showEvents'
 ]);
+
+Route::get('/event_id{id}',[
+    'uses' => 'EventController@getEvent'
+]);
+
+
+
+
 
 
 

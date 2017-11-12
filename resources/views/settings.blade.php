@@ -39,7 +39,8 @@
                     </div>
                     <div class="form-group  {{ $errors->has('password') ? ' has-error' : '' }}">
                         <label for="passwordToUpdate">Password</label>
-                        <input type="password" class="form-control" id="passwordToUpdate" name="passwordToUpdate"
+                        <span id="passStrength"></span>
+                        <input type="password" class="form-control" id="inputPassword" name="passwordToUpdate"
                                placeholder="Input password"
                                aria-describedby="passwordToUpdate" value="">
                         @if ($errors->has('password'))
@@ -50,7 +51,8 @@
                     </div>
                     <div class="form-group  {{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
                         <label for="confirmPasswordToUpdate">Confirm password</label>
-                        <input type="password" class="form-control" id="confirmPasswordToUpdate"
+                        <span id="passCheck"></span>
+                        <input type="password" class="form-control" id="inputConfirmPassword"
                                name="confirmPasswordToUpdate"
                                placeholder="Confirm password"
                                aria-describedby="confirmPasswordToUpdate" value="">
@@ -84,7 +86,7 @@
                     {{ csrf_field() }}
                     <div class="form-group  {{ $errors->has('password') ? ' has-error' : '' }}">
                         <label for="passwordToUpdate">Password</label>
-                        <input type="password" class="form-control" id="passwordToUpdate" name="passwordToUpdate"
+                        <input type="password" class="form-control" id="inputPassword" name="passwordToUpdate"
                                placeholder="Input password"
                                aria-describedby="passwordToUpdate" value="">
                         @if ($errors->has('password'))
@@ -95,7 +97,8 @@
                     </div>
                     <div class="form-group  {{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
                         <label for="confirmPasswordToUpdate">Confirm password</label>
-                        <input type="password" class="form-control" id="confirmPasswordToUpdate"
+                        <span id="passCheck"></span>
+                        <input type="password" class="form-control" id="inputConfirmPassword"
                                name="confirmPasswordToUpdate"
                                placeholder="Confirm password"
                                aria-describedby="confirmPasswordToUpdate" value="">

@@ -68,6 +68,7 @@
                     </div>
                     <div class="form-group  {{ $errors->has('inputPassword') ? ' has-error' : '' }}">
                         <label for="inputPassword">Password</label>
+                        <span id="passStrength"></span>
                         <input type="password" class="form-control" id="inputPassword" name="inputPassword"
                                placeholder="Input password"
                                aria-describedby="inputPassword" value="">
@@ -79,6 +80,7 @@
                     </div>
                     <div class="form-group  {{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
                         <label for="inputConfirmPassword">Confirm password</label>
+                        <span id="passCheck"></span>
                         <input type="password" class="form-control" id="inputConfirmPassword"
                                name="inputConfirmPassword"
                                placeholder="Confirm password"
