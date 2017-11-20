@@ -16,6 +16,10 @@
                     <ul class="dropdown-menu">
                         <li><a href="/id{{$user->id_user}}">My profile</a></li>
                         <li class="divider"></li>
+                        <li><a href="/friends">Friends</a></li>
+                        <li><a href="/messages">Messages</a></li>
+                        <li><a href="/events">Events</a></li>
+                        <li class="divider"></li>
                         <li><a href="/edit">Edit</a></li>
                         <li><a href="/settings">Settings</a></li>
                         <li class="divider"></li>
@@ -24,37 +28,19 @@
                 @else
                     <a href="" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span
                                 class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <form class="form" role="form" method="post" action="login"
-                                  accept-charset="UTF-8"
-                                  id="login-nav">
-                                <div class="form-group">
-                                    <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail2"
-                                           placeholder="Email address" required>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="exampleInputPassword2">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword2"
-                                           placeholder="Password" required>
-                                    <div class="help-block text-right"><a href="">Forget the password ?</a>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-primary btn-block">Sign in</button>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox"> keep me logged-in
-                                    </label>
-                                </div>
-                            </form>
-                            <div class="bottom text-center">
-                                New here ? <a href="#"><b>Join Us</b></a>
-                            </div>
-                        </li>
-                    </ul>
+                    <div class="dropdown-menu">
+                        <form class="form" role="form" method="post" action="login"
+                              accept-charset="UTF-8"
+                              id="login-nav">
+                            <label class="form-group-label" for="exampleInputEmail2">Login</label>
+                            <input type="text" class="form-control" id="exampleInputEmail2"
+                                   placeholder="Login" required>
+                            <label class="form-group-label" for="exampleInputPassword2">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword2"
+                                   placeholder="Password" required>
+                            <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                        </form>
+                    </div>
                 @endif
             </ul>
         </div>

@@ -55,7 +55,7 @@ $(document).ready(function () {
 //end check password
 
 //open create event form
-    $('#elem').click(function (event) {
+    $('#elem-add-event').click(function (event) {
         event.preventDefault();
         $('#overlay').fadeIn(400,
             function () {
@@ -67,6 +67,28 @@ $(document).ready(function () {
 
     $('#new-event-form-close, #overlay').click(function () {
         $('#new-event-form')
+            .animate({opacity: 0, top: '45%'}, 200,
+                function () {
+                    $(this).css('display', 'none');
+                    $('#overlay').fadeOut(400);
+                }
+            );
+    });
+    //end create event form
+
+    //open create event form
+    $('#elem-attending-people-list').click(function (event) {
+        event.preventDefault();
+        $('#overlay').fadeIn(400,
+            function () {
+                $('#attending-people-list')
+                    .css('display', 'block')
+                    .animate({opacity: 1, top: '50%'}, 200);
+            });
+    });
+
+    $('#attending-people-list-close, #overlay').click(function () {
+        $('#attending-people-list')
             .animate({opacity: 0, top: '45%'}, 200,
                 function () {
                     $(this).css('display', 'none');

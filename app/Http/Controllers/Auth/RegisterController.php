@@ -84,7 +84,9 @@ class RegisterController extends Controller
         ];
         $validator = $this->validator($data);
         if ($validator->fails()) {
-            return redirect()->action('Auth\RegisterController@create')->withErrors($validator)->withInput();
+            return redirect()->action('Auth\RegisterController@create')
+                ->withErrors($validator)
+                ->withInput();
         } else {
             User::create([
                 'login' => $data['login'],

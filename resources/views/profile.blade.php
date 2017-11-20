@@ -6,7 +6,7 @@
 @section('left-block')
     <div class="container">
         <div class="user-col col-xs-12 col-sm-4 col-md-3">
-            <div class="user-image"><img src="{{asset('img/man.jpg')}}"></div>
+            <div class="user-image"><img src="{{asset("/img/man.jpg")}}"></div>
             <div class="user-friends col-xs-12 col-sm-12 col-md-12">
                 <div class="user-friends-title col-xs-12 col-sm-12 col-md-12">Friends</div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
@@ -106,4 +106,5 @@
                 </div>
                 @endif
             </div>
+    </div>
 @endsection

@@ -14,9 +14,9 @@
 
 use Illuminate\Support\Facades\Auth;
 
-Route::get('/',['as' => 'welcome' ,function () {
+Route::get('/', ['as' => 'welcome', function () {
     if ($user = session()->get('user')) return redirect()->to("id$user->id_user");
-    else return view('welcome')->with('msg','');
+    else return view('welcome')->with('msg', '');
 }]);
 
 Route::get('/id{id}', [
@@ -60,40 +60,71 @@ Route::post('/registration', [
     'uses' => 'Auth\RegisterController@create'
 ]);
 
-Route::get('/settings',[
+Route::get('/settings', [
     'uses' => 'ProfileController@getSettings'
 ]);
 
-Route::post('/settings',[
+Route::post('/settings', [
     'as' => 'SettingsChangeUserData',
     'uses' => 'ProfileController@postSettings'
 ]);
 
-Route::post('/account_delete',[
+Route::post('/account_delete', [
     'as' => 'DeleteAccount',
     'uses' => 'ProfileController@postDeleteAccount'
 ]);
 
 
-Route::get('/edit',[
+Route::get('/edit', [
     'uses' => 'ProfileController@getEdit'
 ]);
 
-Route::post('/edit',[
+Route::post('/edit', [
     'as' => 'EditChangeUserData',
     'uses' => 'ProfileController@postEdit'
 ]);
 
 
-Route::get('/events/{city?}',[
+Route::get('/events/{city?}', [
     'as' => 'showEvents',
     'uses' => 'EventController@showEvents'
 ]);
 
-Route::get('/event_id{id}',[
+Route::get('/events/create', [
+    'uses' => 'EventController@createEvent'
+]);
+
+Route::get('/event_id{id}', [
     'uses' => 'EventController@getEvent'
 ]);
 
+Route::get('/event_id{id}/join', [
+    'uses' => 'EventController@joinEvent'
+]);
+
+Route::get('/event_id{id}/leave', [
+    'uses' => 'EventController@leaveEvent'
+]);
+
+Route::get('/event_id{id}/edit', [
+    'uses' => 'EventController@editEvent'
+]);
+
+Route::post('/event_id{id}/update', [
+    'uses' => 'EventController@updateEvent'
+]);
+
+Route::get('/event_id{id}/delete', [
+    'uses' => 'EventController@deleteEvent'
+]);
+
+Route::get('/messeges', [
+    'uses' => 'MessageController@getMessages'
+]);
+
+Route::get('/friends', [
+    'uses' => 'FriendsController@getFriends'
+]);
 
 
 
