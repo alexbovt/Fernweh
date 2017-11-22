@@ -13,45 +13,33 @@ class EventController extends Controller
     public function showEvents($city = null)
     {
         $user = session()->get("user");
-        $attending_events = Event::join('event_people_list', 'id_user', '=', 'id_user_from_user')
-            ->where('id_user_from_user', $user->id_user)
-            ->get();
-        $organizing_events = Event::where('id_user', $user->id_user)->get();
+        $attending_events = Event::getAttendingEvents($user->id_user);
+        $organizing_events = Event::getOrganizingEvents($user->id_user);
         if ($city) {
             if (Address::where('city', $city)->first()) {
-                $events = Event::join('address', 'id_address_event', '=', 'id_address')->where('city', $city)->get();
                 $address = Address::where('city', $city)->first();
-                if ($events)
-                    return view('events')
-                        ->with('events', $events)
-                        ->with('user', $user)
-                        ->with('address', $address)
-                        ->with('attending_events', $attending_events)
-                        ->with('organizing_events', $organizing_events);
+                $events = Event::getEvents($city, $user->id_address);
+                if (count($events))
+                    return view('events')->with(['events' => $events,
+                        'user' => $user,
+                        'address' => $address,
+                        'attending_events' => $attending_events,
+                        'organizing_events' => $organizing_events]);
                 else return redirect()->back()
-                    ->with('events_status', "No events in $city")
-                    ->with('city', $city)
-                    ->with('attending_events', $attending_events)
-                    ->with('organizing_events', $organizing_events);
-
+                    ->with('events_status', "No events in $city");
             } else {
                 return redirect()->back()
-                    ->with('events_status', "No city $city")
-                    ->with('city', $city)
-                    ->with('attending_events', $attending_events)
-                    ->with('organizing_events', $organizing_events);
+                    ->with('events_status', "No city $city");
             }
         } else {
-            $events = Event::join('address', 'id_address_event', '=', 'id_address')
-                ->where('id_address', $user->id_address)
-                ->get();
-            $address = Address::where('id_address', $user->id_address)->first();
-            return view('events')
-                ->with('events', $events)
-                ->with('user', $user)
-                ->with('address', $address)
-                ->with('attending_events', $attending_events)
-                ->with('organizing_events', $organizing_events);
+            $address = Address::getUserAddress($user->id_address);
+            $events = Event::getEvents($city, $user->id_address);
+            return view('events')->with(['events' => $events,
+                'user' => $user,
+                'address' => $address,
+                'attending_events' => $attending_events,
+                'organizing_events' => $organizing_events]);
+
         }
     }
 
