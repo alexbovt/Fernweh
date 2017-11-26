@@ -11,7 +11,6 @@ class Address extends Model
 
     public static function addNewAddress($address)
     {
-
         Address::create([
             'country' => $address['country'],
             'city' => $address['city']

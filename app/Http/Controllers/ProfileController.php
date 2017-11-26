@@ -25,13 +25,13 @@ class ProfileController extends Controller
             'name' => 'required|string|max:255',
             'surname' => 'required|string|max:255',
             'birth_date' => 'required|date',
-            'phone_number' => 'string|min:9',
-            'education' => 'string',
+            'phone_number' => 'nullable|string|min:9',
+            'education' => 'nullable|string',
             'sex' => 'required|string',
-            'languages' => 'string',
-            'job' => 'string',
-            'countries' => 'string',
-            'notes' => 'string',
+            'languages' => 'nullable|string',
+            'job' => 'nullable|string',
+            'countries' => 'nullable|string',
+            'notes' => 'nullable|string',
         ]);
     }
 

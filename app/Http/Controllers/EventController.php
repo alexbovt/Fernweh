@@ -89,7 +89,7 @@ class EventController extends Controller
         return redirect()->back();
     }
 
-    public function createEvent()
+    public function createEvent(Request $request)
     {
         echo 'hello';
     }

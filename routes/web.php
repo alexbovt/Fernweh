@@ -90,7 +90,8 @@ Route::get('/events/{city?}', [
     'uses' => 'EventController@showEvents'
 ]);
 
-Route::get('/events/create', [
+Route::post('/events/create', [
+    'as' => 'createEvent',
     'uses' => 'EventController@createEvent'
 ]);
 
