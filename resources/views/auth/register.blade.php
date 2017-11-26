@@ -49,6 +49,28 @@
                                     </span>
                         @endif
                     </div>
+                    <div class="form-group {{ $errors->has('inputCountry') ? ' has-error' : '' }}">
+                        <label for="inputCountry">Country</label>
+                        <input type="text" class="form-control" id="inputCountry" name="inputCountry"
+                               aria-describedby="inputCountry"
+                               placeholder="Input Country" value="{{ old('inputCountry') }}">
+                        @if ($errors->has('inputCountry'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('inputCountry') }}</strong>
+                                    </span>
+                        @endif
+                    </div>
+                    <div class="form-group {{ $errors->has('inputCity') ? ' has-error' : '' }}">
+                        <label for="inputCity">City</label>
+                        <input type="text" class="form-control" id="inputCity" name="inputCity"
+                               aria-describedby="inputCity"
+                               placeholder="Input City" value="{{ old('inputCity') }}">
+                        @if ($errors->has('inputCity'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('inputCity') }}</strong>
+                                    </span>
+                        @endif
+                    </div>
                     <div class="form-group  {{ $errors->has('inputDateOfBirth') ? ' has-error' : '' }}">
                         <label for="inputDateOfBirth">Date of birth</label>
                         <input type="date" class="form-control" id="date_of_birth" name="inputDateOfBirth"

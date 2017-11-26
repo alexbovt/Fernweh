@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Address;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -44,12 +45,6 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -64,15 +59,10 @@ class RegisterController extends Controller
         ]);
     }
 
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array $data
-     * @return \App\User
-     */
     protected function create(Request $request)
     {
         $data = [
+            'id_address' => null,
             'login' => $request->input('inputLogin'),
             'name' => $request->input('inputFirstName'),
             'surname' => $request->input('inputLastName'),
@@ -82,22 +72,21 @@ class RegisterController extends Controller
             'birth_date' => $request->input('inputDateOfBirth'),
             'sex' => $request->input('inputGender')
         ];
+        $address = [
+          'country' => $request->input('inputCountry') ,
+          'city' => $request->input('inputCity')
+        ];
         $validator = $this->validator($data);
         if ($validator->fails()) {
+            dd($validator);
             return redirect()->action('Auth\RegisterController@create')
                 ->withErrors($validator)
                 ->withInput();
         } else {
-            User::create([
-                'login' => $data['login'],
-                'email' => $data['email'],
-                'password' => Hash::make($data['password']),
-                'name' => $data['name'],
-                'surname' => $data['surname'],
-                'birth_date' => $data['birth_date'],
-                'sex' => $data['sex'],
-            ]);
-            return redirect()->back()->with('status', 'You are signed up!');;
+            $id_address = Address::addNewAddress($address);
+            $data['id_address'] = $id_address;
+            User::registerUser($data);
+            return redirect()->back()->with('status', 'You are signed up!');
         }
     }
 

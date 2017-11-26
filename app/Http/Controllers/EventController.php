@@ -32,7 +32,7 @@ class EventController extends Controller
                     ->with('events_status', "No city $city");
             }
         } else {
-            $address = Address::getUserAddress($user->id_address);
+            $address = Address::getAddress($user->id_address);
             $events = Event::getEvents($city, $user->id_address);
             return view('events')->with(['events' => $events,
                 'user' => $user,
@@ -96,12 +96,12 @@ class EventController extends Controller
 
     public function editEvent($id)
     {
-        echo 'hello';
+        echo 'hello'.$id ;
     }
 
     public function updateEvent($id)
     {
-        echo 'hello';
+        echo 'hello'.$id;
     }
 
     public function deleteEvent($id)

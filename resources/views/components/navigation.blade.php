@@ -6,7 +6,7 @@
         <div class="col-xs-0 col-sm-6 col-md-3 col-md-push-6">
             <ul class="navbar-user nav navbar-nav">
                 @if ($user = session()->get('user'))
-                    <a href="/messeges"><span class="glyphicon glyphicon-envelope glyphicon-icons"></span></a>
+                    <a href="/messages"><span class="glyphicon glyphicon-envelope glyphicon-icons"></span></a>
                     <a href="/events"><span class="glyphicon glyphicon-calendar glyphicon-icons"></span></a>
                     <a href="#" class="drodropdown-toggle" data-toggle="dropdown">
                         <span class="navbar-user-name">{{ucfirst($user->name)}}</span>

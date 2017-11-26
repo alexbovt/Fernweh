@@ -5,15 +5,15 @@ $(document).ready(function () {
         return false;
     });
 
-//section auto refresh
+    //open auto refresh
     /*
     setInterval(function() {
         $("#refresh").load(location.href+" #refresh>*","");
     }, 10000);
     */
-//end auto refresh
+    //end auto refresh
 
-//section check password
+    //open check password
 
     $('#inputPassword').keyup(function (e) {
         var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
@@ -52,53 +52,43 @@ $(document).ready(function () {
 
     });
 
-//end check password
-
-//open create event form
-    $('#elem-add-event').click(function (event) {
-        event.preventDefault();
-        $('#overlay').fadeIn(400,
-            function () {
-                $('#new-event-form')
-                    .css('display', 'block')
-                    .animate({opacity: 1, top: '50%'}, 200);
-            });
-    });
-
-    $('#new-event-form-close, #overlay').click(function () {
-        $('#new-event-form')
-            .animate({opacity: 0, top: '45%'}, 200,
-                function () {
-                    $(this).css('display', 'none');
-                    $('#overlay').fadeOut(400);
-                }
-            );
-    });
-    //end create event form
+    //end check password
 
     //open create event form
-    $('#elem-attending-people-list').click(function (event) {
-        event.preventDefault();
-        $('#overlay').fadeIn(400,
-            function () {
-                $('#attending-people-list')
-                    .css('display', 'block')
-                    .animate({opacity: 1, top: '50%'}, 200);
-            });
-    });
+    $(document).ready(function() {
+        $('#elem').click( function(event){
+            event.preventDefault();
+            $('#overlay').fadeIn(400,
+                function(){
+                    $('#new-event-form')
+                        .css('display', 'block')
+                        .animate({opacity: 1, top: '50%'}, 200);
+                });
+        });
 
-    $('#attending-people-list-close, #overlay').click(function () {
-        $('#attending-people-list')
-            .animate({opacity: 0, top: '45%'}, 200,
-                function () {
-                    $(this).css('display', 'none');
-                    $('#overlay').fadeOut(400);
-                }
-            );
+        $('#new-event-form-close, #overlay').click( function(){
+            $('#new-event-form')
+                .animate({opacity: 0, top: '45%'}, 200,
+                    function(){
+                        $(this).css('display', 'none');
+                        $('#overlay').fadeOut(400);
+                    });
+        });
+
+        $('#meeting').bind("click", function () {
+            document.getElementById('form-meeting').style.display = 'block';
+            document.getElementById('form-travel').style.display = 'none';
+        });
+
+        $('#travel').bind("click", function () {
+            document.getElementById('form-meeting').style.display = 'none';
+            document.getElementById('form-travel').style.display = 'block';
+        });
+
     });
     //end create event form
 
-//section scroll-auto download content
+    //open  scroll-auto download content
     /*
     var loading = false;
     $(window).scroll(function(){
@@ -120,5 +110,5 @@ $(document).ready(function () {
         $('#loaded_max').val(50);
     });
     */
-//end scroll-auto download content
+    //end scroll-auto download content
 });

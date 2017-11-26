@@ -118,7 +118,7 @@ Route::get('/event_id{id}/delete', [
     'uses' => 'EventController@deleteEvent'
 ]);
 
-Route::get('/messeges', [
+Route::get('/messages', [
     'uses' => 'MessageController@getMessages'
 ]);
 

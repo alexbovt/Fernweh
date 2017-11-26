@@ -17,9 +17,10 @@ class UserController extends Controller
         if($user->id_address == null) $address = Address::where('id_address','1')->first();
             else {
                 $address = Address::where('id_address',$user->id_address)->first();
-                $photo = Photo::where('id_user',$user->id_user)->first();
+                //$photo = Photo::where('id_user',$user->id_user)->first();
             }
-        return view('profile')->with('user',$user)->with('address',$address)->with('photo',$photo);
+        return view('profile')->with('user',$user)->with('address',$address);
+        //->with('photo',$photo);
     }
 
     public function dashboard(Request $request){

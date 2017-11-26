@@ -40,10 +40,89 @@
                 </div>
             </div>
         </div>
+        <div class="event-description-col col-xs-12 col-sm-8 col-md-8">
+            <div class="event-comments-title">
+                <span class="glyphicon glyphicon-comment"></span>
+                <div>Comments (5)</div>
+            </div>
+            <div class="event-comment">
+                <img src="{{asset('img/man.jpg')}}" class="img-circle">
+                <textarea placeholder="Write a comment"></textarea>
+                <button class="btn" id="send-comment">Send</button>
+            </div>
+            <div class="event-comment">
+                <a href=""><img src="{{asset('img/man.jpg')}}" class="img-circle"></a>
+                <div class="event-people-info">
+                    <ul>
+                        <li><a href="">Name Surname</a></li>
+                        <li>
+                            <div>Friendly reminder that this event is this weekend.</div>
+                        </li>
+                        <li>
+                            <div class="comment-date">3 days ago</div>
+                        </li>
+                    </ul>
+                </div>
+                <a id="elem"><span class="btn glyphicon glyphicon-warning-sign"></span></a>
+                <div id="new-event-form">
+                    <span id="new-event-form-close">X</span>
+                    <div class="event">Report post</div>
+                    <form method="POST">
+                        <div class="form-group">
+                            <label for="">What's happening?</label>
+                            <div class="form-report">
+                                <p><input type="radio" name="report" value="spam" checked>It's spam</p>
+                                <p><input type="radio" name="report" value="verbal">Verbal abuse</p>
+                                <p><input type="radio" name="report" value="violence">Violence or extremism</p>
+                                <p><input type="radio" name="report" value="other">Other</p>
+                                <p><textarea></textarea></p>
+                                <input type="submit" class="btn btn-primary" value="Report">
+                                <input type="reset" class="btn btn-default" value="Cancel">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="event-comment">
+                <a href=""><img src="{{asset('img/man.jpg')}}" class="img-circle"></a>
+                <div class="event-people-info">
+                    <ul>
+                        <li><a href="">Name Surname</a></li>
+                        <li>
+                            <div>Friendly reminder that this event is this weekend.</div>
+                        </li>
+                        <li>
+                            <div class="comment-date">7 days ago</div>
+                        </li>
+                    </ul>
+                </div>
+                <a id="elem"><span class="btn glyphicon glyphicon-warning-sign"></span></a>
+                <div id="new-event-form">
+                    <span id="new-event-form-close">X</span>
+                    <div class="event">Report post</div>
+                    <form method="POST">
+                        <div class="form-group">
+                            <label for="">What's happening?</label>
+                            <div class="form-report">
+                                <p><input type="radio" name="report" value="spam" checked>It's spam</p>
+                                <p><input type="radio" name="report" value="verbal">Verbal abuse</p>
+                                <p><input type="radio" name="report" value="violence">Violence or extremism</p>
+                                <p><input type="radio" name="report" value="other">Other</p>
+                                <p><textarea name="" cols="" rows="3"></textarea></p>
+                                <input type="submit" class="btn btn-primary" value="Report">
+                                <input type="reset" class="btn btn-default" value="Cancel">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div id="overlay"></div>
+            </div>
+        </div>
         @endsection
         @section('right-block')
-            <div class="event-people-list-col col-xs-12 col-sm-4 col-md-3">Going {{count($event_people_list)}}
+            <div class="event-people-list-col col-xs-12 col-sm-4 col-md-3">
                 <div class="event-people-list col-xs-12 col-sm-12 col-md-12">
+                    <div class="event-people-list-title">Attending({{count($event_people_list)}})</div>
                     @foreach($event_people_list as $event_people)
                         <div>
                             <a href=""><img src="{{asset('img/man.jpg')}}" class="img-circle"></a>

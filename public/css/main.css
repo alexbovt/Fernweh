@@ -184,7 +184,8 @@ body {
 }
 
 .user-friends-title,
-.user-events-title {
+.user-events-title,
+.event-people-list-title{
     padding: 5%;
     font-size: 12px;
     color: #a4a388;
@@ -368,6 +369,10 @@ body {
     padding: 0.5% 4%;
 }
 
+.form-travel{
+    display: none;
+}
+
 .event-img {
     padding: 15px 0;
 }
@@ -378,35 +383,36 @@ body {
 }
 
 .event-info-col > .event-name {
-    padding: 0;
+    padding: 0 1%;
 }
 
 .event-date > div,
-.event-place > div{
+.event-place > div,
+.event-comments-title > div {
     display: inline;
     font-weight: bold;
     font-size: 16px;
 }
 
 .event-date,
-.event-place{
+.event-place {
     margin: 0 2% 0.5% 2%;
 }
 
 .event-date .glyphicon-time,
 .event-place .glyphicon-map-marker,
-.event-comments .glyphicon-comment {
+.event-comments-title .glyphicon-comment,
+.glyphicon-warning-sign {
     color: #60697e;
     margin-right: 0.5%;
 }
 
 .event-description-col {
-    padding: 0;
+    margin: 1% 0 0 0;
 }
 
 .event-people-list-col {
-    padding-right: 0;
-    padding-left: 0;
+    padding: 1% 0;
     float: right;
 }
 
@@ -543,4 +549,98 @@ body {
     border-bottom: 1px solid #eae9c2;
 }
 
+.glyphicon-warning-sign {
+    font-size: 15px;
+    float: right;
+    margin: 2.5%;
+    padding: 0;
+}
+
+.event-description {
+    padding: 0 2% 2% 2%;
+    white-space: pre-line;
+}
+
+.event-people-list img {
+    width: 50px;
+    height: 50px;
+    margin: 2% 1%;
+}
+
+.event-description-col img {
+    width: 50px;
+    height: 50px;
+    margin: 1% 2%;
+}
+
+.event-people-info > ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.event-people-info {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.event-people-list > div {
+    border-bottom: 1px solid #eae9c2;
+}
+
+.event-people-info ul .comment-date {
+    font-size: 10px;
+    padding: 2% 7%;
+}
+
+.event-comments-title {
+    padding: 1.5% 1.5%;
+    border-bottom: 1px solid #eae9c2;
+}
+
+.event-comment {
+    border-bottom: 1px solid #eae9c2;
+    display: inline-block;
+    width: 100%;
+}
+
+.event-comment > img {
+    margin-top: 2.5%;
+}
+
+.event-comment textarea {
+    resize: vertical;
+    width: 80%;
+    min-height: 60px;
+    border-radius: 5px;
+    border: 1px solid #ede9be;
+    float: right;
+    margin: 2% 2% 0 2%;
+}
+
+.event-comment > #send-comment {
+    margin: 3% 2%;
+    float: right;
+}
+
+.form-report p {
+    padding: 1% 5%;
+    margin: 0;
+}
+
+.form-report textarea {
+    height: 60px;
+    width: 90%;
+    resize: none;
+    margin: 0 5%;
+}
+
+.form-report .btn-primary {
+    float: right;
+    margin: 3% 7%;
+}
+
+.form-report .btn-default {
+    float: left;
+    margin: 3% 7%;
+}
 

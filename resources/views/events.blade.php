@@ -6,26 +6,42 @@
     <div class="container">
         <div class="event-info-col col-xs-8 col-sm-8 col-md-7">
             <div class="event col-xs-10 col-sm-10 col-md-11">Events in {{$address->city}}</div>
-            <a id="elem-add-event"><span
+            <a id="elem"><span
                         class="add-event glyphicon glyphicon-plus-sign col-xs-2 col-sm-2 col-md-1"></span></a>
             <div id="new-event-form">
-                <span id="new-event-form-close" class="glyphicon glyphicon-remove"></span>
-                <div id="test" class="event">Creating new event</div>
-                <form method="POST" class="new-event-form-components">
+                <span id="new-event-form-close">X</span>
+                <div class="event">Creating new event</div>
+                <form method="POST">
                     <div class="form-group">
                         <label for="eventType">Event type</label>
-                        <input id="meeting" type="radio" name="eventType" value="meeting" checked>Meeting
-                        <input id="travel" type="radio" name="eventType" value="travel">Travel
+                        <input type="radio" name="eventType" id="meeting" value="meeting" checked>Meeting
+                        <input type="radio" name="eventType" id="travel" value="travel">Travel
                     </div>
                     <div class="form-group">
                         <label for="eventTitle">Title</label>
                         <input type="text" id="eventTitle" name="eventTitle" class="form-control"
                                placeholder="Event title">
                     </div>
-                    <div class="form-group">
-                        <label for="eventPhoto">Photo</label>
-                        <input type="file" id="eventPhoto" name="eventPhoto"
+                    <div id="form-meeting">
+                        <label>Place</label>
+                        <input type="text" id="form-meeting" name="" class="form-control"
                                placeholder="">
+                        <label>Date</label>
+                        <p><input type="date" class="form-control"></p>
+                        <p>Start time<input type="time" name="" id="" class="form-control">
+                            End time<input type="time" name="" id="" class="form-control"></p>
+                        <label>Photo</label>
+                        <p><input type="image" name="" id=""></p>
+                    </div>
+                    <div id="form-travel" class="form-travel">
+                        <label>Destination</label>
+                        <input type="text" id="form-travel" name="" class="form-control"
+                               placeholder="">
+                        <label>Arrive date<input type="date" name="" id="" class="form-control"></label>
+                        <label> Depart date<input type="date" name="" id="" class="form-control"></label><br/>
+                        <label>Photo</label>
+                        <p><input type="image" name="" id=""></p>
+
                     </div>
                 </form>
             </div>
@@ -88,6 +104,11 @@
                             </a>
                         </div>
                     @endforeach
+                </div>
+                <div class="user-event-info-col col-xs-12 col-sm-12 col-md-3">
+                    <div class="user-events-title col-xs-12 col-sm-12 col-md-12">Visited Events</div>
+                    <div class="user-event-name col-xs-8 col-sm-8 col-md-12"><a href="">Berlin - Hamburg Hitchikking(5
+                            July)</a></div>
                 </div>
             </div>
     </div>
