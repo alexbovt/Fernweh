@@ -32,6 +32,9 @@
                             End time<input type="time" name="" id="" class="form-control"></p>
                         <label>Photo</label>
                         <p><input type="image" name="" id=""></p>
+                        <button type="submit" formaction="{{route('createEvent')}}" class="btn btn-primary">
+                            Create
+                        </button>
                     </div>
                     <div id="form-travel" class="form-travel">
                         <label>Destination</label>
