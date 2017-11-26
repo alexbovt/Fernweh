@@ -35,7 +35,8 @@ class Event extends Model
         return Event::where('id_user', $id_user)->get();
     }
 
-    public static function createEvent($data){
+    public static function createEvent($data)
+    {
 
     }
 }

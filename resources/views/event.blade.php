@@ -74,27 +74,35 @@
                         </ul>
                     </div>
                     @if($user->id_user == $comment->id_user)
-                        <a href="/event_id{{$event->id_event}}/deleteComment_id{{$comment->id_comment}}" ><span class="btn glyphicon glyphicon-remove"></span></a>
+                        <a href="/event_id{{$event->id_event}}/deleteComment_id{{$comment->id_comment}}"><span
+                                    class="btn glyphicon glyphicon-remove"></span></a>
                     @else
                         <a id="elem"><span class="btn glyphicon glyphicon-warning-sign"></span></a>
                         <div id="new-event-form">
                             <span id="new-event-form-close">X</span>
                             <div class="event">Report post</div>
                             <form method="POST">
+                                {{ csrf_field() }}
                                 <div class="form-group">
                                     <label for="">What's happening?</label>
                                     <div class="form-report">
-                                        <p><input type="radio" name="report" value="spam" checked>It's spam</p>
-                                        <p><input type="radio" name="report" value="verbal">Verbal abuse</p>
-                                        <p><input type="radio" name="report" value="violence">Violence or extremism</p>
-                                        <p><input type="radio" name="report" value="other">Other</p>
-                                        <p><textarea></textarea></p>
-                                        <input type="submit" class="btn btn-primary" value="Report">
+                                        <p><input type="radio" name="report_type" value="spam" checked>It's spam</p>
+                                        <p><input type="radio" name="report_type" value="verbal">Verbal abuse</p>
+                                        <p><input type="radio" name="report_type" value="violence">Violence or extremism
+                                        </p>
+                                        <p><input type="radio" name="report_type" value="other">Other</p>
+                                        <p><textarea name="report_text"></textarea></p>
+                                        <button type="submit"
+                                                formaction="{{route('reportComment',['id' => $event->id_event, 'id_comment' => $comment->id_comment])}}"
+                                                class="btn btn-primary">
+                                            Report
+                                        </button>
                                         <input type="reset" class="btn btn-default" value="Cancel">
                                     </div>
                                 </div>
                             </form>
                         </div>
+                        <div id="overlay"></div>
                     @endif
                 </div>
             @endforeach

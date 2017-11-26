@@ -65,7 +65,7 @@ class EventController extends Controller
             ->with('user', $user)
             ->with('address', $address)
             ->with('event_people_list', $event_people_list)
-            ->with('comments',$comments);
+            ->with('comments', $comments);
     }
 
 

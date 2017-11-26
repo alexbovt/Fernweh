@@ -10,7 +10,7 @@
             <div class="user-friends col-xs-12 col-sm-12 col-md-12">
                 <div class="user-friends-title col-xs-12 col-sm-12 col-md-12">Friends</div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
-                <a href="" class="col-md-12"><img src="{{asset('img/man.jpg')}}" class="img-circle"></a>
+                    <a href="" class="col-md-12"><img src="{{asset('img/man.jpg')}}" class="img-circle"></a>
                     <a href="" class="col-md-12">Name</a>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
@@ -72,38 +72,39 @@
                 </div>
                 <div class="user-info col-md-12">
                     <div class="user-info-title col-md-2">Address</div>
-                    <div class="user-info-info col-md-8">{{ucfirst($address->country)}},{{ucfirst($address->city)}},{{ucfirst($address->street)}}</div>
+                    <div class="user-info-info col-md-8">{{ucfirst($address->country)}},{{ucfirst($address->city)}}
+                        ,{{ucfirst($address->street)}}</div>
                 </div>
 
                 @if($user->languages)
-                <div class="user-info col-md-12">
-                    <div class="user-info-title col-md-2">Languages</div>
-                    <div class="user-info-info col-md-8">{{ucfirst($user->languages)}}</div>
-                </div>
+                    <div class="user-info col-md-12">
+                        <div class="user-info-title col-md-2">Languages</div>
+                        <div class="user-info-info col-md-8">{{ucfirst($user->languages)}}</div>
+                    </div>
                 @endif
                 @if($user->education)
-                <div class="user-info col-md-12">
-                    <div class="user-info-title col-md-2">Education</div>
-                    <div class="user-info-info col-md-8">{{ucfirst($user->education)}}</div>
-                </div>
+                    <div class="user-info col-md-12">
+                        <div class="user-info-title col-md-2">Education</div>
+                        <div class="user-info-info col-md-8">{{ucfirst($user->education)}}</div>
+                    </div>
                 @endif
                 @if($user->job)
-                <div class="user-info col-md-12">
-                    <div class="user-info-title col-md-2">Job</div>
-                    <div class="user-info-info col-md-8">{{ucfirst($user->job)}}</div>
-                </div>
+                    <div class="user-info col-md-12">
+                        <div class="user-info-title col-md-2">Job</div>
+                        <div class="user-info-info col-md-8">{{ucfirst($user->job)}}</div>
+                    </div>
                 @endif
                 @if($user->countries)
-                <div class="user-info col-md-12">
-                    <div class="user-info-title col-md-2">Countries</div>
-                    <div class="user-info-info col-md-8">{{ucfirst($user->countries)}}</div>
-                </div>
+                    <div class="user-info col-md-12">
+                        <div class="user-info-title col-md-2">Countries</div>
+                        <div class="user-info-info col-md-8">{{ucfirst($user->countries)}}</div>
+                    </div>
                 @endif
                 @if($user->notes)
-                <div class="user-info col-md-12">
-                    <div class="user-info-title col-md-2">About me</div>
-                    <div class="user-info-info col-md-8">{{ucfirst($user->notes)}}</div>
-                </div>
+                    <div class="user-info col-md-12">
+                        <div class="user-info-title col-md-2">About me</div>
+                        <div class="user-info-info col-md-8">{{ucfirst($user->notes)}}</div>
+                    </div>
                 @endif
             </div>
     </div>

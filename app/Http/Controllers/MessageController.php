@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 class MessageController extends Controller
 {
-    public function getMessages(){
+    public function getMessages()
+    {
         return view('messages');
     }
 }

@@ -10,7 +10,6 @@ require 'Faker-master/src/autoload.php';
 $faker = Faker\Factory::create();
 
 
-
 for ($i = 12; $i < 105; $i++) {
     $rand = rand(1, 2);
     if ($rand % 2 == 0) {
@@ -21,41 +20,41 @@ for ($i = 12; $i < 105; $i++) {
         $user['name'] = $faker->firstNameMale;
     }
     $user['surname'] = $faker->lastName;
-    $user['email'] = lcfirst($user['name']).'.'.lcfirst($user['surname']).'@'.$faker->freeEmailDomain;
-         $user['birth_date'] = $faker->date($format = 'Y-m-d', $max = '2001-01-01');
-         $user['login'] = substr($user['name'], 0, 3).substr($user['surname'], -3).substr($user['birth_date'], -2);
-         $user['phone_number'] = $faker->e164PhoneNumber;
-         $user['job'] = $faker->jobTitle;
-         $user['notes'] = $faker->text($maxNbChars = 100);
-         $user['countries'] = implode($faker->randomElements(array('Ukraine ', 'Poland ', 'Germany ', 'Netherlands ', 'Denmark ', 'Norway ', 'Sweden ', 'Spain '),$count = (rand(1,8))));
-         $user['languages'] = implode($faker->randomElements(array('Ukrainian ', 'Polish ', 'German ', 'Dutch ', 'Danish ', 'Norwegian ', 'Swedish ', 'Spanish ', 'English ', 'Portuguese ', 'Italian '), $count = rand(1, 5)));
-         $user['education'] = $faker->randomElement(array('Harvard', 'ETH Zurich', 'UCL', 'Stanford', 'Leiden', 'Politechnika Lubelska', 'MIT', 'Cambridge', 'Princeton', 'Kyiv Polytechnic Institute', 'Lviv Polytechnic National University',
-             'Oxford', 'Northwestern', 'Technical University of Munich', 'University of Amsterdam', 'Karolinska Institute', 'Taras Shevchenko National University of Kyiv',
-             'University of Bristol', 'Leiden University', 'Utrecht University', 'Delft University of Technology', 'Czech Technical University in Prague'));
-         $user['id_address'] = $i;
-        if ($i % 5 == 1) {
-            $user['id_address_home'] = rand(12, 100);
-        } else
-            $user['id_address_home'] = $i;
-        User::insert([
+    $user['email'] = lcfirst($user['name']) . '.' . lcfirst($user['surname']) . '@' . $faker->freeEmailDomain;
+    $user['birth_date'] = $faker->date($format = 'Y-m-d', $max = '2001-01-01');
+    $user['login'] = substr($user['name'], 0, 3) . substr($user['surname'], -3) . substr($user['birth_date'], -2);
+    $user['phone_number'] = $faker->e164PhoneNumber;
+    $user['job'] = $faker->jobTitle;
+    $user['notes'] = $faker->text($maxNbChars = 100);
+    $user['countries'] = implode($faker->randomElements(array('Ukraine ', 'Poland ', 'Germany ', 'Netherlands ', 'Denmark ', 'Norway ', 'Sweden ', 'Spain '), $count = (rand(1, 8))));
+    $user['languages'] = implode($faker->randomElements(array('Ukrainian ', 'Polish ', 'German ', 'Dutch ', 'Danish ', 'Norwegian ', 'Swedish ', 'Spanish ', 'English ', 'Portuguese ', 'Italian '), $count = rand(1, 5)));
+    $user['education'] = $faker->randomElement(array('Harvard', 'ETH Zurich', 'UCL', 'Stanford', 'Leiden', 'Politechnika Lubelska', 'MIT', 'Cambridge', 'Princeton', 'Kyiv Polytechnic Institute', 'Lviv Polytechnic National University',
+        'Oxford', 'Northwestern', 'Technical University of Munich', 'University of Amsterdam', 'Karolinska Institute', 'Taras Shevchenko National University of Kyiv',
+        'University of Bristol', 'Leiden University', 'Utrecht University', 'Delft University of Technology', 'Czech Technical University in Prague'));
+    $user['id_address'] = $i;
+    if ($i % 5 == 1) {
+        $user['id_address_home'] = rand(12, 100);
+    } else
+        $user['id_address_home'] = $i;
+    User::insert([
 
-            'id_address' => $user['id_address'],
-            'id_address_home' => $user['id_address_home'],
+        'id_address' => $user['id_address'],
+        'id_address_home' => $user['id_address_home'],
 
-            'email' => $user['email'],
-            'login' => $user['login'],
-            'password' => Hash::make('123123'),
-            'name' => $user['name'],
-            'surname' => $user['surname'],
-            'birth_date' => $user['birth_date'],
-            'sex' => $user['sex'],
-            'phone_number' => $user['phone_number'],
-            'education' => $user['education'],
-            'languages' => $user['languages'],
-            'job' => $user['job'],
-            'countries' => $user['countries'],
-            'notes' => $user['notes'],
-        ]);
+        'email' => $user['email'],
+        'login' => $user['login'],
+        'password' => Hash::make('123123'),
+        'name' => $user['name'],
+        'surname' => $user['surname'],
+        'birth_date' => $user['birth_date'],
+        'sex' => $user['sex'],
+        'phone_number' => $user['phone_number'],
+        'education' => $user['education'],
+        'languages' => $user['languages'],
+        'job' => $user['job'],
+        'countries' => $user['countries'],
+        'notes' => $user['notes'],
+    ]);
 }
 
 

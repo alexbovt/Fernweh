@@ -90,7 +90,7 @@ Route::get('/events/{city?}', [
     'uses' => 'EventController@showEvents'
 ]);
 
-Route::post('/events/create', [
+Route::post('/events/createEvent', [
     'as' => 'createEvent',
     'uses' => 'EventController@createEvent'
 ]);
@@ -128,6 +128,12 @@ Route::get('/event_id{id}/deleteComment_id{id_comment}', [
     'as' => 'deleteComment',
     'uses' => 'CommentController@deleteComment'
 ]);
+
+Route::post('/event_id{id}/reportComment_id{id_comment}', [
+    'as' => 'reportComment',
+    'uses' => 'CommentController@reportComment'
+]);
+
 
 Route::get('/messages', [
     'uses' => 'MessageController@getMessages'

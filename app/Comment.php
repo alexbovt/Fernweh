@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Comment extends Model
 {
     protected $table = 'comment';
-    protected $fillable = ['id_comment', 'id_user_from_user_to_comment', 'id_event_from_event_to_comment', 'text', 'created_at', 'updated_at'];
+    protected $fillable = ['id_comment', 'id_user_from_user_to_comment', 'id_event_from_event_to_comment', 'text', 'report_type', 'report_text', 'created_at', 'updated_at'];
 
 
     public static function showComment($id)
@@ -33,5 +33,15 @@ class Comment extends Model
         return Comment::where('id_user_from_user_to_comment', $data['id_user_from_user_to_comment'])
             ->where('id_event_from_event_to_comment', $data['id_event_from_event_to_comment'])
             ->where('id_comment', $data['id_comment'])->delete();
+    }
+
+    public static function reportComment($data)
+    {
+        return Comment::where('id_event_from_event_to_comment', $data['id_event_from_event_to_comment'])
+            ->where('id_comment', $data['id_comment'])
+            ->update([
+                'report_type' => $data['report_type'],
+                'report_text' => $data['report_text']
+            ]);
     }
 }

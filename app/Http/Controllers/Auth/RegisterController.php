@@ -73,8 +73,8 @@ class RegisterController extends Controller
             'sex' => $request->input('inputGender')
         ];
         $address = [
-          'country' => $request->input('inputCountry') ,
-          'city' => $request->input('inputCity')
+            'country' => $request->input('inputCountry'),
+            'city' => $request->input('inputCity')
         ];
         $validator = $this->validator($data);
         if ($validator->fails()) {

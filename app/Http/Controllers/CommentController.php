@@ -19,11 +19,6 @@ class CommentController extends Controller
         return redirect()->back()->with('status', 'Your comment has been added');
     }
 
-    public static function reportComment()
-    {
-
-    }
-
     public static function deleteComment($id, $id_comment)
     {
         $user = session()->get("user");
@@ -34,5 +29,20 @@ class CommentController extends Controller
         ];
         Comment::deleteComment($data);
         return redirect()->back()->with('status', 'Your comment has been deleted');
+    }
+
+
+    public static function reportComment($id, $id_comment, Request $request)
+    {
+        $user = session()->get("user");
+        $data = [
+            'id_user_from_user_to_comment' => $user->id_user,
+            'id_event_from_event_to_comment' => $id,
+            'id_comment' => $id_comment,
+            'report_type' => $request->input('report_type'),
+            'report_text' => $request->input('report_text')
+        ];
+        Comment::reportComment($data);
+        return redirect()->back()->with('status', 'Comment has been reported');
     }
 }

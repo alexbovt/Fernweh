@@ -55,21 +55,21 @@ $(document).ready(function () {
     //end check password
 
     //open create event form
-    $(document).ready(function() {
-        $('#elem').click( function(event){
+    $(document).ready(function () {
+        $('#elem').click(function (event) {
             event.preventDefault();
             $('#overlay').fadeIn(400,
-                function(){
+                function () {
                     $('#new-event-form')
                         .css('display', 'block')
                         .animate({opacity: 1, top: '50%'}, 200);
                 });
         });
 
-        $('#new-event-form-close, #overlay').click( function(){
+        $('#new-event-form-close, #overlay').click(function () {
             $('#new-event-form')
                 .animate({opacity: 0, top: '45%'}, 200,
-                    function(){
+                    function () {
                         $(this).css('display', 'none');
                         $('#overlay').fadeOut(400);
                     });

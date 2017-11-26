@@ -43,7 +43,7 @@
                         <label>Photo</label>
                         <p><input type="image" name="" id=""></p>
                     </div>
-                    <button type="submit" formaction="{{routes('createEvent')}}" class="btn btn-primary">
+                    <button type="submit" formaction="{{route('createEvent')}}" class="btn btn-primary">
                         Create
                     </button>
                 </form>
