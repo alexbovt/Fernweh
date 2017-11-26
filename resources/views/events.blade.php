@@ -12,6 +12,7 @@
                 <span id="new-event-form-close">X</span>
                 <div class="new-event-form-title">Creating new event</div>
                 <form method="POST">
+                    {{ csrf_field() }}
                     <div class="form-group">
                         <label for="eventType">Event type</label>
                         <input type="radio" name="eventType" id="meeting" value="meeting" checked>Meeting
@@ -28,6 +29,7 @@
                         @endif
                     </div>
                     <div id="form-meeting">
+<<<<<<< HEAD
                         <label for="eventPlace">Place</label>
                         <input type="text" id="eventPlace" name="eventPlace" class="form-control"
                                placeholder="Address">
@@ -91,6 +93,28 @@
                                     </span>
                     @endif
                     <button type="submit" formaction="{{route('createEvent')}}" class="btn btn-primary create-btn">
+=======
+                        <label>Place</label>
+                        <input type="text" id="form-meeting" name="" class="form-control"
+                               placeholder="">
+                        <label>Date</label>
+                        <p><input type="date" class="form-control"></p>
+                        <p>Start time<input type="time" name="" id="" class="form-control">
+                            End time<input type="time" name="" id="" class="form-control"></p>
+                        <label>Photo</label>
+                        <p><input type="image" name="" id=""></p>
+                    </div>
+                    <div id="form-travel" class="form-travel">
+                        <label>Destination</label>
+                        <input type="text" id="form-travel" name="" class="form-control"
+                               placeholder="">
+                        <label>Arrive date<input type="date" name="" id="" class="form-control"></label>
+                        <label> Depart date<input type="date" name="" id="" class="form-control"></label><br/>
+                        <label>Photo</label>
+                        <p><input type="image" name="" id=""></p>
+                    </div>
+                    <button type="submit" formaction="{{route('createEvent')}}" class="btn btn-primary">
+>>>>>>> Comments
                         Create
                     </button>
                 </form>

@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Address;
+use App\Comment;
 use App\Event;
 use App\EventPeopleList;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EventController extends Controller
 {
@@ -48,6 +50,7 @@ class EventController extends Controller
         $user = session()->get("user");
         $event = Event::where('id_event', $id)->first();
         $address = Address::where('id_address', $event->id_address_event)->first();
+        $comments = Comment::showComment($id);
         $event_people_list = User::join('event_people_list', 'id_user', '=', 'event_people_list.id_user_from_user')
             ->join('address', 'user.id_address', '=', 'address.id_address')
             ->where('id_event_from_event', $event->id_event)
@@ -61,7 +64,8 @@ class EventController extends Controller
             ->with('event', $event)
             ->with('user', $user)
             ->with('address', $address)
-            ->with('event_people_list', $event_people_list);
+            ->with('event_people_list', $event_people_list)
+            ->with('comments', $comments);
     }
 
 
@@ -90,17 +94,18 @@ class EventController extends Controller
 
     public function createEvent(Request $request)
     {
-        echo 'hello';
+        dd($request);
+        Event::createEvent($request);
     }
 
     public function editEvent($id)
     {
-        echo 'hello'.$id ;
+        echo 'hello' . $id;
     }
 
     public function updateEvent($id)
     {
-        echo 'hello'.$id;
+        echo 'hello' . $id;
     }
 
     public function deleteEvent($id)
