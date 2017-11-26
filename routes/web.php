@@ -119,6 +119,16 @@ Route::get('/event_id{id}/delete', [
     'uses' => 'EventController@deleteEvent'
 ]);
 
+Route::post('/event_id{id}/addComment', [
+    'as' => 'addComment',
+    'uses' => 'CommentController@addComment'
+]);
+
+Route::get('/event_id{id}/deleteComment_id{id_comment}', [
+    'as' => 'deleteComment',
+    'uses' => 'CommentController@deleteComment'
+]);
+
 Route::get('/messages', [
     'uses' => 'MessageController@getMessages'
 ]);

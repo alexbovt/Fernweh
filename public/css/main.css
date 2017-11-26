@@ -185,7 +185,7 @@ body {
 
 .user-friends-title,
 .user-events-title,
-.event-people-list-title{
+.event-people-list-title {
     padding: 5%;
     font-size: 12px;
     color: #a4a388;
@@ -369,7 +369,7 @@ body {
     padding: 0.5% 4%;
 }
 
-.form-travel{
+.form-travel {
     display: none;
 }
 
@@ -402,6 +402,7 @@ body {
 .event-date .glyphicon-time,
 .event-place .glyphicon-map-marker,
 .event-comments-title .glyphicon-comment,
+.glyphicon-remove,
 .glyphicon-warning-sign {
     color: #60697e;
     margin-right: 0.5%;
@@ -607,7 +608,7 @@ body {
     margin-top: 2.5%;
 }
 
-.event-comment textarea {
+.event-comment > form textarea {
     resize: vertical;
     width: 80%;
     min-height: 60px;
@@ -617,7 +618,7 @@ body {
     margin: 2% 2% 0 2%;
 }
 
-.event-comment > #send-comment {
+.event-comment > form > #send-comment {
     margin: 3% 2%;
     float: right;
 }

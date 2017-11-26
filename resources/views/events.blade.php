@@ -12,6 +12,7 @@
                 <span id="new-event-form-close">X</span>
                 <div class="event">Creating new event</div>
                 <form method="POST">
+                    {{ csrf_field() }}
                     <div class="form-group">
                         <label for="eventType">Event type</label>
                         <input type="radio" name="eventType" id="meeting" value="meeting" checked>Meeting
@@ -32,9 +33,6 @@
                             End time<input type="time" name="" id="" class="form-control"></p>
                         <label>Photo</label>
                         <p><input type="image" name="" id=""></p>
-                        <button type="submit" formaction="{{route('createEvent')}}" class="btn btn-primary">
-                            Create
-                        </button>
                     </div>
                     <div id="form-travel" class="form-travel">
                         <label>Destination</label>
@@ -44,8 +42,10 @@
                         <label> Depart date<input type="date" name="" id="" class="form-control"></label><br/>
                         <label>Photo</label>
                         <p><input type="image" name="" id=""></p>
-
                     </div>
+                    <button type="submit" formaction="{{routes('createEvent')}}" class="btn btn-primary">
+                        Create
+                    </button>
                 </form>
             </div>
             <div id="overlay"></div>

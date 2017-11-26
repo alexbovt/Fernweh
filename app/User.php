@@ -14,7 +14,7 @@ class User extends Model implements Authenticatable
     protected $fillable = ['id_user','id_address','login','email','password','name','surname','birth_date','sex'];
 
     public static function registerUser($data){
-        User::create([
+        return User::create([
             'id_address' => $data['id_address'],
             'login' => $data['login'],
             'email' => $data['email'],

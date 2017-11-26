@@ -9,6 +9,7 @@ class Event extends Model
     protected $table = 'event';
     protected $fillable = ['id_event', 'id_user', 'id_address_event', 'id_destination', 'id_photo', 'event_name', 'created_at', 'duration', 'coordination', 'type'];
 
+
     public static function getEvents($city, $id_address)
     {
         if ($city) {
@@ -33,4 +34,9 @@ class Event extends Model
     {
         return Event::where('id_user', $id_user)->get();
     }
+
+    public static function createEvent($data){
+
+    }
 }
+
