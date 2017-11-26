@@ -55,7 +55,6 @@ class EventController extends Controller
         if (EventPeopleList::where('id_event_from_event', $id)->where('id_user_from_user', $user->id_user)->first()) session(['attendance' => 'true']);
         else session(['attendance' => 'false']);
         if (Event::where('id_event', $id)->where('id_user', $user->id_user)->first()) {
-            session(['attendance' => 'creator']);
             session(['creator' => 'true']);
         } else session(['creator' => 'false']);
         return view('event')

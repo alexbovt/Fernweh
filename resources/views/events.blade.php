@@ -10,7 +10,7 @@
                         class="add-event glyphicon glyphicon-plus-sign col-xs-2 col-sm-2 col-md-1"></span></a>
             <div id="new-event-form">
                 <span id="new-event-form-close">X</span>
-                <div class="event">Creating new event</div>
+                <div class="new-event-form-title">Creating new event</div>
                 <form method="POST">
                     <div class="form-group">
                         <label for="eventType">Event type</label>
@@ -21,31 +21,78 @@
                         <label for="eventTitle">Title</label>
                         <input type="text" id="eventTitle" name="eventTitle" class="form-control"
                                placeholder="Event title">
+                        @if ($errors->has('eventTitle'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('eventTitle') }}</strong>
+                                    </span>
+                        @endif
                     </div>
                     <div id="form-meeting">
-                        <label>Place</label>
-                        <input type="text" id="form-meeting" name="" class="form-control"
-                               placeholder="">
-                        <label>Date</label>
-                        <p><input type="date" class="form-control"></p>
-                        <p>Start time<input type="time" name="" id="" class="form-control">
-                            End time<input type="time" name="" id="" class="form-control"></p>
-                        <label>Photo</label>
-                        <p><input type="image" name="" id=""></p>
-                        <button type="submit" formaction="{{route('createEvent')}}" class="btn btn-primary">
-                            Create
-                        </button>
+                        <label for="eventPlace">Place</label>
+                        <input type="text" id="eventPlace" name="eventPlace" class="form-control"
+                               placeholder="Address">
+                        @if ($errors->has('eventPlace'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('eventPlace') }}</strong>
+                                    </span>
+                        @endif
+                        <label for="eventDate">Date</label>
+                        <input type="date" name="eventDate" id="eventDate" class="form-control">
+                        @if ($errors->has('eventDate'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('eventDate') }}</strong>
+                                    </span>
+                        @endif
+                        <label>Start time</label>
+                        <input type="time" name="startTime" id="startTime"
+                               class="form-control">
+                        @if ($errors->has('startTime'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('startTime') }}</strong>
+                                    </span>
+                        @endif
+                        <label>End time</label>
+                        <input type="time" name="endTime" id="endTime" class="form-control">
+                        @if ($errors->has('endTime'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('endTime') }}</strong>
+                                    </span>
+                        @endif
                     </div>
                     <div id="form-travel" class="form-travel">
-                        <label>Destination</label>
-                        <input type="text" id="form-travel" name="" class="form-control"
-                               placeholder="">
-                        <label>Arrive date<input type="date" name="" id="" class="form-control"></label>
-                        <label> Depart date<input type="date" name="" id="" class="form-control"></label><br/>
-                        <label>Photo</label>
-                        <p><input type="image" name="" id=""></p>
-
+                        <label for="destination">Destination</label>
+                        <input type="text" id="destination" name="destination" class="form-control"
+                               placeholder="Destination">
+                        @if ($errors->has('destination'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('destination') }}</strong>
+                                    </span>
+                        @endif
+                        <label for="arriveDate">Arrive date</label>
+                        <input type="date" name="arriveDate" id="arriveDate" class="form-control">
+                        @if ($errors->has('arriveDate'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('arriveDate') }}</strong>
+                                    </span>
+                        @endif
+                        <label for="departDate">Depart date</label>
+                        <input type="date" name="departDate" id="departDate" class="form-control">
+                        @if ($errors->has('departDate'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('departDate') }}</strong>
+                                    </span>
+                        @endif
                     </div>
+                    <label for="eventPhoto">Photo</label>
+                    <input type="image" name="eventPhoto" id="eventPhoto">
+                    @if ($errors->has('eventPhoto'))
+                        <span class="help-block">
+                                        <strong>{{ $errors->first('eventPhoto') }}</strong>
+                                    </span>
+                    @endif
+                    <button type="submit" formaction="{{route('createEvent')}}" class="btn btn-primary create-btn">
+                        Create
+                    </button>
                 </form>
             </div>
             <div id="overlay"></div>
