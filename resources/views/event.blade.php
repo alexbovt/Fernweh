@@ -110,14 +110,9 @@
                         <a href="/event_id{{$event->id_event}}/delete" class="btn  delete-event">Yes</a>
                     </div>
                     <div id="overlay"></div>
-<<<<<<< HEAD
                 @endif
             </div>
-=======
-                    @endif
-            </div>
 
->>>>>>> 88e91defff5ff5156e9c165851a4cf71e9a477df
             <div class="event-date">
                 <span class="glyphicon glyphicon-time"></span>
                 <div>
