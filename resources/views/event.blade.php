@@ -97,7 +97,7 @@
                             @endif
                             <button type="submit" formaction="{{route('createEvent')}}"
                                     class="btn btn-primary create-btn">
-                                Save
+                                Create
                             </button>
                         </form>
                     </div>
