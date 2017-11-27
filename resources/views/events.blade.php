@@ -12,7 +12,6 @@
                 <span id="new-event-form-close">X</span>
                 <div class="new-event-form-title">Creating new event</div>
                 <form method="POST">
-                    {{ csrf_field() }}
                     <div class="form-group">
                         <label for="eventType">Event type</label>
                         <input type="radio" name="eventType" id="meeting" value="meeting" checked>Meeting
@@ -30,6 +29,9 @@
                     </div>
                     <div id="form-meeting">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Comments
                         <label for="eventPlace">Place</label>
                         <input type="text" id="eventPlace" name="eventPlace" class="form-control"
                                placeholder="Address">
@@ -60,6 +62,7 @@
                                         <strong>{{ $errors->first('endTime') }}</strong>
                                     </span>
                         @endif
+<<<<<<< HEAD
                     </div>
                     <div id="form-travel" class="form-travel">
                         <label for="destination">Destination</label>
@@ -103,17 +106,45 @@
                             End time<input type="time" name="" id="" class="form-control"></p>
                         <label>Photo</label>
                         <p><input type="image" name="" id=""></p>
+=======
+>>>>>>> Comments
                     </div>
                     <div id="form-travel" class="form-travel">
-                        <label>Destination</label>
-                        <input type="text" id="form-travel" name="" class="form-control"
-                               placeholder="">
-                        <label>Arrive date<input type="date" name="" id="" class="form-control"></label>
-                        <label> Depart date<input type="date" name="" id="" class="form-control"></label><br/>
-                        <label>Photo</label>
-                        <p><input type="image" name="" id=""></p>
+                        <label for="destination">Destination</label>
+                        <input type="text" id="destination" name="destination" class="form-control"
+                               placeholder="Destination">
+                        @if ($errors->has('destination'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('destination') }}</strong>
+                                    </span>
+                        @endif
+                        <label for="arriveDate">Arrive date</label>
+                        <input type="date" name="arriveDate" id="arriveDate" class="form-control">
+                        @if ($errors->has('arriveDate'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('arriveDate') }}</strong>
+                                    </span>
+                        @endif
+                        <label for="departDate">Depart date</label>
+                        <input type="date" name="departDate" id="departDate" class="form-control">
+                        @if ($errors->has('departDate'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('departDate') }}</strong>
+                                    </span>
+                        @endif
                     </div>
+<<<<<<< HEAD
                     <button type="submit" formaction="{{route('createEvent')}}" class="btn btn-primary">
+>>>>>>> Comments
+=======
+                    <label for="eventPhoto">Photo</label>
+                    <input type="image" name="eventPhoto" id="eventPhoto">
+                    @if ($errors->has('eventPhoto'))
+                        <span class="help-block">
+                                        <strong>{{ $errors->first('eventPhoto') }}</strong>
+                                    </span>
+                    @endif
+                    <button type="submit" formaction="{{route('createEvent')}}" class="btn btn-primary create-btn">
 >>>>>>> Comments
                         Create
                     </button>

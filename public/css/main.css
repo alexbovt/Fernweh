@@ -302,7 +302,13 @@ body {
     text-overflow: ellipsis;
 }
 
+<<<<<<< HEAD
 .event-button-group {  float: right;  }
+=======
+.event-button-group {
+    float: right;
+}
+>>>>>>> Comments
 
 .join-event {
     margin: 0 1% 0 1%;
@@ -342,7 +348,11 @@ body {
 }
 
 #new-event-form,
+<<<<<<< HEAD
 #delete-event-form{
+=======
+#delete-event-form {
+>>>>>>> Comments
     width: 60%;
     height: auto;
     padding-bottom: 2%;
@@ -358,7 +368,11 @@ body {
 }
 
 #new-event-form .new-event-form-title,
+<<<<<<< HEAD
 #delete-event-form .delete-event-form-title{
+=======
+#delete-event-form .delete-event-form-title {
+>>>>>>> Comments
     font-size: 22px;
     margin: 2%;
     padding-bottom: 1%;
@@ -369,9 +383,14 @@ body {
     color: #8d0c00;
 }
 
+<<<<<<< HEAD
 
 #new-event-form #new-event-form-close,
 #delete-event-form #delete-event-form-close{
+=======
+#new-event-form #new-event-form-close,
+#delete-event-form #delete-event-form-close {
+>>>>>>> Comments
     width: 21px;
     height: 21px;
     position: absolute;
@@ -381,33 +400,69 @@ body {
     display: block;
 }
 
+<<<<<<< HEAD
 .form-group{margin: 0;}
+=======
+.form-group {
+    margin: 0;
+}
+>>>>>>> Comments
 
 #new-event-form label {
     padding: 0.5% 2%;
     width: 15%;
 }
 
+<<<<<<< HEAD
 #new-event-form .form-control{
+=======
+#new-event-form .form-control {
+>>>>>>> Comments
     width: 75%;
     display: inline;
 }
 
+<<<<<<< HEAD
 #delete-event-form{
+=======
+#delete-event-form {
+>>>>>>> Comments
     width: auto;
     margin-top: -100px;
     left: 35%;
 }
 
+<<<<<<< HEAD
 #delete-event-form .delete-event-form-title{
+=======
+#delete-event-form .delete-event-form-title {
+>>>>>>> Comments
     border-bottom: none;
     padding: 3% 0 0 3%;
 }
 
+<<<<<<< HEAD
 #delete-event-form .join-event{
     float: left;
     margin: 2% 10%;
     padding:2% 4%;
+=======
+#delete-event-form .join-event {
+    float: left;
+    margin: 2% 10%;
+    padding: 2% 4%;
+}
+
+#delete-event-form .delete-event {
+    float: right;
+    margin: 2% 10%;
+    padding: 2% 4%;
+}
+
+.create-btn {
+    float: right;
+    margin: 3% 9.5% 0 0;
+>>>>>>> Comments
 }
 
 <<<<<<< HEAD
@@ -464,11 +519,18 @@ body {
 }
 
 .event-description-col {
+    margin: 0 0 1% 0;
+}
+
+.left-event-block {
+    min-width: 70%;
+    padding-left: 0;
     margin: 1% 0 0 0;
 }
 
 .event-people-list-col {
     padding: 1% 0;
+    min-width: 30%;
     float: right;
 }
 
@@ -553,7 +615,8 @@ body {
     border-bottom: 1px solid #eae9c2;
 }
 
-.glyphicon-warning-sign {
+.glyphicon-warning-sign,
+.glyphicon-remove {
     font-size: 15px;
     float: right;
     margin: 2.5%;
@@ -593,7 +656,6 @@ body {
 
 .event-people-info ul .comment-date {
     font-size: 10px;
-    padding: 2% 7%;
 }
 
 .event-comments-title {
@@ -611,20 +673,30 @@ body {
     margin-top: 2.5%;
 }
 
-.event-comment > form textarea {
+.event-comment textarea {
     resize: vertical;
-    width: 80%;
+    width: 100%;
     min-height: 60px;
     border-radius: 5px;
     border: 1px solid #ede9be;
     float: right;
     margin: 2% 2% 0 2%;
+    height: 60px;
 }
 
-.event-comment > form > #send-comment {
-    margin: 3% 2%;
+.event-comment-form {
+    min-width: 85%;
     float: right;
 }
+
+.event-comment-form > .btn-primary {
+    color: #fff;
+    background-color: #3097D1;
+    border-color: #2a88bd;
+    margin: 3% 2% 3% 0;
+    float: right;
+}
+
 
 .form-report p {
     padding: 1% 5%;
@@ -648,4 +720,10 @@ body {
     margin: 3% 7%;
 }
 
+<<<<<<< HEAD
 #delete-event-form{display: none;}
+=======
+#delete-event-form {
+    display: none;
+}
+>>>>>>> Comments
