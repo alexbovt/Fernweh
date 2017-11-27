@@ -15,6 +15,7 @@ class Comment extends Model
         return Comment::join('user', 'user.id_user', '=', 'id_user_from_user_to_comment')
             ->where('id_event_from_event_to_comment', $id)
             ->select('comment.*', 'user.id_user', 'user.name', 'user.surname')
+            ->orderBy('comment.created_at', 'desc')
             ->get();
     }
 
