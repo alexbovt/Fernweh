@@ -14,8 +14,8 @@
 @section('left-block')
     <div class="info col-md-7">
         <div class="content">
-            <h3>Fernweh for mobile devices</h3>
-            <h4>Install our official mobile app and stay in touch with your friends anytime and anywhere.</h4>
+            <h2>Fernweh - system for travelers</h2>
+            <h3>We’re all connected by a love for travel!</h3>
             <img src="{{asset('/img/phone.png')}}" alt="">
         </div>
     </div>

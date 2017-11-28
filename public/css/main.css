@@ -8,6 +8,10 @@ body {
 
 }
 
+.content img {
+    max-width: 100%;
+}
+
 .glyphicon-icons {
     margin: 0 10px 0 12px;
     padding: 5px;
@@ -228,7 +232,7 @@ body {
     height: auto;
 }
 
-.us-ev{
+.us-ev {
     padding: 0;
 }
 
@@ -652,7 +656,6 @@ body {
     float: right;
 }
 
-
 .form-report p {
     padding: 1% 5%;
     margin: 0;
@@ -679,11 +682,11 @@ body {
     display: none;
 }
 
-.conversation-block{
+.conversation-block {
     border: 1px solid black;
 }
 
-.messages-block{
+.messages-block {
     border: 1px solid black;
 
 }
