@@ -162,6 +162,10 @@ body {
     margin: 2.5%;
 }
 
+.user-col > .btn-info {
+    border-radius: 0;
+}
+
 .user-info-col,
 .event-info-col,
 .user-event-info-col,
@@ -224,22 +228,28 @@ body {
     height: auto;
 }
 
+.us-ev{
+    padding: 0;
+}
+
 .user-event-img {
     padding: 3%;
 }
 
 .user-event-name {
-    font-size: 1vw;
+    font-size: 14px;
+    padding: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 .user-event-descr {
-    font-size: 0.7vw;
+    font-size: 10px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    padding: 0 3%;
 }
 
 .user-events img {
@@ -667,4 +677,13 @@ body {
 
 #delete-event-form {
     display: none;
+}
+
+.conversation-block{
+    border: 1px solid black;
+}
+
+.messages-block{
+    border: 1px solid black;
+
 }

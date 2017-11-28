@@ -7,51 +7,57 @@
     <div class="container">
         <div class="user-col col-xs-12 col-sm-4 col-md-3">
             <div class="user-image"><img src="{{asset("/img/man.jpg")}}"></div>
+            @if($user->id = 142)
+                <button class="btn btn-info col-md-12 col-sm-12 col-xs-12">Update profile photo</button>
+            @else
+                <button class="btn btn-info col-md-12 col-sm-12 col-xs-12">Add to friends</button>
+                <button class="btn btn-info col-md-12 col-sm-12 col-xs-12">Send message</button>
+            @endif
             <div class="user-friends col-xs-12 col-sm-12 col-md-12">
                 <div class="user-friends-title col-xs-12 col-sm-12 col-md-12">Friends</div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
-                    <a href="" class="col-md-12"><img src="{{asset('img/man.jpg')}}" class="img-circle"></a>
-                    <a href="" class="col-md-12">Name</a>
+                    <a href="" class="col-md-12"><img src="{{asset('img/man2.jpg')}}" class="img-circle"></a>
+                    <a href="" class="col-md-12">Jan</a>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
-                    <a href="" class="col-md-12"><img src="{{asset('img/man.jpg')}}" class="img-circle"></a>
-                    <a href="" class="col-md-12">Name</a>
+                    <a href="" class="col-md-12"><img src="{{asset('img/woman1.jpg')}}" class="img-circle"></a>
+                    <a href="" class="col-md-12">Joanna</a>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
-                    <a href="" class="col-md-12"><img src="{{asset('img/man.jpg')}}" class="img-circle"></a>
-                    <a href="" class="col-md-12">Name</a>
+                    <a href="" class="col-md-12"><img src="{{asset('img/woman2.jpg')}}" class="img-circle"></a>
+                    <a href="" class="col-md-12">Katarzyna</a>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
-                    <a href="" class="col-md-12"><img src="{{asset('img/man.jpg')}}" class="img-circle"></a>
-                    <a href="" class="col-md-12">Name</a>
+                    <a href="" class="col-md-12"><img src="{{asset('img/man3.jpg')}}" class="img-circle"></a>
+                    <a href="" class="col-md-12">Alfred</a>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
-                    <a href="" class="col-md-12"><img src="{{asset('img/man.jpg')}}" class="img-circle"></a>
-                    <a href="" class="col-md-12">Name</a>
+                    <a href="" class="col-md-12"><img src="{{asset('img/man1.jpg')}}" class="img-circle"></a>
+                    <a href="" class="col-md-12">Andrew</a>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
-                    <a href="" class="col-md-12"><img src="{{asset('img/man.jpg')}}" class="img-circle"></a>
-                    <a href="" class="col-md-12">Name</a>
+                    <a href="" class="col-md-12"><img src="{{asset('img/woman.jpg')}}" class="img-circle"></a>
+                    <a href="" class="col-md-12">Alexa</a>
                 </div>
             </div>
             <div class="user-events col-xs-12 col-sm-12 col-md-12">
                 <div class="user-events-title col-xs-12 col-sm-12 col-md-12">Events</div>
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="user-event-img col-xs-4 col-sm-4 col-md-4"><img src="{{asset('img/event1.jpg')}}"></div>
-                    <div class="user-event-name col-xs-8 col-sm-8 col-md-8">Meeting in the center</div>
-                    <div class="user-event-descr col-xs-8 col-sm-8 col-md-8">55th to 110th Street</div>
+                <div class=" us-ev col-xs-12 col-sm-12 col-md-12">
+                    <div class="user-event-img col-xs-4 col-sm-4 col-md-5"><img src="{{asset('img/event1.jpg')}}"></div>
+                    <div class="user-event-name col-xs-8 col-sm-8 col-md-6">Meeting in the center</div>
+                    <div class="user-event-descr col-xs-8 col-sm-8 col-md-6">55th to 110th Street</div>
                 </div>
                 <div class="top-line col-xs-12 col-sm-12 col-md-12"></div>
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="user-event-img col-xs-4 col-sm-4 col-md-4"><img src="{{asset('img/event2.jpg')}}"></div>
-                    <div class="user-event-name col-xs-8 col-sm-8 col-md-8">Volleyball</div>
-                    <div class="user-event-descr col-xs-8 col-sm-8 col-md-8">55th to 110th Street</div>
+                <div class="us-ev col-xs-12 col-sm-12 col-md-12">
+                    <div class="user-event-img col-xs-4 col-sm-4 col-md-5"><img src="{{asset('img/event2.jpg')}}"></div>
+                    <div class="user-event-name col-xs-8 col-sm-8 col-md-6">Volleyball</div>
+                    <div class="user-event-descr col-xs-8 col-sm-8 col-md-6">55th to 110th Street</div>
                 </div>
                 <div class="top-line col-xs-12 col-sm-12 col-md-12"></div>
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="user-event-img col-xs-4 col-sm-4 col-md-4"><img src="{{asset('img/event1.jpg')}}"></div>
-                    <div class="user-event-name col-xs-8 col-sm-8 col-md-8">Meeting in the center</div>
-                    <div class="user-event-descr col-xs-8 col-sm-8 col-md-8">55th to 110th Street</div>
+                <div class="us-ev col-xs-12 col-sm-12 col-md-12">
+                    <div class="user-event-img col-xs-4 col-sm-4 col-md-5"><img src="{{asset('img/event1.jpg')}}"></div>
+                    <div class="user-event-name col-xs-8 col-sm-8 col-md-6">Meeting in the center</div>
+                    <div class="user-event-descr col-xs-8 col-sm-8 col-md-6">55th to 110th Street</div>
                 </div>
             </div>
         </div>
