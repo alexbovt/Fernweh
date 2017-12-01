@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Comment extends Model
 {
     protected $table = 'comment';
-    protected $fillable = ['id_comment', 'id_user_from_user_to_comment', 'id_event_from_event_to_comment', 'text', 'report_type', 'report_text', 'created_at', 'updated_at'];
+    protected $fillable = array('id_comment', 'id_user_from_user_to_comment', 'id_event_from_event_to_comment', 'text', 'report_type', 'report_text', 'created_at', 'updated_at');
 
 
     public static function showComment($id)

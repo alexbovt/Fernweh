@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Address extends Model
 {
     protected $table = 'address';
-    protected $fillable = ['country', 'city', 'street', 'house', 'flat'];
+    protected $fillable = array('country', 'city', 'street', 'house', 'flat');
 
     public static function addNewAddress($address)
     {

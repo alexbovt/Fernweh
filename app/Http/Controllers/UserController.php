@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Address;
+use App\Friend;
 use App\User;
 use App\Photo;
 use Illuminate\Http\Request;
