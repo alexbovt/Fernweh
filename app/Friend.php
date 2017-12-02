@@ -30,28 +30,52 @@ class Friend extends Model
             ->get();
     }
 
-    public static function checkFriend($id)
+    public static function checkFriend($id_user, $id)
     {
-        return $id;
+        if (Friend::where('id_first_friend', $id_user)
+            ->where('id_second_friend', $id)
+            ->where('status', 'friend')
+            ->orWhere('id_first_friend', $id)
+            ->where('id_second_friend', $id_user)
+            ->where('status', 'friend')
+            ->first()) return true;
+        else return false;
     }
 
-    public static function sendRequest($id)
+    public static function sendRequest($id_user, $id)
     {
-        return $id;
+        return Friend::create([
+            'id_first_friend' => $id_user,
+            'id_second_friend' => $id,
+            'status' => 'request'
+        ]);
     }
 
-    public static function addFriend($id)
+    public static function addFriend($id_user, $id)
     {
-        return $id;
+        return Friend::where('id_second_friend', $id_user)
+            ->where('id_first_friend', $id)
+            ->update([
+                'status' => 'friend'
+            ]);
     }
 
-    public static function deleteFriend($id)
+    public static function deleteFriend($id_user, $id)
     {
-        return $id;
+        return Friend::where('id_first_friend', $id_user)
+            ->where('id_second_friend', $id)
+            ->where('status', 'friend')
+            ->orWhere('id_first_friend', $id)
+            ->where('id_second_friend', $id_user)
+            ->where('status', 'friend')
+            ->delete();
     }
 
-    public static function deleteRequest($id)
+    public static function deleteRequest($id_user, $id)
     {
-        return $id;
+        return Friend::where('id_second_friend', $id_user)
+            ->where('id_first_friend', $id)
+            ->where('status', 'request')
+            ->delete();
     }
 }

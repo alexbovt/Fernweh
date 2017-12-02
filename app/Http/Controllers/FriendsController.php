@@ -21,4 +21,30 @@ class FriendsController extends Controller
         $friend_requests = Friend::getRequests($user->id_user);
         return view('requests')->with('friend_requests', $friend_requests);
     }
+
+    public function sendFriendRequest($id)
+    {
+        $user = Session::get('user');
+        Friend::sendRequest($user->id_user, $id);
+        return redirect()->back();
+    }
+
+    public function deleteFromFriends($id)
+    {
+        Friend::deleteFriend(session()->get('user')->id_user, $id);
+        return redirect()->back();
+    }
+
+    public function addToFriends($id)
+    {
+        Friend::addFriend(session()->get('user')->id_user, $id);
+        return redirect()->back();
+    }
+
+    public function deleteFriendRequest($id)
+    {
+        Friend::deleteRequest(session()->get('user')->id_user, $id);
+        return redirect()->back();
+    }
+
 }

@@ -11,12 +11,16 @@
                     <a href=""><img src="{{asset('img/man.jpg')}}" class="img-circle"></a>
                     <div class="friends-list">
                         <ul>
-                            <li><a href="/id{{$friend_request->id_user}}">{{$friend_request->name.' '.$friend_request->surname}}</a></li>
+                            <li>
+                                <a href="/id{{$friend_request->id_user}}">{{$friend_request->name.' '.$friend_request->surname}}</a>
+                            </li>
                             <li><a id="elem" href="">Write a message</a></li>
                             <div id="new-event-form">
                                 <span id="new-event-form-close">X</span>
                                 <div class="new-event-form-title">Message
-                                    to <a href="/id{{$friend_request->id_user}}">{{$friend_request->name.' '.$friend_request->surname}}</a> </div>
+                                    to
+                                    <a href="/id{{$friend_request->id_user}}">{{$friend_request->name.' '.$friend_request->surname}}</a>
+                                </div>
                                 <form method="POST">
                                     <div class="message-text">
                                         <textarea></textarea></div>
@@ -29,7 +33,12 @@
                             <div id="overlay"></div>
                         </ul>
                     </div>
-                   <span class="glyphicon glyphicon-trash"></span>
+                    <a href="/id{{$friend_request->id_user}}/addToFriends">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </a>
+                    <a href="/id{{$friend_request->id_user}}/deleteRequest">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </a>
                 </div>
             @endforeach
         </div>

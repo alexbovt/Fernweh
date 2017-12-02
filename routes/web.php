@@ -140,6 +140,23 @@ Route::get('/friends', [
     'uses' => 'FriendsController@getFriends'
 ]);
 
+Route::get('/id{id}/sendRequest', [
+    'uses' => 'FriendsController@sendFriendRequest'
+]);
+
+Route::get('/id{id}/deleteRequest', [
+    'uses' => 'FriendsController@deleteFriendRequest'
+]);
+
+Route::get('/id{id}/addToFriends', [
+    'uses' => 'FriendsController@addToFriends'
+]);
+
+Route::get('/id{id}/deleteFriend', [
+    'uses' => 'FriendsController@deleteFromFriends'
+]);
+
+
 Route::get('/requests', [
     'uses' => 'FriendsController@getRequests'
 ]);

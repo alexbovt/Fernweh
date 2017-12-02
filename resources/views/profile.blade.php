@@ -7,58 +7,83 @@
     <div class="container">
         <div class="user-col col-xs-12 col-sm-4 col-md-3">
             <div class="user-image"><img src="{{asset("/img/man.jpg")}}"></div>
-            @if($user->id = 142)
-                <button class="btn btn-info col-md-12 col-sm-12 col-xs-12">Update profile photo</button>
-            @else
-                <button class="btn btn-info col-md-12 col-sm-12 col-xs-12">Add to friends</button>
-                <button class="btn btn-info col-md-12 col-sm-12 col-xs-12">Send message</button>
+            @if(is_null($statusFriend))
+                <a href="" class="btn btn-info col-md-12 col-sm-12 col-xs-12">Update profile photo</a>
+            @elseif($statusFriend === true)
+                <a id="delete-event" class="btn btn-danger delete-from-friends">Delete from friend</a>
+                <div id="delete-event-form">
+                    <span id="delete-event-form-close">X</span>
+                    <div class="delete-event-form-title">Are you sure you want to
+                        delete {{$user->name.' '.$user->surname}} from friends?
+                    </div>
+                    <input type="reset" class="btn join-event" id="delete-event-resignation" value="No">
+                    <a href="/id{{$user->id_user}}/deleteFriend" class="btn  delete-event">Yes</a>
+                </div>
+                <div id="overlay"></div>
+                <a id="elem" href="" class="btn btn-info col-md-12 col-sm-12 col-xs-12">Send message</a>
+                <div id="new-event-form">
+                    <span id="new-event-form-close">X</span>
+                    <div class="new-event-form-title">Message
+                        to <a href="/id{{$user->id_user}}">{{$user->name.' '.$user->surname}}</a></div>
+                    <form method="POST">
+                        <div class="message-text">
+                            <textarea></textarea></div>
+                        <button type="submit"
+                                class="btn btn-primary create-btn">
+                            Send
+                        </button>
+                    </form>
+                </div>
+                <div id="overlay"></div>
+            @elseif($statusFriend === false)
+                <a href="/id{{$user->id_user}}/sendRequest" class="btn btn-info col-md-12 col-sm-12 col-xs-12">Add
+                    to
+                    friends</a>
+                <a id="elem" href="" class="btn btn-info col-md-12 col-sm-12 col-xs-12">Send message</a>
+                <div id="new-event-form">
+                    <span id="new-event-form-close">X</span>
+                    <div class="new-event-form-title">Message
+                        to <a href="/id{{$user->id_user}}">{{$user->name.' '.$user->surname}}</a></div>
+                    <form method="POST">
+                        <div class="message-text">
+                            <textarea></textarea></div>
+                        <button type="submit"
+                                class="btn btn-primary create-btn">
+                            Send
+                        </button>
+                    </form>
+                </div>
+                <div id="overlay"></div>
             @endif
             <div class="user-friends col-xs-12 col-sm-12 col-md-12">
-                <div class="user-friends-title col-xs-12 col-sm-12 col-md-12">Friends</div>
-                <div class="col-xs-4 col-sm-4 col-md-4">
-                    <a href="" class="col-md-12"><img src="{{asset('img/man2.jpg')}}" class="img-circle"></a>
-                    <a href="" class="col-md-12">Jan</a>
-                </div>
-                <div class="col-xs-4 col-sm-4 col-md-4">
-                    <a href="" class="col-md-12"><img src="{{asset('img/woman1.jpg')}}" class="img-circle"></a>
-                    <a href="" class="col-md-12">Joanna</a>
-                </div>
-                <div class="col-xs-4 col-sm-4 col-md-4">
-                    <a href="" class="col-md-12"><img src="{{asset('img/woman2.jpg')}}" class="img-circle"></a>
-                    <a href="" class="col-md-12">Katarzyna</a>
-                </div>
-                <div class="col-xs-4 col-sm-4 col-md-4">
-                    <a href="" class="col-md-12"><img src="{{asset('img/man3.jpg')}}" class="img-circle"></a>
-                    <a href="" class="col-md-12">Alfred</a>
-                </div>
-                <div class="col-xs-4 col-sm-4 col-md-4">
-                    <a href="" class="col-md-12"><img src="{{asset('img/man1.jpg')}}" class="img-circle"></a>
-                    <a href="" class="col-md-12">Andrew</a>
-                </div>
-                <div class="col-xs-4 col-sm-4 col-md-4">
-                    <a href="" class="col-md-12"><img src="{{asset('img/woman.jpg')}}" class="img-circle"></a>
-                    <a href="" class="col-md-12">Alexa</a>
-                </div>
+                <a href="/friends">
+                    <div class="user-friends-title col-xs-12 col-sm-12 col-md-12">Friends ({{count($friends)}})
+                    </div>
+                </a>
+                @foreach($friends as $friend)
+                    <div class="col-xs-4 col-sm-4 col-md-4">
+                        <a href="/id{{$friend->id_user}}" class="col-md-12"><img src="{{asset('img/man2.jpg')}}"
+                                                                                 class="img-circle"></a>
+                        <a href="/id{{$friend->id_user}}" class="col-md-12">{{$friend->name}}</a>
+                    </div>
+                @endforeach
             </div>
             <div class="user-events col-xs-12 col-sm-12 col-md-12">
-                <div class="user-events-title col-xs-12 col-sm-12 col-md-12">Events</div>
-                <div class=" us-ev col-xs-12 col-sm-12 col-md-12">
-                    <div class="user-event-img col-xs-4 col-sm-4 col-md-5"><img src="{{asset('img/event1.jpg')}}"></div>
-                    <div class="user-event-name col-xs-8 col-sm-8 col-md-6">Meeting in the center</div>
-                    <div class="user-event-descr col-xs-8 col-sm-8 col-md-6">55th to 110th Street</div>
-                </div>
-                <div class="top-line col-xs-12 col-sm-12 col-md-12"></div>
-                <div class="us-ev col-xs-12 col-sm-12 col-md-12">
-                    <div class="user-event-img col-xs-4 col-sm-4 col-md-5"><img src="{{asset('img/event2.jpg')}}"></div>
-                    <div class="user-event-name col-xs-8 col-sm-8 col-md-6">Volleyball</div>
-                    <div class="user-event-descr col-xs-8 col-sm-8 col-md-6">55th to 110th Street</div>
-                </div>
-                <div class="top-line col-xs-12 col-sm-12 col-md-12"></div>
-                <div class="us-ev col-xs-12 col-sm-12 col-md-12">
-                    <div class="user-event-img col-xs-4 col-sm-4 col-md-5"><img src="{{asset('img/event1.jpg')}}"></div>
-                    <div class="user-event-name col-xs-8 col-sm-8 col-md-6">Meeting in the center</div>
-                    <div class="user-event-descr col-xs-8 col-sm-8 col-md-6">55th to 110th Street</div>
-                </div>
+                <a href="/events">
+                    <div class="user-events-title col-xs-12 col-sm-12 col-md-12">Events ({{count($events)}})</div>
+                </a>
+                @foreach($events as $event)
+
+                    <a href="/event_id{{$event->id_event}}">
+                        <div class=" us-ev col-xs-12 col-sm-12 col-md-12">
+                            <div class="user-event-img col-xs-4 col-sm-4 col-md-5"><img
+                                        src="{{asset('img/event1.jpg')}}">
+                            </div>
+                            <div class="user-event-name col-xs-8 col-sm-8 col-md-6">{{$event->event_name}}</div>
+                            <div class="user-event-descr col-xs-8 col-sm-8 col-md-6">{{$event->id_address_event}}</div>
+                        </div>
+                    </a>
+                @endforeach
             </div>
         </div>
         @endsection

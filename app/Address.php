@@ -11,9 +11,17 @@ class Address extends Model
 
     public static function addNewAddress($address)
     {
+        if(!$address['street'] and !$address['house'])
+        {
+            $address['street'] = null;
+            $address['house'] = null;
+        }
+
         Address::create([
             'country' => $address['country'],
-            'city' => $address['city']
+            'city' => ucfirst($address['city']),
+            'street' => $address['street'],
+            'house' => $address['house']
         ]);
         return Address::where('country', $address['country'])
             ->where('city', $address['city'])
