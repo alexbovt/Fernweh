@@ -175,7 +175,9 @@ body {
 .user-event-info-col,
 .event-description-col,
 .event-people-list,
-.user-event-info-col {
+.user-event-info-col,
+.friends-right-col,
+.friends-left-col{
     height: auto;
     border: 1px solid #eae9c2;
     box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
@@ -193,11 +195,11 @@ body {
 
 .user-friends-title,
 .user-events-title,
-.event-people-list-title {
+.event-people-list-title{
     padding: 5%;
     font-size: 12px;
     color: #a4a388;
-    border-bottom: 1px solid #eae9c2;;
+    border-bottom: 1px solid #eae9c2;
 }
 
 .user-friends {
@@ -283,7 +285,8 @@ body {
     margin: 0 0.5% 1% 0;
 }
 
-.event-info-col > .event {
+.event-info-col > .event,
+.friends-title{
     float: left;
     font-size: 36px;
 }
@@ -364,7 +367,7 @@ body {
     padding-bottom: 2%;
     border: 1px solid #eae9c2;
     box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
-    background: white;
+    background: #fffedc;
     position: fixed;
     left: 20%;
     margin-top: -260px;
@@ -472,7 +475,7 @@ body {
 .event-place .glyphicon-map-marker,
 .event-comments-title .glyphicon-comment,
 .glyphicon-remove,
-.glyphicon-warning-sign {
+.glyphicon-warning-sign{
     color: #60697e;
     margin-right: 0.5%;
 }
@@ -575,7 +578,8 @@ body {
 }
 
 .glyphicon-warning-sign,
-.glyphicon-remove {
+.glyphicon-remove ,
+.friends .glyphicon-trash{
     font-size: 15px;
     float: right;
     margin: 2.5%;
@@ -587,7 +591,8 @@ body {
     white-space: pre-line;
 }
 
-.event-people-list img {
+.event-people-list img,
+.friends-left-col a img{
     width: 50px;
     height: 50px;
     margin: 2% 1%;
@@ -628,7 +633,7 @@ body {
     width: 100%;
 }
 
-.event-comment > img {
+.event-comment > img{
     margin-top: 2.5%;
 }
 
@@ -688,5 +693,53 @@ body {
 
 .messages-block {
     border: 1px solid black;
+}
 
+.friends-right-col,
+.friends-left-col{
+    margin-left: 20px;
+    padding: 0;
+}
+
+.friends-title {  border-bottom: 1px solid #eae9c2;  }
+
+.friends{border-bottom: 1px solid #eae9c2;}
+
+.friends-list{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.friends-list > ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.friends .glyphicon-trash{float:right;}
+.friends-list a{
+    text-decoration: none;
+}
+
+.friends-right-col a,
+.friends-list a{  text-decoration: none;
+    color: #606968;
+}
+
+.friends-right-href{  padding: 3%;  }
+
+/*.friends-right-href:hover{
+    border-bottom: 2px solid #ff5537;
+}*/
+
+.friends-right-href:hover,
+.friends:hover{  background: #f9b9a2;  }
+.message-text textarea{
+    margin: 2% 10%;
+    border: solid 1px #eae9c2;
+    outline: 0;
+    width: 80%;
+    background: #FFFFFF;
+    max-width: 80%;
+    height: 150px;
+    line-height: 150%;
 }
