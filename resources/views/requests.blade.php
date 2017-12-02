@@ -4,9 +4,9 @@
 @endsection
 @section('left-block')
     <div class="container">
-        @foreach($friends as $friend)
+        @foreach($friend_requests as $friend_request)
             <div class="col-md-8">
-                <a href="/id{{$friend->id_user}}">{{$friend->name.' '.$friend->surname}}</a>
+                <a href="/id{{$friend_request->id_user}}">{{$friend_request->name.' '.$friend_request->surname}}</a>
             </div>
         @endforeach
         @endsection

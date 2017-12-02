@@ -11,7 +11,7 @@ class Friend extends Model
 
     public static function getFriends($id)
     {
-        return Friend::select('friends.*', 'user.name')
+        return Friend::select('friends.*', 'user.*')
             ->where('status', 'friend')
             ->join('user', function ($join) use ($id) {
                 $join->on('id_second_friend', '=', 'id_user')->where('id_first_friend', $id);
@@ -23,7 +23,7 @@ class Friend extends Model
 
     public static function getRequests($id)
     {
-        return Friend::select('friends.*', 'user.name')
+        return Friend::select('friends.*', 'user.*')
             ->join('user', 'id_first_friend', '=', 'id_user')
             ->where('id_second_friend', $id)
             ->where('status', 'request')

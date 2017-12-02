@@ -19,6 +19,7 @@
                         <span id="new-event-form-close">X</span>
                         <div class="new-event-form-title">Changing event information</div>
                         <form method="POST">
+                            {{ csrf_field() }}
                             <div class="form-group">
                                 <label for="eventTitle">Title</label>
                                 <input type="text" id="eventTitle" name="eventTitle" class="form-control"
@@ -95,7 +96,7 @@
                                         <strong>{{ $errors->first('eventPhoto') }}</strong>
                                     </span>
                             @endif
-                            <button type="submit" formaction="{{route('createEvent')}}"
+                            <button type="submit" formaction="{{route('updateEvent')}}"
                                     class="btn btn-primary create-btn">
                                 Create
                             </button>

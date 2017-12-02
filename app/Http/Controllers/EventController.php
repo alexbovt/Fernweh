@@ -94,18 +94,12 @@ class EventController extends Controller
 
     public function createEvent(Request $request)
     {
-        dd($request);
         Event::createEvent($request);
-    }
-
-    public function editEvent($id)
-    {
-        echo 'hello' . $id;
     }
 
     public function updateEvent($id)
     {
-        echo 'hello' . $id;
+        dd($id);
     }
 
     public function deleteEvent($id)

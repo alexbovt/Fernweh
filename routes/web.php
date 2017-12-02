@@ -107,11 +107,8 @@ Route::get('/event_id{id}/leave', [
     'uses' => 'EventController@leaveEvent'
 ]);
 
-Route::get('/event_id{id}/edit', [
-    'uses' => 'EventController@editEvent'
-]);
-
 Route::post('/event_id{id}/update', [
+    'as' => 'updateEvent',
     'uses' => 'EventController@updateEvent'
 ]);
 
@@ -143,15 +140,6 @@ Route::get('/friends', [
     'uses' => 'FriendsController@getFriends'
 ]);
 
-
-
-
-
-
-
-
-
-//Auth::routes();
-
-//Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('/requests', [
+    'uses' => 'FriendsController@getRequests'
+]);

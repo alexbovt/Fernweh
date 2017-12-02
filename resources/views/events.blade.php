@@ -12,6 +12,7 @@
                 <span id="new-event-form-close">X</span>
                 <div class="new-event-form-title">Creating new event</div>
                 <form method="POST">
+                    {{ csrf_field() }}
                     <div class="form-group">
                         <label for="eventType">Event type</label>
                         <input type="radio" name="eventType" id="meeting" value="meeting" checked>Meeting
