@@ -41,7 +41,7 @@
                 @endif
             </ul>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-6 col-md-pull-3">
+        <div class="col-xs-12 col-sm-12 col-md-5 col-md-pull-3">
             <form class="navbar-form" role="search">
                 <div class="input-group col-sm-12">
                     <input type="text" class="search-query form-control" placeholder="Search"/>
