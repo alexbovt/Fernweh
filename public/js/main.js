@@ -112,6 +112,32 @@ $(document).ready(function () {
                         $('#overlay').fadeOut(400);
                     });
         });
+
+        $('#new-message-area').each(function () {
+            this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:auto;');
+        }).on('input', function () {
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
+        });
+
+        $('.new-message').each(function () {
+            $(this).find('textarea').keypress(function (e) {
+                // Enter pressed
+                if (e.which == 10 || e.which == 13) {
+                    if (event.preventDefault) event.preventDefault();
+                    if (document.getElementById('new-message-area').value == '') {
+                        this.style.background = 'pink';
+                    }
+                    else {
+                        //this.form.submit();
+                        this.value = ' ';
+                        this.style.background = 'lightgreen';
+                    }
+                }
+            });
+
+        });
+
     });
     //end create event form
 

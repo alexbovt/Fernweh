@@ -180,7 +180,9 @@ body {
 .event-people-list,
 .user-event-info-col,
 .friends-right-col,
-.friends-left-col {
+.friends-left-col,
+.messages-left-col,
+.messages-right-col{
     height: auto;
     border: 1px solid #eae9c2;
     box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
@@ -602,7 +604,8 @@ body {
 }
 
 .event-people-list img,
-.friends-left-col a img {
+.friends-left-col a img,
+.messages-left-col a img{
     width: 50px;
     height: 50px;
     margin: 2% 1%;
@@ -719,12 +722,14 @@ body {
     border-bottom: 1px solid #eae9c2;
 }
 
-.friends-list {
+.friends-list,
+.messages-name{
     display: inline-block;
     vertical-align: middle;
 }
 
-.friends-list > ul {
+.friends-list > ul,
+.messages-name ul{
     list-style-type: none;
     padding: 0;
 }
@@ -734,12 +739,14 @@ body {
     color: #606968;
 }
 
-.friends-list a {
+.friends-list a,
+.messages-name a{
     text-decoration: none;
 }
 
 .friends-right-col a,
-.friends-list a {
+.friends-list a,
+.messages-name a{
     text-decoration: none;
     color: #606968;
 }
@@ -753,11 +760,9 @@ body {
 }*/
 
 .friends-right-href:hover,
-.friends:hover {
-    background: #fccfbf;
-}
+.friends:hover {  background: #fccfbf;  }
 
-.message-text textarea {
+/*.message-text{
     margin: 2% 10%;
     border: solid 1px #eae9c2;
     outline: 0;
@@ -766,4 +771,67 @@ body {
     max-width: 80%;
     height: 150px;
     line-height: 150%;
+}*/
+
+.messages-left-col,
+.messages-right-col{  padding: 0;  }
+
+.messages-right-col a img{
+    width: 30px;
+    height: 30px;
+    margin: 2% 1%;
+}
+
+.messages-right-col > ul{
+    border-top: 1px solid #eae9c2;
+    padding: 3%;
+    overflow-y: auto;
+    height: 400px;
+}
+
+.messages-right-col > ul li {
+    list-style-type: none;
+    margin-bottom: 0.7%;
+    padding: 1% 3%;
+}
+
+.other-message {
+    float: left;
+    border-radius: 0 10px 10px 0;
+    clear: both;
+    background: #eee;
+}
+
+.my-message {
+    float: right;
+    border-radius: 10px 0 0 10px;
+    clear: both;
+    background: #0084ff;
+    color: #fff;
+}
+
+.other-message.start {  border-top-left-radius: 10px;  }
+
+.other-message.end {  border-bottom-left-radius: 10px;  }
+
+.my-message.start {  border-top-right-radius: 10px;  }
+
+.my-message.end {  border-bottom-right-radius: 10px;  }
+
+.new-message{
+    height: auto;
+    border-top: 1px solid #eae9c2;
+}
+
+.new-message textarea{
+    width: 100%;
+    resize: none;
+    border: none;
+    padding: 1%;
+    max-height: 100px;
+    overflow-y: scroll;
+}
+
+.new-message textarea:focus, .new-message textarea:focus{
+    outline: none;
 }
