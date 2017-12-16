@@ -11,15 +11,14 @@ class Address extends Model
 
     public static function addNewAddress($address)
     {
-        if(!$address['street'] and !$address['house'])
-        {
+        if (!$address['street']  and !$address['house']  and !$address['city']) {
             $address['street'] = null;
             $address['house'] = null;
+            $address['city'] = 'Lublin';
         }
-
         Address::create([
             'country' => $address['country'],
-            'city' => ucfirst($address['city']),
+            'city' => $address['city'],
             'street' => $address['street'],
             'house' => $address['house']
         ]);

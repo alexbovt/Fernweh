@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Event extends Model
 {
     protected $table = 'event';
-    protected $fillable = array('id_event', 'id_user', 'id_address_event', 'id_destination', 'id_photo', 'event_name', 'created_at','arrive_date','depart_date','start_time','end_time', 'coordination', 'type');
+    protected $fillable = array('id_event', 'id_user', 'id_address_event', 'id_destination', 'id_photo', 'event_name',  'arrive_date', 'depart_date', 'start_time', 'end_time', 'coordination', 'type', 'notes');
 
 
     public static function getEvents($city, $id_address)
@@ -37,7 +37,21 @@ class Event extends Model
 
     public static function createEvent($data)
     {
-        dd($data);
+        return Event::create([
+            'id_user'=>$data['id_user'],
+            'id_address_event'=>$data['id_address_event'],
+            'id_destination'=>$data['id_destination'],
+            //'id_photo',
+            'event_name'=>$data['event_name'],
+            //'created_at',
+            'arrive_date'=>$data['arrive_date'],
+            'depart_date'=>$data['depart_date'],
+            'start_time'=>$data['start_time'],
+            'end_time'=>$data['end_time'],
+            //'coordination',
+            'type'=>$data['type'],
+            'notes'=>$data['notes']
+        ]);
     }
 
     public static function editEvent($data)

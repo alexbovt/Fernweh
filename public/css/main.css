@@ -726,8 +726,9 @@ body {
     padding: 0;
 }
 
-.friends .glyphicon-trash {
-    float: right;
+.friends .glyphicon-trash,
+.friends .glyphicon-plus{
+    color: #606968;
 }
 
 .friends-list a {
@@ -750,7 +751,7 @@ body {
 
 .friends-right-href:hover,
 .friends:hover {
-    background: #f9b9a2;
+    background: #fccfbf;
 }
 
 .message-text textarea {

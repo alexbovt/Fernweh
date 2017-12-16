@@ -94,7 +94,38 @@ class EventController extends Controller
 
     public function createEvent(Request $request)
     {
-        Event::createEvent($request);
+
+        $id = session()->get("user")->id_user;
+        $id_destination = null;
+        $address = [
+            'street' => null,
+            'house' => null,
+            'city' => null,
+            'country' => $request->input('eventPlace')
+        ];
+        if ($request->input('eventType') === 'travel') {
+            $address_destination = [
+                'street' => null,
+                'house' => null,
+                'city' => null,
+                'country' => $request->input('destination')
+            ];
+            $id_destination = Address::addNewAddress($address_destination);
+        }
+        $data = [
+            'id_user' => $id,
+            'id_address_event' => Address::addNewAddress($address),
+            'id_destination' => $id_destination,
+            'event_name' => $request->input('eventTitle'),
+            'arrive_date' => $request->input('arriveDate'),
+            'depart_date' => $request->input('departDate'),
+            'start_time' => $request->input('startTime'),
+            'end_time' => $request->input('endTime'),
+            'type' => $request->input('eventType'),
+            'notes' => null
+        ];
+        Event::createEvent($data);
+        return redirect()->back()->with('status','Success');
     }
 
     public function updateEvent($id)

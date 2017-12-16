@@ -29,7 +29,11 @@
                             <div id="overlay"></div>
                         </ul>
                     </div>
+                    <a href="">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </a>
                 </div>
+
             @endforeach
         </div>
         @endsection
@@ -37,7 +41,7 @@
 
         @section('right-block')
             <div class="friends-right-col col-xs-12 col-sm-12 col-md-3">
-                <div class="friends-right-href"><a href="/friends">My friends</a></div>
+                <div class="friends-right-href" style="background: #f9b9a2;"><a href="/friends">My friends</a></div>
                 <div class="friends-right-href"><a href="/requests">Friends requests</a></div>
             </div>
 
