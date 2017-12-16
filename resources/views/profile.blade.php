@@ -7,38 +7,26 @@
     <div class="container">
         <div class="user-col col-xs-12 col-sm-4 col-md-3">
             <div class="user-image"><img src="{{asset("/img/man.jpg")}}"></div>
-            @if(is_null($statusFriend))
+            @if(session()->get('user')->id_user === $user->id_user)
                 <a href="" class="btn btn-info col-md-12 col-sm-12 col-xs-12">Update profile photo</a>
-            @elseif($statusFriend === true)
-                <a id="delete-event" class="btn btn-danger delete-from-friends">Delete from friend</a>
-                <div id="delete-event-form">
-                    <span id="delete-event-form-close">X</span>
-                    <div class="delete-event-form-title">Are you sure you want to
-                        delete {{$user->name.' '.$user->surname}} from friends?
+            @else
+                @if($statusFriend === true)
+                    <a id="delete-event" class="btn btn-danger delete-from-friends">Delete from friend</a>
+                    <div id="delete-event-form">
+                        <span id="delete-event-form-close">X</span>
+                        <div class="delete-event-form-title">Are you sure you want to
+                            delete {{$user->name.' '.$user->surname}} from friends?
+                        </div>
+                        <input type="reset" class="btn join-event" id="delete-event-resignation" value="No">
+                        <a href="/id{{$user->id_user}}/deleteFriend" class="btn  delete-event">Yes</a>
                     </div>
-                    <input type="reset" class="btn join-event" id="delete-event-resignation" value="No">
-                    <a href="/id{{$user->id_user}}/deleteFriend" class="btn  delete-event">Yes</a>
-                </div>
-                <div id="overlay"></div>
-                <a id="elem" href="" class="btn btn-info col-md-12 col-sm-12 col-xs-12">Send message</a>
-                <div id="new-event-form">
-                    <span id="new-event-form-close">X</span>
-                    <div class="new-event-form-title">Message
-                        to <a href="/id{{$user->id_user}}">{{$user->name.' '.$user->surname}}</a></div>
-                    <form method="POST">
-                        <div class="message-text">
-                            <textarea></textarea></div>
-                        <button type="submit"
-                                class="btn btn-primary create-btn">
-                            Send
-                        </button>
-                    </form>
-                </div>
-                <div id="overlay"></div>
-            @elseif($statusFriend === false)
-                <a href="/id{{$user->id_user}}/sendRequest" class="btn btn-info col-md-12 col-sm-12 col-xs-12">Add
-                    to
-                    friends</a>
+                    <div id="overlay"></div>
+                @elseif($statusFriend === false)
+                    <a href="/id{{$user->id_user}}/sendRequest" class="btn btn-info col-md-12 col-sm-12 col-xs-12">Add
+                        to
+                        friends</a>
+                    <a id="elem" href="" class="btn btn-info col-md-12 col-sm-12 col-xs-12">Send message</a>
+                @endif
                 <a id="elem" href="" class="btn btn-info col-md-12 col-sm-12 col-xs-12">Send message</a>
                 <div id="new-event-form">
                     <span id="new-event-form-close">X</span>
