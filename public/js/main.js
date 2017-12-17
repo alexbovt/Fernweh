@@ -113,7 +113,11 @@ $(document).ready(function () {
                     });
         });
 
-        $('#new-message-area').each(function () {
+
+        var element = document.getElementById("messages"); //скроллинг в диалоге
+        element.scrollTop = element.scrollHeight;
+
+        $('#new-message-area').each(function () { //отправка сообщения
             this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:auto;');
         }).on('input', function () {
             this.style.height = 'auto';
@@ -122,20 +126,26 @@ $(document).ready(function () {
 
         $('.new-message').each(function () {
             $(this).find('textarea').keypress(function (e) {
+                document.getElementById('send-message').style.display='inline-block';
                 // Enter pressed
                 if (e.which == 10 || e.which == 13) {
-                    if (event.preventDefault) event.preventDefault();
-                    if (document.getElementById('new-message-area').value == '') {
-                        this.style.background = 'pink';
-                    }
-                    else {
-                        //this.form.submit();
-                        this.value = ' ';
-                        this.style.background = 'lightgreen';
-                    }
+                    sendMessage()
                 }
             });
+            document.getElementById('send-message').addEventListener("click", sendMessage);
 
+            function sendMessage() {
+                if (event.preventDefault) event.preventDefault();
+                if (document.getElementById('new-message-area').value === '') {
+                    document.getElementById('new-message-area').style.background = 'pink';
+                    document.getElementById('send-message').style.display='none';
+                }
+                else {
+                    //this.form.submit();
+                    document.getElementById('new-message-area').style.background = 'lightgreen';
+                    document.getElementById('send-message').style.display='none';
+                }
+            }
         });
 
     });
