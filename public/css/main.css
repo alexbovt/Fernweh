@@ -182,7 +182,8 @@ body {
 .friends-right-col,
 .friends-left-col,
 .messages-left-col,
-.messages-right-col{
+.messages-right-col,
+.admin-request{
     height: auto;
     border: 1px solid #eae9c2;
     box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
@@ -512,7 +513,7 @@ body {
     white-space: pre-line;
 }
 
-.event-people-list img {
+.event-people-list img{
     width: 50px;
     height: 50px;
     margin: 7px 0;
@@ -776,33 +777,34 @@ body {
 .messages-left-col,
 .messages-right-col{  padding: 0;  }
 
-.messages-right-col a img{
+.messages-right-col a img,
+.admin-user-name img{
     width: 30px;
     height: 30px;
     margin: 2% 1%;
 }
 
-.messages-right-col > ul{
+.messages-right-col .messages ul{
     border-top: 1px solid #eae9c2;
     padding: 3%;
     overflow-y: auto;
     height: 400px;
 }
 
-.messages-right-col > ul li {
+.messages-right-col .messages ul li {
     list-style-type: none;
     margin-bottom: 0.7%;
     padding: 1% 3%;
 }
 
-.other-message {
+.messages .other-message {
     float: left;
     border-radius: 0 10px 10px 0;
     clear: both;
     background: #eee;
 }
 
-.my-message {
+.messages .my-message {
     float: right;
     border-radius: 10px 0 0 10px;
     clear: both;
@@ -810,13 +812,13 @@ body {
     color: #fff;
 }
 
-.other-message.start {  border-top-left-radius: 10px;  }
+.messages .other-message.start {  border-top-left-radius: 10px;  }
 
-.other-message.end {  border-bottom-left-radius: 10px;  }
+.messages .other-message.end {  border-bottom-left-radius: 10px;  }
 
-.my-message.start {  border-top-right-radius: 10px;  }
+.messages .my-message.start {  border-top-right-radius: 10px;  }
 
-.my-message.end {  border-bottom-right-radius: 10px;  }
+.messages .my-message.end {  border-bottom-right-radius: 10px;  }
 
 .new-message{
     height: auto;
@@ -824,7 +826,7 @@ body {
 }
 
 .new-message textarea{
-    width: 100%;
+    width: 93%;
     resize: none;
     border: none;
     padding: 1%;
@@ -835,3 +837,79 @@ body {
 .new-message textarea:focus, .new-message textarea:focus{
     outline: none;
 }
+
+.new-message .glyphicon-send{
+     font-size: 32px;
+     padding: 0;
+     display: none;
+ }
+
+.messages::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+.messages::-webkit-scrollbar-track {
+    /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.8);*/
+    -webkit-border-radius: 10px;
+    background-color:#fff;
+    border-radius: 10px;
+}
+
+/* Handle */
+.messages::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #d5d5d5;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.19);
+}
+
+table{
+    border-collapse: collapse;
+    width:100%;
+    table-layout: fixed;
+}
+
+table, th, td {  border: 1px solid #eae9c2;}
+
+table, th, td, td > a{
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 5px;
+    text-overflow: ellipsis;
+}
+
+td > a{
+    text-decoration: none;
+    color: #606968;
+}
+
+td > a:hover{
+    text-decoration: none;
+    color: #424b4a;
+}
+
+.admin-event-name,
+.admin-comment,
+.admin-user-list,
+.admin-type,
+.admin-notes,
+.admin-date{
+
+}
+
+
+.admin-action .glyphicon {
+    margin: 0;
+    font-size: 20px;
+    padding: 5% 13%;
+}
+
+
+
+
+.admin-action .glyphicon-ok:hover {color: rgba(0, 190, 0, 0.57);}
+
+.admin-action .glyphicon-remove:hover {color: rgba(255, 0, 0, 0.7);}
+
+.admin-action{  padding: 0;  }

@@ -160,3 +160,8 @@ Route::get('/id{id}/deleteFriend', [
 Route::get('/requests', [
     'uses' => 'FriendsController@getRequests'
 ]);
+
+
+Route::get('/admin', [
+    'uses' => 'AdminController@getAdmin'
+]);
