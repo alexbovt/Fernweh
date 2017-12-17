@@ -96,7 +96,7 @@
                                         <strong>{{ $errors->first('eventPhoto') }}</strong>
                                     </span>
                             @endif
-                            <button type="submit" formaction="{{route('updateEvent')}}"
+                            <button type="submit" formaction="{{url("/event_id$event->id_event/update")}}"
                                     class="btn btn-primary create-btn">
                                 Create
                             </button>

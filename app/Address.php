@@ -11,10 +11,9 @@ class Address extends Model
 
     public static function addNewAddress($address)
     {
-        if (!$address['street']  and !$address['house']  and !$address['city']) {
+        if (!$address['street'] and !$address['house']) {
             $address['street'] = null;
             $address['house'] = null;
-            $address['city'] = 'Lublin';
         }
         Address::create([
             'country' => $address['country'],
@@ -27,6 +26,11 @@ class Address extends Model
             ->orderBy('id_address', 'desc')
             ->pluck('id_address')
             ->first();
+    }
+
+    public static function getAddressByCity()
+    {
+        return Address::where()->get();
     }
 
     public static function getAddress($id_address)

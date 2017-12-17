@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 
 class EventController extends Controller
 {
+    /*
     public function showEvents($city = null)
     {
         $user = session()->get("user");
@@ -43,6 +44,26 @@ class EventController extends Controller
                 'organizing_events' => $organizing_events]);
 
         }
+    }
+    */
+
+    public function showEvents()
+    {
+        $user = session()->get("user");
+        $attending_events = Event::getAttendingEvents($user->id_user);
+        $organizing_events = Event::getOrganizingEvents($user->id_user);
+        $address = Address::getAddress($user->id_address);
+        $events = Event::getEvents();
+        return view('events')->with(['events' => $events,
+            'user' => $user,
+            'address' => $address,
+            'attending_events' => $attending_events,
+            'organizing_events' => $organizing_events]);
+    }
+
+    public function showEventsInCity($city)
+    {
+
     }
 
     public function getEvent($id)
@@ -94,14 +115,13 @@ class EventController extends Controller
 
     public function createEvent(Request $request)
     {
-
         $id = session()->get("user")->id_user;
         $id_destination = null;
         $address = [
             'street' => null,
             'house' => null,
-            'city' => null,
-            'country' => $request->input('eventPlace')
+            'city' => $request->input('eventPlace'),
+            'country' => 'Poland'
         ];
         if ($request->input('eventType') === 'travel') {
             $address_destination = [
@@ -125,7 +145,7 @@ class EventController extends Controller
             'notes' => null
         ];
         Event::createEvent($data);
-        return redirect()->back()->with('status','Success');
+        return redirect()->back()->with('status', 'Success');
     }
 
     public function updateEvent($id)
