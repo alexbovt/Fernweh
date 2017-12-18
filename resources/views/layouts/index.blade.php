@@ -10,5 +10,6 @@
 </div>
 <div class="footer-top-line"></div>
 <script type="text/javascript" src="{{asset('/js/main.js')}}"></script>
+<!--<script src="js/app.js" charset="utf-8"></script>-->
 </body>
 </html>

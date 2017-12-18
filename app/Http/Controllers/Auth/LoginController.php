@@ -68,8 +68,8 @@ class LoginController extends Controller
         } else {
             $credentials = ['login' => $request->input('inputLogin'), 'password' => $request->input('inputPassword')];
             if (Auth::attempt($credentials)) {
-                $user = auth::user();
-                Auth::login($user);
+                $user = Auth::user();
+                Auth::login($user   );
                 Session::put('user', $user);
                 Session::save();
                 return redirect()->to('dashboard');

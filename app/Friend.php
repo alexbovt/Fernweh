@@ -16,7 +16,6 @@ class Friend extends Model
             ->join('user', function ($join) use ($id) {
                 $join->on('id_second_friend', '=', 'id_user')->where('id_first_friend', $id);
                 $join->orOn('id_first_friend', '=', 'id_user')->where('id_second_friend', $id);
-
             })
             ->get();
     }

@@ -54,11 +54,7 @@ class EventController extends Controller
         $organizing_events = Event::getOrganizingEvents($user->id_user);
         $address = Address::getAddress($user->id_address);
         $events = Event::getEvents();
-        return view('events')->with(['events' => $events,
-            'user' => $user,
-            'address' => $address,
-            'attending_events' => $attending_events,
-            'organizing_events' => $organizing_events]);
+        return view('events')->with(compact('events', 'user', 'address', 'attending_events', 'organizing_events'));
     }
 
     public function showEventsInCity($city)
@@ -81,12 +77,7 @@ class EventController extends Controller
         if (Event::where('id_event', $id)->where('id_user', $user->id_user)->first()) {
             session(['creator' => 'true']);
         } else session(['creator' => 'false']);
-        return view('event')
-            ->with('event', $event)
-            ->with('user', $user)
-            ->with('address', $address)
-            ->with('event_people_list', $event_people_list)
-            ->with('comments', $comments);
+        return view('event')->with(compact('event', 'user', 'address', 'event_people_list', 'comments'));
     }
 
 

@@ -132,7 +132,15 @@ Route::post('/event_id{id}/reportComment_id{id_comment}', [
 ]);
 
 
+Route::get('/createConversation{id}', [
+    'uses' => 'MessageController@createConversationIfNotExist'
+]);
+
 Route::get('/messages', [
+    'uses' => 'MessageController@getConversations'
+]);
+
+Route::get('/messages?sel={id}', [
     'uses' => 'MessageController@getMessages'
 ]);
 

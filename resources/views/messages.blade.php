@@ -4,17 +4,17 @@
 @endsection
 @section('left-block')
     <div class="container">
-        <div class="col-xs-12 col-sm-12 col-md-3">
+        <div class="col-xs-12 col-sm-12 col-md-4">
             <div class="messages-left-col col-xs-12 col-sm-12 col-md-12">
                 <div class="friends-title col-xs-12 col-sm-12 col-md-12">Messages</div>
-                <div class="friends col-xs-12 col-sm-12 col-md-12">
-                    <a href=""><img src="{{asset('img/man.jpg')}}" class="img-circle"></a>
-                    <div class="friends-list">
-                        <ul>
-                            <li><a href="">Name Surname</a></li>
-                        </ul>
+                @foreach($conversations as $conversation)
+                    <div class="friends col-xs-12 col-sm-12 col-md-12">
+                        <a href=""><img src="{{asset('img/man.jpg')}}" class="img-circle"></a>
+                        <div class="friends-list">
+                            <a href="/id{{$conversation->id_user}}">{{$conversation->name.' '.$conversation->surname}}</a>
+                        </div>
                     </div>
-                </div>
+                @endforeach
             </div>
         </div>
         @endsection
@@ -24,12 +24,10 @@
                     <div class="messages-right-col-title col-xs-12 col-sm-12 col-md-12">
                         <a href=""><img src="{{asset('img/man.jpg')}}" class="img-circle"></a>
                         <div class="messages-name">
-                            <ul>
-                                <li><a href="">Name Surname</a></li>
-                            </ul>
+                            <a href="">Name Surname</a>
                         </div>
                     </div>
-                    <div class="messages" >
+                    <div class="messages">
                         <ul class="messages" id="messages">
                             <li class="other-message start">By Other User</li>
                             <li class="other-message">By Other User</li>

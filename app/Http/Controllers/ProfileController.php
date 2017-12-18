@@ -48,7 +48,7 @@ class ProfileController extends Controller
     {
         if ($logged_user = session()->get('user')) {
             $user = User::where('id_user', $logged_user->id_user)->first();
-            return view('settings')->with('user', $user);
+            return view('settings')->with(compact('user'));
         } else return redirect()->to('/');
     }
 
@@ -79,7 +79,7 @@ class ProfileController extends Controller
     {
         if ($logged_user = session()->get('user')) {
             $user = User::where('id_user', $logged_user->id_user)->first();
-            return view('edit')->with('user', $user);
+            return view('edit')->with(compact('user'));
         } else return redirect()->to('/');
     }
 
