@@ -872,12 +872,18 @@ table{
 
 table, th, td {  border: 1px solid #eae9c2;}
 
-table, th, td, td > a{
-    white-space: nowrap;
+/*table, th, td, td > .admin-user-name,
+td > .admin-user-list ,{
+/*word-wrap: break-word*/
+  /*  white-space: nowrap;
     overflow: hidden;
     padding: 5px;
     text-overflow: ellipsis;
-}
+}*/
+
+/*tr:hover{  background: #fccfbf;}*/
+
+.admin-notes{word-wrap: break-word}
 
 td > a{
     text-decoration: none;
@@ -898,15 +904,11 @@ td > a:hover{
 
 }
 
-
 .admin-action .glyphicon {
     margin: 0;
     font-size: 20px;
     padding: 5% 13%;
 }
-
-
-
 
 .admin-action .glyphicon-ok:hover {color: rgba(0, 190, 0, 0.57);}
 

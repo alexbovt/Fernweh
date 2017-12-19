@@ -23,7 +23,7 @@
                             <div class="form-group">
                                 <label for="eventTitle">Title</label>
                                 <input type="text" id="eventTitle" name="eventTitle" class="form-control"
-                                       placeholder="Event title">
+                                       placeholder="Event title" value="{{$event->event_name}}">
                                 @if ($errors->has('eventTitle'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('eventTitle') }}</strong>
@@ -34,14 +34,16 @@
                                 <div id="form-meeting">
                                     <label for="eventPlace">Place</label>
                                     <input type="text" id="eventPlace" name="eventPlace" class="form-control"
-                                           placeholder="Address">
+                                           placeholder="Address"
+                                           value="{{$address->street.', '.$address->house.', '.$address->city.','.$address->country}}">
                                     @if ($errors->has('eventPlace'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('eventPlace') }}</strong>
                                     </span>
                                     @endif
                                     <label for="eventDate">Date</label>
-                                    <input type="date" name="eventDate" id="eventDate" class="form-control">
+                                    <input type="date" name="eventDate" id="eventDate" class="form-control"
+                                           value="{{$event->arrive_date}}">
                                     @if ($errors->has('eventDate'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('eventDate') }}</strong>
@@ -49,14 +51,15 @@
                                     @endif
                                     <label>Start time</label>
                                     <input type="time" name="startTime" id="startTime"
-                                           class="form-control">
+                                           class="form-control" value="{{$event->start_time}}">
                                     @if ($errors->has('startTime'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('startTime') }}</strong>
                                     </span>
                                     @endif
                                     <label>End time</label>
-                                    <input type="time" name="endTime" id="endTime" class="form-control">
+                                    <input type="time" name="endTime" id="endTime" class="form-control"
+                                           value="{{$event->end_time}}">
                                     @if ($errors->has('endTime'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('endTime') }}</strong>
@@ -67,27 +70,38 @@
                                 <div id="form-meeting" class="form-meeting">
                                     <label for="destination">Destination</label>
                                     <input type="text" id="destination" name="destination" class="form-control"
-                                           placeholder="Destination">
+                                           placeholder="Destination"
+                                           value="{{$address->street.', '.$address->house.', '.$address->city.','.$address->country}}">
                                     @if ($errors->has('destination'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('destination') }}</strong>
                                     </span>
                                     @endif
                                     <label for="arriveDate">Arrive date</label>
-                                    <input type="date" name="arriveDate" id="arriveDate" class="form-control">
+                                    <input type="date" name="eventDate" id="arriveDate" class="form-control"
+                                           value="{{$event->arrive_date}}">
                                     @if ($errors->has('arriveDate'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('arriveDate') }}</strong>
                                     </span>
                                     @endif
                                     <label for="departDate">Depart date</label>
-                                    <input type="date" name="departDate" id="departDate" class="form-control">
+                                    <input type="date" name="departDate" id="departDate" class="form-control"
+                                           value="{{$event->depart_date}}">
                                     @if ($errors->has('departDate'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('departDate') }}</strong>
                                     </span>
                                     @endif
                                 </div>
+                            @endif
+                            <label for="eventNotes">Notes</label>
+                            <input type="text" name="eventNotes" id="eventNotes" class="form-control"
+                                   value="{{$event->notes}}">
+                            @if ($errors->has('eventNotes'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('eventNotes') }}</strong>
+                                    </span>
                             @endif
                             <label for="eventPhoto">Photo</label>
                             <input type="image" name="eventPhoto" id="eventPhoto">
@@ -98,7 +112,7 @@
                             @endif
                             <button type="submit" formaction="{{url("/event_id$event->id_event/update")}}"
                                     class="btn btn-primary create-btn">
-                                Create
+                                Save
                             </button>
                         </form>
                     </div>
@@ -117,7 +131,11 @@
             <div class="event-date">
                 <span class="glyphicon glyphicon-time"></span>
                 <div>
-                    {{$event->created_at->format('M').'  '.$event->created_at->format('d').', '.$event->created_at->format('Y').', '.$event->created_at->format('h:m a')}}
+                    @if($event->type==='meeting')
+                        {{date('D, M j, Y',strtotime($event->arrive_date)).' from '.date('h:i a',strtotime($event->start_time)).' to '.date('h:i a',strtotime($event->end_time))}}
+                    @else
+                        {{date('D, M j, Y',strtotime($event->arrive_date)).' - '.date('D, M j, Y',strtotime($event->depart_date))}}
+                    @endif
                 </div>
             </div>
             <div class="event-place">

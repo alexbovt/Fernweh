@@ -66,9 +66,20 @@ class Event extends Model
         ]);
     }
 
-    public static function editEvent($data)
+    public static function updateEvent($id, $data)
     {
-
+        $event = Event::where('id_event', $id)->first();
+        Event::where('id_event', $event->id_event)
+            ->update([
+                'event_name' => $data['event_name'],
+                //'address_event' => $data['address_event'],
+                //'destination' => $data['destination'],
+                'arrive_date' => $data['arrive_date'],
+                'depart_date' => $data['depart_date'],
+                'start_time' => $data['start_time'],
+                'end_time' => $data['end_time'],
+                'notes'=>$data['notes']
+            ]);
     }
 
     public static function deleteEvent($data)

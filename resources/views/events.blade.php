@@ -70,7 +70,7 @@
                                     </span>
                         @endif
                         <label for="arriveDate">Arrive date</label>
-                        <input type="date" name="arriveDate" id="arriveDate" class="form-control">
+                        <input type="date" name="eventDate" id="arriveDate" class="form-control">
                         @if ($errors->has('arriveDate'))
                             <span class="help-block">
                                         <strong>{{ $errors->first('arriveDate') }}</strong>

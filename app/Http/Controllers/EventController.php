@@ -115,6 +115,7 @@ class EventController extends Controller
 
     public function createEvent(Request $request)
     {
+
         $id = session()->get("user")->id_user;
         $id_destination = null;
         $address = [
@@ -124,20 +125,20 @@ class EventController extends Controller
             'country' => 'Poland'
         ];
         if ($request->input('eventType') === 'travel') {
-            $address_destination = [
+            $address = [
                 'street' => null,
                 'house' => null,
-                'city' => null,
-                'country' => $request->input('destination')
+                'city' => $request->input('destination'),
+                'country' => 'Poland'
             ];
-            $id_destination = Address::addNewAddress($address_destination);
+            $id_destination = Address::addNewAddress($address);
         }
         $data = [
             'id_user' => $id,
             'id_address_event' => Address::addNewAddress($address),
             'id_destination' => $id_destination,
             'event_name' => $request->input('eventTitle'),
-            'arrive_date' => $request->input('arriveDate'),
+            'arrive_date' => $request->input('eventDate'),
             'depart_date' => $request->input('departDate'),
             'start_time' => $request->input('startTime'),
             'end_time' => $request->input('endTime'),
@@ -148,9 +149,23 @@ class EventController extends Controller
         return redirect()->back()->with('status', 'Success');
     }
 
-    public function updateEvent($id)
+    public function updateEvent($id, Request $request)
     {
-        dd($id);
+
+       $data = [
+           'event_name' => $request->input('eventTitle'),
+           //'address'=>$request->input('eventPlace'),
+           //'address_event' =>
+           //'destination' =>
+           'arrive_date' => $request->input('eventDate'),
+           'depart_date' => $request->input('departDate'),
+           'start_time' => $request->input('startTime'),
+           'end_time' => $request->input('endTime'),
+           'notes'=>$request->input('eventNotes')
+           //'id-photo'
+       ];
+        Event::updateEvent($id, $data);
+        return redirect()->back();
     }
 
     public function deleteEvent($id)
