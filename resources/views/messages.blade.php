@@ -4,9 +4,9 @@
 @endsection
 @section('left-block')
     <div class="container">
-        <div class="col-xs-12 col-sm-12 col-md-4">
+        <div class="col-xs-12 col-sm-12 col-md-3">
             <div class="messages-left-col col-xs-12 col-sm-12 col-md-12">
-                <div class="friends-title col-xs-12 col-sm-12 col-md-12">Messages</div>
+                <div class="messages-title col-xs-12 col-sm-12 col-md-12">Messages</div>
                 @foreach($conversations as $conversation)
                     <div class="friends col-xs-12 col-sm-12 col-md-12">
                         <a href=""><img src="{{asset('img/man.jpg')}}" class="img-circle"></a>

@@ -3,7 +3,7 @@
     Events
 @endsection
 @section('left-block')
-    <div class="container">
+    <div class="container ">
         <div class="event-info-col col-xs-8 col-sm-8 col-md-7">
             <div class="event col-xs-10 col-sm-10 col-md-11">Events in {{$address->city}}</div>
             <a id="elem"><span
@@ -109,23 +109,21 @@
             @else
                 @foreach($events as $event)
                     <div class="events col-xs-12 col-sm-12 col-md-12">
-                        <div class="top-line"></div>
                         <a href="/event_id{{$event->id_event}}">
-                            <div class="events-img col-xs-4 col-sm-4 col-md-5"><img src="{{asset('img/event1.jpg')}}">
+                            <div class="events-img col-xs-4 col-sm-5 col-md-5"><img src="{{asset('img/event1.jpg')}}">
                             </div>
                         </a>
                         <a href="/event_id{{$event->id_event}}">
-                            <div class="event-name col-xs-8 col-sm-8 col-md-7">{{$event->event_name}}</div>
+                            <div class="event-name col-xs-8 col-sm-7 col-md-7">{{$event->event_name}}</div>
                         </a>
-                        <div class="col-xs-8 col-sm-8 col-md-7">{{$event->street.' '.$event->house.' | '}}
+                        <div class="col-xs-8 col-sm-5 col-md-7">{{$event->street.' '.$event->house.' | '}}
                             <a href="/events/{{$event->city}}">
                                 {{$event->city.','.$event->country}}
                             </a>
                         </div>
                         <a id="elem-attending-people-list\{{$event->id_event}}"><span
-                                    class="col-xs-8 col-sm-8 col-md-7">{{count($events)}}</span></a>
+                                    class="col-xs-6 col-sm-4 col-md-4">Attending {{count($events)}}</span></a>
                         <a href="/event_id{{$event->id_event}}/join" class="btn btn-info join-event">Join</a>
-
                         <div id="attending-people-list">
                             <span id="attending-people-list-close" class="glyphicon glyphicon-remove"></span>
                             <div id="test" class="attending-people-list-tittle">People who attend event</div>
@@ -137,32 +135,30 @@
         </div>
         @endsection
         @section('right-block')
-            <div class="container">
-                <div class="user-event-info-col col-xs-12 col-sm-4 col-md-3">
-                    <div class="user-events-title col-xs-12 col-sm-12 col-md-12">Events I'm Attending</div>
-                    @foreach($attending_events as $attending_event)
-                        <div class="user-event-name col-xs-8 col-sm-8 col-md-12">
-                            <a href="/event_id{{$attending_event->id_event}}">
-                                {{$attending_event->event_name}}
-                            </a>
-                        </div>
-                    @endforeach
-                </div>
-                <div class="user-event-info-col col-xs-12 col-sm-4 col-md-3">
-                    <div class="user-events-title col-xs-12 col-sm-12 col-md-12">Events I'm Organizing</div>
-                    @foreach($organizing_events as $organizing_event)
-                        <div class="user-event-name col-xs-8 col-sm-8 col-md-12">
-                            <a href="/event_id{{$organizing_event->id_event}}">
-                                {{$organizing_event->event_name}}
-                            </a>
-                        </div>
-                    @endforeach
-                </div>
-                <div class="user-event-info-col col-xs-12 col-sm-12 col-md-3">
-                    <div class="user-events-title col-xs-12 col-sm-12 col-md-12">Visited Events</div>
-                    <div class="user-event-name col-xs-8 col-sm-8 col-md-12"><a href="">Berlin - Hamburg Hitchikking(5
-                            July)</a></div>
-                </div>
+            <div class="user-event-info-col col-xs-12 col-sm-3 col-md-3">
+                <div class="user-events-title col-xs-12 col-sm-12 col-md-12">Events I'm Attending</div>
+                @foreach($attending_events as $attending_event)
+                    <div class="user-event-name col-xs-8 col-sm-8 col-md-12">
+                        <a href="/event_id{{$attending_event->id_event}}">
+                            {{$attending_event->event_name}}
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+            <div class="user-event-info-col col-xs-12 col-sm-3 col-md-3">
+                <div class="user-events-title col-xs-12 col-sm-12 col-md-12">Events I'm Organizing</div>
+                @foreach($organizing_events as $organizing_event)
+                    <div class="user-event-name col-xs-8 col-sm-8 col-md-12">
+                        <a href="/event_id{{$organizing_event->id_event}}">
+                            {{$organizing_event->event_name}}
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+            <div class="user-event-info-col col-xs-12 col-sm-3 col-md-3">
+                <div class="user-events-title col-xs-12 col-sm-12 col-md-12">Visited Events</div>
+                <div class="user-event-name col-xs-8 col-sm-8 col-md-12"><a href="">Berlin - Hamburg Hitchikking(5
+                        July)</a></div>
             </div>
     </div>
 @endsection

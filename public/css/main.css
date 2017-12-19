@@ -68,10 +68,10 @@ body {
 }
 
 .dropdown-menu {
-    left: 35%;
-    background: #fffede;
+    left: 50%;
     height: auto;
-    border: 1px solid black;
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
+    background: white;
 }
 
 .dropdown-menu a,
@@ -92,13 +92,9 @@ body {
     color: #636b6f;
 }
 
-.navbar-user > .dropdown-menu li a:hover {
-    background: #ffa786;
-}
+.navbar-user > .dropdown-menu li a:hover {  background: #ffa786;  }
 
-.navbar-user-name {
-    padding: 3%;
-}
+.navbar-user-name {  padding: 3%;  }
 
 .nav-photo {
     vertical-align: top;
@@ -117,8 +113,7 @@ body {
 }
 
 .content {
-    margin: 10px;
-    padding: 10px;
+
     border: 1px solid #eae9c2;
     box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
     background: white;
@@ -129,13 +124,19 @@ body {
     margin-top: 1%;
 }
 
-.forms h3 {
-    margin: 1%;
-}
+.content > h2,
+.content > h3{ padding: 0 2%;}
 
 .login-form form,
 .registration-form form {
     margin: 3%;
+}
+
+.login-form{    margin-bottom: 2%;}
+
+.registration-form, .login-form{
+    margin-bottom: 2%;
+    padding: 1%;
 }
 
 .footer {
@@ -169,9 +170,8 @@ body {
     margin: 2.5%;
 }
 
-.user-col > .btn-info {
-    border-radius: 0;
-}
+.user-col > .btn-info,
+.user-col > .btn-danger {  border-radius: 0;  }
 
 .user-info-col,
 .event-info-col,
@@ -195,9 +195,7 @@ body {
     margin: 2%;
 }
 
-.user-about {
-    margin-top: 20px;
-}
+.user-about {  margin-top: 20px;  }
 
 .user-friends-title,
 .user-events-title,
@@ -205,8 +203,10 @@ body {
     padding: 5%;
     font-size: 12px;
     color: #a4a388;
-    border-bottom: 1px solid #eae9c2;
 }
+
+.user-friends-title,
+.user-events-title{    border-bottom: 1px solid #eae9c2;}
 
 .user-friends {
     border: 1px solid #eae9c2;
@@ -214,12 +214,10 @@ body {
     background: white;
     margin-top: 3%;
     width: 100%;
-    height: auto;
-}
-
-.user-friends .col-md-4 {
     padding: 0 7px 7px 0;
 }
+
+.user-friends a{padding: 0;}
 
 .user-friends img {
     width: 50px;
@@ -227,8 +225,10 @@ body {
     margin: 7px 0;
 }
 
-.user-friends a {
+.user-friends .friend-name {
     font-size: 12px;
+    text-decoration: none;
+    padding: 0 25%;
 }
 
 .user-events {
@@ -240,13 +240,9 @@ body {
     height: auto;
 }
 
-.us-ev {
-    padding: 0;
-}
+.us-ev {  padding: 0;  }
 
-.user-event-img {
-    padding: 3%;
-}
+.user-event-img {  padding: 3%;  }
 
 .user-event-name {
     font-size: 14px;
@@ -254,6 +250,7 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-decoration: none;
 }
 
 .user-event-descr {
@@ -262,6 +259,7 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     padding: 0 3%;
+    text-decoration: none;
 }
 
 .user-events img {
@@ -270,8 +268,9 @@ body {
 }
 
 .user-info {
-    border-bottom: 1px solid #eae9c2;
+    border-top: 1px solid #eae9c2;
     vertical-align: bottom;
+    padding: 1.5% 5%;
 }
 
 .user-info-title {
@@ -283,18 +282,29 @@ body {
 .user-info-info {
     height: auto;
     margin: 2% 2% 2% 5%;
-    font-size: 16px;
+    font-size: 14px;
     white-space: normal;
 }
 
-.event-info-col {
-    margin: 0 0.5% 1% 0;
+.event-info-col {  margin: 0 0.5% 1% 0;  }
+
+
+
+.settings-title, .forms-title{ margin-bottom: 2%;}
+
+.forms-title,
+.settings-title,
+.event-info-col > .event,
+.friends-title,
+.messages-title{
+    float: left;
+    font-size: 26px;
+    padding: 0.7% 2%;
 }
 
-.event-info-col > .event,
-.friends-title {
-    float: left;
-    font-size: 36px;
+.btn-settings{
+    float: right;
+    margin-top: 1.5%;
 }
 
 .add-event {
@@ -313,21 +323,17 @@ body {
     height: auto;
 }
 
-.events-img {
-    padding: 15px 0;
-}
+.events-img {  padding: 15px 0;  }
 
 .event-name {
-    font-size: 26px;
+    font-size: 24px;
     padding: 2%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.event-button-group {
-    float: right;
-}
+.event-button-group {  float: right;  }
 
 .join-event {
     margin: 0 1% 0 1%;
@@ -338,7 +344,7 @@ body {
 .events > .join-event{
     color: #fff;
     float: right;
-    margin-bottom: 5px;
+    margin: 0;
 }
 
 .delete-event {
@@ -347,24 +353,14 @@ body {
     color: white;
 }
 
-.delete-from-friends {
-    width: 100%;
-    background: red;
-    color: white;
-}
-
 .user-event-info-col {
-display: block;
+    display: block;
     margin-bottom: 0.5%;
 }
 
-.user-event-name {
-    margin: 2%;
-}
+.user-event-name {  margin: 2%;  }
 
-.user-event-name > a {
-    color: #60697e;
-}
+.user-event-name > a {  color: #60697e;  }
 
 #overlay {
     z-index: 3;
@@ -386,7 +382,7 @@ display: block;
     padding-bottom: 2%;
     border: 1px solid #eae9c2;
     box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
-    background: #fffedc;
+    background: #fffbfb;
     position: fixed;
     left: 20%;
     margin-top: -260px;
@@ -394,6 +390,8 @@ display: block;
     opacity: 0;
     z-index: 5;
 }
+
+.form-group>h4{padding: 0 3%;}
 
 #new-event-form .new-event-form-title,
 #delete-event-form .delete-event-form-title {
@@ -403,9 +401,7 @@ display: block;
     border-bottom: 1px solid #eae9c2;
 }
 
-#new-event-form #new-event-form-close:hover {
-    color: #8d0c00;
-}
+#new-event-form #new-event-form-close:hover {  color: #8d0c00;  }
 
 #new-event-form #new-event-form-close,
 #delete-event-form #delete-event-form-close {
@@ -418,9 +414,7 @@ display: block;
     display: block;
 }
 
-.form-group {
-    margin: 0;
-}
+.form-group {  margin: 0;  }
 
 #new-event-form label {
     padding: 0.5% 2%;
@@ -460,22 +454,16 @@ display: block;
     margin: 3% 9.5% 0 0;
 }
 
-.form-travel {
-    display: none;
-}
+.form-travel {  display: none;  }
 
-.event-img {
-    padding: 15px 0;
-}
+.event-img {  padding: 15px 0;  }
 
 .event-img img {
     width: 100%;
     height: 300px;
 }
 
-.event-info-col > .event-name {
-    padding: 0 1%;
-}
+.event-info-col > .event-name {  padding: 0 1%;  }
 
 .event-date > div,
 .event-place > div,
@@ -486,9 +474,7 @@ display: block;
 }
 
 .event-date,
-.event-place {
-    margin: 0 2% 0.5% 2%;
-}
+.event-place {  margin: 0 2% 0.5% 2%;  }
 
 .event-date .glyphicon-time,
 .event-place .glyphicon-map-marker,
@@ -499,9 +485,7 @@ display: block;
     margin-right: 0.5%;
 }
 
-.event-description-col {
-    margin: 0 0 1% 0;
-}
+.event-description-col {  margin: 0 0 1% 0;  }
 
 .left-event-block {
     min-width: 70%;
@@ -536,9 +520,9 @@ display: block;
     vertical-align: middle;
 }
 
-.event-people-list > div {
-    border-bottom: 1px solid #eae9c2;
-}
+.event-people-list > div {  border-top: 1px solid #eae9c2;  }
+
+.events{  border-top: 1px solid #eae9c2;  }
 
 .events a {
     text-decoration: none;
@@ -550,17 +534,11 @@ display: block;
     color: #8d0c00;
 }
 
-.user-event-info-col {
-    margin: 0 1% 0.5% 1%;
-}
+.user-event-info-col {  margin: 0 1% 0.5% 1%;  }
 
-.user-event-name {
-    margin: 2%;
-}
+.user-event-name {  margin: 2%; }
 
-.user-event-name > a {
-    color: #60697e;
-}
+.user-event-name > a {  color: #60697e;  }
 
 #attending-people-list {
     width: 40%;
@@ -635,28 +613,17 @@ display: block;
     vertical-align: middle;
 }
 
-.event-people-list > div {
-    border-bottom: 1px solid #eae9c2;
-}
+.event-people-info ul .comment-date {  font-size: 10px;  }
 
-.event-people-info ul .comment-date {
-    font-size: 10px;
-}
-
-.event-comments-title {
-    padding: 1.5% 1.5%;
-    border-bottom: 1px solid #eae9c2;
-}
+.event-comments-title {  padding: 1.5% 1.5%;  }
 
 .event-comment {
-    border-bottom: 1px solid #eae9c2;
+    border-top: 1px solid #eae9c2;
     display: inline-block;
     width: 100%;
 }
 
-.event-comment > img {
-    margin-top: 2.5%;
-}
+.event-comment > img {  margin-top: 2.5%;  }
 
 .event-comment textarea {
     resize: vertical;
@@ -704,31 +671,21 @@ display: block;
     margin: 3% 7%;
 }
 
-#delete-event-form {
-    display: none;
-}
+#delete-event-form {  display: none;  }
 
-.conversation-block {
-    border: 1px solid black;
-}
+.conversation-block {  border: 1px solid black;  }
 
-.messages-block {
-    border: 1px solid black;
-}
+.messages-block {  border: 1px solid black;  }
 
 .friends-right-col,
-.friends-left-col {
-    margin-left: 20px;
-    padding: 0;
-}
+.friends-left-col {  padding: 0;  }
+.friends-left-col{margin-bottom: 2%;}
 
-.friends-title {
-    border-bottom: 1px solid #eae9c2;
-}
+.friends-right-col{  margin-left: 14px;  }
 
-.friends {
-    border-bottom: 1px solid #eae9c2;
-}
+.settings-title,.messages-title, .forms-title {  border-bottom: 1px solid #eae9c2;  }
+
+.friends {  border-top: 1px solid #eae9c2;  }
 
 .friends-list,
 .messages-name {
@@ -759,18 +716,14 @@ display: block;
     color: #606968;
 }
 
-.friends-right-href {
-    padding: 3%;
-}
+.friends-right-href {  padding: 3%;  }
 
 /*.friends-right-href:hover{
     border-bottom: 2px solid #ff5537;
 }*/
 
 .friends-right-href:hover,
-.friends:hover {
-    background: #fccfbf;
-}
+.friends:hover {  background: #fccfbf;  }
 
 /*.message-text{
     margin: 2% 10%;
@@ -824,21 +777,13 @@ display: block;
     color: #fff;
 }
 
-.messages .other-message.start {
-    border-top-left-radius: 10px;
-}
+.messages .other-message.start {  border-top-left-radius: 10px;  }
 
-.messages .other-message.end {
-    border-bottom-left-radius: 10px;
-}
+.messages .other-message.end {  border-bottom-left-radius: 10px;  }
 
-.messages .my-message.start {
-    border-top-right-radius: 10px;
-}
+.messages .my-message.start {  border-top-right-radius: 10px;  }
 
-.messages .my-message.end {
-    border-bottom-right-radius: 10px;
-}
+.messages .my-message.end {  border-bottom-right-radius: 10px;  }
 
 .new-message {
     height: auto;
@@ -854,9 +799,7 @@ display: block;
     overflow-y: scroll;
 }
 
-.new-message textarea:focus, .new-message textarea:focus {
-    outline: none;
-}
+.new-message textarea:focus, .new-message textarea:focus {  outline: none;  }
 
 .new-message .glyphicon-send {
     font-size: 32px;
@@ -864,9 +807,7 @@ display: block;
     display: none;
 }
 
-.messages::-webkit-scrollbar {
-    width: 10px;
-}
+.messages::-webkit-scrollbar {  width: 10px;  }
 
 /* Track */
 .messages::-webkit-scrollbar-track {
@@ -890,19 +831,14 @@ table {
     table-layout: fixed;
 }
 
-table, th, td {
-    border: 1px solid #eae9c2;
-}
+table, th, td {  border: 1px solid #eae9c2;  }
 
-<<<<<<< HEAD
 /*table, th, td, td > .admin-user-name,
 td > .admin-user-list ,{
 /*word-wrap: break-word*/
   /*  white-space: nowrap;
-=======
 table, th, td, td > a {
     white-space: nowrap;
->>>>>>> ad2d45738222bd2a5eb300c50a9b7b536a312f22
     overflow: hidden;
     padding: 5px;
     text-overflow: ellipsis;
@@ -910,7 +846,7 @@ table, th, td, td > a {
 
 /*tr:hover{  background: #fccfbf;}*/
 
-.admin-notes{word-wrap: break-word}
+.admin-notes{   word-wrap: break-word;}
 
 td > a {
     text-decoration: none;
@@ -937,13 +873,13 @@ td > a:hover {
     padding: 5% 13%;
 }
 
-<<<<<<< HEAD
+
 .admin-action .glyphicon-ok:hover {color: rgba(0, 190, 0, 0.57);}
 
 .admin-action .glyphicon-remove:hover {color: rgba(255, 0, 0, 0.7);}
 
 .admin-action{  padding: 0;  }
-=======
+
 .admin-action .glyphicon-ok:hover {
     color: rgba(0, 190, 0, 0.57);
 }

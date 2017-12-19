@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-md-2"></div>
             <div class="registration-form content col-md-8">
-                <h3>Your profile information</h3>
+                <div class="settings-title col-xc-12 col-sm-12 col-md-12">Your profile information</div>
                 <form method="POST">
                     {{ csrf_field() }}
                     <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
@@ -136,11 +136,9 @@
                                     </span>
                         @endif
                     </div>
-                    <div class="col-md-9">
-                        <button type="submit" formaction="{{route('EditChangeUserData')}}" class="btn btn-primary">
+                        <button type="submit" formaction="{{route('EditChangeUserData')}}" class="btn btn-primary btn-settings">
                             Change
                         </button>
-                    </div>
                 </form>
             </div>
             <div class="col-md-2"></div>

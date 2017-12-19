@@ -198,11 +198,11 @@
                             <a id="elem"><span class="btn glyphicon glyphicon-warning-sign"></span></a>
                             <div id="new-event-form">
                                 <span id="new-event-form-close">X</span>
-                                <div class="event">Report post</div>
+                                <div class="new-event-form-title">Report post</div>
                                 <form method="POST">
                                     {{ csrf_field() }}
                                     <div class="form-group">
-                                        <label for="">What's happening?</label>
+                                        <h4>What's happening?</h4>
                                         <div class="form-report">
                                             <p><input type="radio" name="report_type" value="spam" checked>It's spam</p>
                                             <p><input type="radio" name="report_type" value="verbal">Verbal abuse</p>

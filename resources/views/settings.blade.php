@@ -3,16 +3,14 @@
     Settings
 @endsection
 @section('content')
-    <div class="container">
+    <div class="container col-md-offset-2">
         @if (session('status'))
             <div class="alert alert-success">
                 {{ session('status') }}
             </div>
         @endif
-        <div class="row">
-            <div class="col-md-2"></div>
             <div class="registration-form content col-md-8">
-                <h3>Your profile settings</h3>
+                <div class="settings-title col-xc-12 col-sm-12 col-md-12">Your profile settings</div>
                 <form method="POST">
                     {{ csrf_field() }}
                     <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }}">
@@ -62,26 +60,18 @@
                                     </span>
                         @endif
                     </div>
-                    <div class="col-md-9">
-                        <button type="submit" formaction="{{route('SettingsChangeUserData')}}" class="btn btn-primary">
+                        <button type="submit" formaction="{{route('SettingsChangeUserData')}}" class="btn btn-primary btn-settings">
                             Change
                         </button>
-                    </div>
                 </form>
             </div>
-            <div class="col-md-2"></div>
-        </div>
-    </div>
-    <div class="container">
         @if (session('status'))
             <div class="alert alert-success">
                 {{ session('status') }}
             </div>
         @endif
-        <div class="row">
-            <div class="col-md-2"></div>
             <div class="registration-form content col-md-8">
-                <h3>You can delete your account</h3>
+                <div class="settings-title col-xc-12 col-sm-12 col-md-12">You can delete your account</div>
                 <form method="POST">
                     {{ csrf_field() }}
                     <div class="form-group  {{ $errors->has('password') ? ' has-error' : '' }}">
@@ -108,14 +98,11 @@
                                     </span>
                         @endif
                     </div>
-                    <div class="col-md-9">
-                        <button type="submit" formaction="{{route('DeleteAccount')}}" class="btn btn-danger">
+                        <button type="submit" formaction="{{route('DeleteAccount')}}" class="btn btn-danger btn-settings">
                             Delete Account
                         </button>
-                    </div>
                 </form>
             </div>
             <div class="col-md-2"></div>
         </div>
-    </div>
 @endsection

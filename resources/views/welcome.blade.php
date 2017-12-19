@@ -24,7 +24,7 @@
     <div class="forms col-md-5">
         <div class="login-form content col-md-12">
             {{ csrf_field() }}
-            <h3>Sign in</h3>
+            <div class="forms-title col-xs-12 col-sm-12 col-md-12">Sign in</div>
             @if (session('login_status'))
                 <div class="alert alert-warning">
                     {{ session('login_status') }}
@@ -59,23 +59,22 @@
                                     </span>
                     @endif
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-7">
                     <div class="checkbox">
                         <label>
                             <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
                         </label>
                     </div>
                 </div>
-                <div class="col-md-5">
-                    <button type="submit" formaction="{{route('login')}}" class="btn btn-primary">Log in</button>
-                </div>
-                <div class="col-md-7">
+                <div class="col-md-6">
                     <a href="">Forgot your password?</a>
                 </div>
+                    <button type="submit" formaction="{{route('login')}}" class="btn btn-primary btn-settings">Log in
+                    </button>
             </form>
         </div>
         <div class="registration-form content col-md-12">
-            <h3>For the first time on Fernweh ?</h3>
+            <div class="forms-title col-xs-12 col-sm-12 col-md-12">For the first time on Fernweh ?</div>
             <h4>Write your full name and click continue to sign up
                 <h4>
                     <form method="POST">
@@ -102,10 +101,8 @@
                                     </span>
                             @endif
                         </div>
-                        <div class="col-md-5">
-                            <button type="submit" formaction="{{route('register')}}" class="btn btn-primary">Continue
+                            <button type="submit" formaction="{{route('register')}}" class="btn btn-primary btn-settings">Continue
                             </button>
-                        </div>
                     </form>
         </div>
     </div>
