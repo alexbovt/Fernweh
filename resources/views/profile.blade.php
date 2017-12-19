@@ -6,7 +6,7 @@
 @section('left-block')
     <div class="container">
         <div class="user-col col-xs-12 col-sm-4 col-md-3">
-            <div class="user-image"><img src="{{asset("/img/$user->photo")}}"></div>
+            <div class="user-image"><img src="{{asset("/img/man.jpg")}}"></div>
 
             @if(session()->get('user')->id_user === $user->id_user)
                 <a href="" class="btn btn-info col-md-12 col-sm-12 col-xs-12">Update profile photo</a>

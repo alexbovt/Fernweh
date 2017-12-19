@@ -11,7 +11,7 @@
                     <div class="friends col-xs-12 col-sm-12 col-md-12">
                         <a href=""><img src="{{asset('img/man.jpg')}}" class="img-circle"></a>
                         <div class="friends-list">
-                            <a href="/id{{$conversation->id_user}}">{{$conversation->name.' '.$conversation->surname}}</a>
+                            <a href="/messages/sel={{$conversation->id_conversation}}">{{$conversation->name.' '.$conversation->surname}}</a>
                         </div>
                     </div>
                 @endforeach
@@ -21,40 +21,38 @@
         @section('right-block')
             <div class="col-xs-12 col-sm-12 col-md-8">
                 <div class="messages-right-col col-xs-12 col-sm-12 col-md-12">
-                    <div class="messages-right-col-title col-xs-12 col-sm-12 col-md-12">
-                        <a href=""><img src="{{asset('img/man.jpg')}}" class="img-circle"></a>
-                        <div class="messages-name">
-                            <a href="">Name Surname</a>
+                    @if($messages)
+                        <div class="messages-right-col-title col-xs-12 col-sm-12 col-md-12">
+                            <a href="/id{{$companion->id_user}}"><img src="{{asset('img/man.jpg')}}" class="img-circle"></a>
+                            <div class="messages-name">
+                                <a href="">{{$companion->name.' '.$companion->surname}}</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="messages">
-                        <ul class="messages" id="messages">
-                            <li class="other-message start">By Other User</li>
-                            <li class="other-message">By Other User</li>
-                            <li class="other-message end">By Other User</li>
+                        <div id="refresh" class="messages">
+                            <ul class="messages" id="messages">
+                                @foreach($messages as $message)
+                                    @if($message->id_sender === session()->get('user')->id_user)
+                                        <li class="my-message">{{$message->text}}</li>
+                                    @else
+                                        <li class="other-message">{{$message->text}}</li>
+                                    @endif
+                                @endforeach
+                            </ul>
 
-                            <li class="my-message start">By this User, first message</li>
-                            <li class="my-message">By this User, secon dmessage</li>
-                            <li class="my-message">By this User, third message</li>
-                            <li class="my-message end">By this User, fourth message</li>
-
-                            <li class="other-message start">By Other User</li>
-                            <li class="other-message">By Other User</li>
-                            <li class="other-message end">By Other User</li>
-
-                            <li class="my-message start">By this User, first message</li>
-                            <li class="my-message">By this User, second message</li>
-                            <li class="my-message">By this User, third message</li>
-                            <li class="my-message end">By this User, fourth message</li>
-                        </ul>
-                    </div>
-                    <div class="new-message">
-                        <form method="POST" class="new-message">
-                            <textarea rows="1" name="inputMessage" placeholder="Write a message"
-                                      id="new-message-area"></textarea>
-                            <span class="glyphicon glyphicon-send" id="send-message"></span>
-                        </form>
-                    </div>
+                        </div>
+                        <div class="new-message">
+                            <form method="POST" class="new-message">
+                                {{ csrf_field() }}
+                                <textarea rows="1" name="inputMessage" placeholder="Write a message"
+                                          id="new-message-area"></textarea>
+                                <button type="submit"
+                                        formaction="/messages/sel={{1}}/sendMessage"><span
+                                            class="glyphicon glyphicon-send" id="send-message"></span></button>
+                            </form>
+                        </div>
+                    @else
+                        //wyberi dialg
+                    @endif
                 </div>
             </div>
     </div>

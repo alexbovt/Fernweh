@@ -5,15 +5,21 @@ $(document).ready(function () {
         return false;
     });
 
-    //open auto refresh
-    /*
-    setInterval(function() {
-        $("#refresh").load(location.href+" #refresh>*","");
-    }, 10000);
-    */
-    //end auto refresh
 
-    //open check password
+//open auto refresh
+
+
+    setInterval(function (element) {
+        var element = document.getElementById("messages"); //скроллинг в диалоге
+        element.scrollTop = element.scrollHeight;
+        $("#refresh").load(location.href + " #refresh>*", "");
+        element.scrollTop = element.scrollHeight;
+    }, 15000);
+
+
+//end auto refresh
+
+//open check password
 
     $('#inputPassword').keyup(function (e) {
         var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
@@ -52,9 +58,9 @@ $(document).ready(function () {
 
     });
 
-    //end check password
+//end check password
 
-    //open create event form
+//open create event form
     $(document).ready(function () {
         $('#elem').click(function (event) {
             event.preventDefault();
@@ -126,7 +132,7 @@ $(document).ready(function () {
 
         $('.new-message').each(function () {
             $(this).find('textarea').keypress(function (e) {
-                document.getElementById('send-message').style.display='inline-block';
+                document.getElementById('send-message').style.display = 'inline-block';
                 // Enter pressed
                 if (e.which == 10 || e.which == 13) {
                     sendMessage()
@@ -138,20 +144,20 @@ $(document).ready(function () {
                 if (event.preventDefault) event.preventDefault();
                 if (document.getElementById('new-message-area').value === '') {
                     document.getElementById('new-message-area').style.background = 'pink';
-                    document.getElementById('send-message').style.display='none';
+                    document.getElementById('send-message').style.display = 'none';
                 }
                 else {
                     //this.form.submit();
                     document.getElementById('new-message-area').style.background = 'lightgreen';
-                    document.getElementById('send-message').style.display='none';
+                    document.getElementById('send-message').style.display = 'none';
                 }
             }
         });
 
     });
-    //end create event form
+//end create event form
 
-    //open  scroll-auto download content
+//open  scroll-auto download content
     /*
     var loading = false;
     $(window).scroll(function(){
@@ -172,5 +178,6 @@ $(document).ready(function () {
         $('#loaded_max').val(50);
     });
     */
-    //end scroll-auto download content
-});
+//end scroll-auto download content
+})
+;

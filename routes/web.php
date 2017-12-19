@@ -85,10 +85,22 @@ Route::post('/edit', [
 ]);
 
 
-Route::get('/events/{city?}', [
+
+Route::get('/events', [
     'as' => 'showEvents',
     'uses' => 'EventController@showEvents'
 ]);
+
+Route::get('/events/{city}', [
+    'as' => 'showEventsInCity',
+    'uses' => 'EventController@showEventsInCity'
+]);
+
+Route::post('/events/search', [
+    'as' => 'searchEvents',
+    'uses' => 'searchController@search'
+]);
+
 
 Route::post('/events/createEvent', [
     'as' => 'createEvent',
@@ -139,10 +151,21 @@ Route::get('/createConversation{id}', [
 Route::get('/messages', [
     'uses' => 'MessageController@getConversations'
 ]);
-
+/*
 Route::get('/messages?sel={id}', [
     'uses' => 'MessageController@getMessages'
 ]);
+*/
+
+Route::get('/messages/sel={id}', [
+    'uses' => 'MessageController@getMessages'
+]);
+
+Route::post('/messages/sel={id}/sendMessage', [
+    'as' => 'sendMessage{id}',
+    'uses' => 'MessageController@sendMessage'
+]);
+
 
 Route::get('/friends', [
     'uses' => 'FriendsController@getFriends'

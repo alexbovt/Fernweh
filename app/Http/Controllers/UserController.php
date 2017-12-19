@@ -25,8 +25,8 @@ class UserController extends Controller
         } else {
             $statusFriend = Friend::checkFriend(session()->get('user')->id_user, $id_user);
         }
-        $user->photo = $userPhoto->imagePath;
-        $user->minPhoto = $userPhoto->minImagePath;
+        //$user->photo = $userPhoto->imagePath;
+        //$user->minPhoto = $userPhoto->minImagePath;
         return view('profile')->with(compact('user', 'address', 'friends', 'events', 'statusFriend', 'userPhoto'));
         /*
         ->with('address', $address)

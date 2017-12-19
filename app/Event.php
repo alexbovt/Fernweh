@@ -31,7 +31,9 @@ class Event extends Model
 
     public static function getEventsInCity($city)
     {
-
+        return Event::join('address', 'event.id_address_event', '=', 'address.id_address')
+            ->where('address.city', $city)
+            ->get();
     }
 
     public static function getAttendingEvents($id_user)

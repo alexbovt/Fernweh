@@ -59,7 +59,12 @@ class EventController extends Controller
 
     public function showEventsInCity($city)
     {
-
+        $user = session()->get("user");
+        $attending_events = Event::getAttendingEvents($user->id_user);
+        $organizing_events = Event::getOrganizingEvents($user->id_user);
+        $address = Address::getAddress($user->id_address);
+        $events = Event::getEventsInCity($city);
+        return view('events')->with(compact('events', 'user', 'address', 'attending_events', 'organizing_events'));
     }
 
     public function getEvent($id)
