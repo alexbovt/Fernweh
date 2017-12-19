@@ -1,6 +1,6 @@
 @extends('layouts.index')
 @section('title')
-    Welocome
+    Welcome
 @endsection
 @section('content')
     <div class="container">

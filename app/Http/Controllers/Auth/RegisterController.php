@@ -98,6 +98,6 @@ class RegisterController extends Controller
             'firstName' => $request->input('inputFirstName'),
             'lastName' => $request->input('inputLastName')
         ];
-        return view('auth.register')->with('fullName', $fullName);
+        return view('auth.register')->with(compact('fullName'));
     }
 }

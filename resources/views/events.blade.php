@@ -124,6 +124,8 @@
                         </div>
                         <a id="elem-attending-people-list\{{$event->id_event}}"><span
                                     class="col-xs-8 col-sm-8 col-md-7">{{count($events)}}</span></a>
+                        <a href="/event_id{{$event->id_event}}/join" class="btn btn-info join-event">Join</a>
+
                         <div id="attending-people-list">
                             <span id="attending-people-list-close" class="glyphicon glyphicon-remove"></span>
                             <div id="test" class="attending-people-list-tittle">People who attend event</div>

@@ -42,12 +42,14 @@
             </ul>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-5 col-md-pull-3">
-            <form class="navbar-form" role="search">
+            <form class="navbar-form" method="POST">
+                {{ csrf_field() }}
                 <div class="input-group col-sm-12">
-                    <input type="text" class="search-query form-control" placeholder="Search"/>
+                    <input name="search" type="text" class="search-query form-control" placeholder="Search events in city"/>
                     <span class="input-group-btn">
-                        <button class="btn btn-search" type="button"><span class="glyphicon glyphicon-search"
-                                                                           aria-hidden="true"></span></button>
+                        <button class="btn btn-search" formaction="/events/search" type="submit"><span
+                                    class="glyphicon glyphicon-search"
+                                    aria-hidden="true"></span></button>
                     </span>
                 </div>
             </form>

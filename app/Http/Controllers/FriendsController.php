@@ -12,14 +12,14 @@ class FriendsController extends Controller
     {
         $user = Session::get('user');
         $friends = Friend::getFriends($user->id_user);
-        return view('friends')->with('friends', $friends);
+        return view('friends')->with(compact('friends'));
     }
 
     public function getRequests()
     {
         $user = Session::get('user');
         $friend_requests = Friend::getRequests($user->id_user);
-        return view('requests')->with('friend_requests', $friend_requests);
+        return view('requests')->with(compact('friend_requests'));
     }
 
     public function sendFriendRequest($id)
