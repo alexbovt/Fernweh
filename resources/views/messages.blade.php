@@ -45,13 +45,15 @@
                                 {{ csrf_field() }}
                                 <textarea rows="1" name="inputMessage" placeholder="Write a message"
                                           id="new-message-area"></textarea>
-                                <button type="submit"
-                                        formaction="/messages/sel={{1}}/sendMessage"><span
+                                <button type="submit" id=".new-message"
+                                        formaction="/messages/sel={{$companion->id_conversation}}/sendMessage"><span
                                             class="glyphicon glyphicon-send" id="send-message"></span></button>
                             </form>
                         </div>
                     @else
-                        //wyberi dialg
+                        <div class="messages-right-col-title col-xs-12 col-sm-12 col-md-12">
+                            <h4>Select conversation from list :)</h4>
+                        </div>
                     @endif
                 </div>
             </div>

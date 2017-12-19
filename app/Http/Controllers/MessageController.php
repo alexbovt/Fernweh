@@ -45,6 +45,30 @@ class MessageController extends Controller
             $id_newConversation = Conversation::createConversation($user->id_user, $id);
             return redirect("/messages?sel=$id_newConversation");
         } else return redirect("/messages?sel=$id_conversation");
+
+    }
+
+
+    public static function createConversationWithMessage($id, Request $request)
+    {
+        $user = session()->get('user');
+        if ($id_conversation = Conversation::checkConversation($user->id_user, intval($id))) {
+            $data = [
+                'id_conversation_from_conversation' => intval($id_conversation),
+                'id_sender' => $user->id_user,
+                'text' => $request->input('messageText')
+
+            ];
+        } else {
+            $id_newConversation = Conversation::createConversation($user->id_user, intval($id));
+            $data = [
+                'id_conversation_from_conversation' => intval($id_newConversation),
+                'id_sender' => $user->id_user,
+                'text' => $request->input('messageText')
+            ];
+        }
+        Message::sendMessage($data);
+        return redirect()->back();
     }
 
 }

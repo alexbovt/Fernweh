@@ -44,7 +44,8 @@ class Conversation extends Model
         return Conversation::where('id_first', $id_first)
             ->where('id_second', $id_second)
             ->orderBy('id_conversation', 'desc')
-            ->pluck('id_conversation');
+            ->pluck('id_conversation')
+            ->first();
     }
 
     public static function deleteConversation($id)

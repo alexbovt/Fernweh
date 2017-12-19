@@ -18,7 +18,7 @@ class Message extends Model
 
     public static function getCompanion($id)
     {
-        return Conversation::select('user.id_user', 'user.name', 'user.surname')
+        return Conversation::select('conversation.id_conversation','user.id_user', 'user.name', 'user.surname')
             ->where('id_conversation', $id)
             ->join('user', function ($join) use ($id) {
                 $join->on('id_second', '=', 'id_user')->where('id_first', session()->get('user')->id_user);

@@ -19,6 +19,7 @@ Route::get('/', ['as' => 'welcome', function () {
     else return view('welcome')->with('msg', '');
 }]);
 
+
 Route::get('/id{id}', [
     'uses' => 'UserController@getUser'
 ]);
@@ -85,7 +86,6 @@ Route::post('/edit', [
 ]);
 
 
-
 Route::get('/events', [
     'as' => 'showEvents',
     'uses' => 'EventController@showEvents'
@@ -143,6 +143,11 @@ Route::post('/event_id{id}/reportComment_id{id_comment}', [
     'uses' => 'CommentController@reportComment'
 ]);
 
+
+Route::post('/createConversationWithMessage{id}', [
+    'as' => 'newConversationMessage',
+    'uses' => 'MessageController@createConversationWithMessage'
+]);
 
 Route::get('/createConversation{id}', [
     'uses' => 'MessageController@createConversationIfNotExist'

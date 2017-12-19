@@ -11,7 +11,7 @@ class User extends Model implements Authenticatable
 {
     use AuthenticableTrait;
     protected $table = 'user';
-    protected $fillable = array('id_user', 'id_address', 'login', 'email', 'password', 'name', 'surname', 'birth_date', 'sex');
+    protected $fillable = array('id_user', 'id_address', 'login', 'email', 'password', 'name', 'surname', 'birth_date', 'sex', 'profile_status');
 
     public static function registerUser($data)
     {

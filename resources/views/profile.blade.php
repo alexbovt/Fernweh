@@ -34,9 +34,11 @@
                     <div class="new-event-form-title">Message
                         to <a href="/id{{$user->id_user}}">{{$user->name.' '.$user->surname}}</a></div>
                     <form method="POST">
+                        {{ csrf_field() }}
                         <div class="message-text">
-                            <textarea></textarea></div>
+                            <textarea name="messageText"></textarea></div>
                         <button type="submit"
+                                formaction="/createConversationWithMessage{{$user->id_user}}"
                                 class="btn btn-primary create-btn">
                             Send
                         </button>
