@@ -723,6 +723,14 @@ body {
     margin: 0 5%;
 }
 
+.message-text textarea {
+    margin: 0 10%;
+    min-width: 80%;
+    max-width: 80%;
+    min-height: 210px;
+    max-height: 210px;
+}
+
 .form-report .btn-primary {
     float: right;
     margin: 3% 7%;
@@ -894,12 +902,12 @@ body {
     outline: none;
 }
 
-.new-message  .glyphicon-send {
+.new-message .glyphicon-send {
     font-size: 20px;
     padding: 0;
 }
 
-.new-message  button {
+.new-message button {
     background: inherit;
     border: none;
 }
