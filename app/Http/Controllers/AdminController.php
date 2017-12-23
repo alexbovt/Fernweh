@@ -15,4 +15,16 @@ class AdminController extends Controller
             return view('admin')->with(compact('reports'));
         }
     }
+
+    public function acceptReport($id)
+    {
+        Report::acceptReport($id);
+        return redirect()->back()->with('status', 'Report has been accepted!!');
+    }
+
+    public function deleteReport($id)
+    {
+        Report::deleteReport($id);
+        return redirect()->back()->with('status', 'Report has been deleted!!');
+    }
 }

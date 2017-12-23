@@ -10,6 +10,9 @@
 
             @if(session()->get('user')->id_user === $user->id_user)
                 <a href="" class="btn btn-info col-xs-12 col-sm-12 col-md-12">Update profile photo</a>
+            @elseif(session()->get('user')->profile_status === 'admin')
+                <a href="" class="btn btn-info col-xs-12 col-sm-12 col-md-12">Block user</a>
+                <a href="" class="btn btn-danger col-xs-12 col-sm-12 col-md-12">Delete user</a>
             @else
                 @if($statusFriend === true)
                     <a id="elem" href="" class="btn btn-info col-xs-12 col-sm-12 col-md-12">Send message</a>

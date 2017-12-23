@@ -197,7 +197,42 @@ Route::get('/requests', [
     'uses' => 'FriendsController@getRequests'
 ]);
 
+//admin
 
 Route::get('/admin', [
     'uses' => 'AdminController@getAdmin'
+]);
+
+Route::get('/admin/acceptReport{id}', [
+    'uses' => 'AdminController@acceptReport'
+]);
+
+Route::get('/admin/deleteReport{id}', [
+    'uses' => 'AdminController@deleteReport'
+]);
+
+
+Route::get('/admin', [
+    'uses' => 'AdminController@getAdmin'
+]);
+
+Route::get('/admin/acceptReport{id}', [
+    'uses' => 'AdminController@acceptReport'
+]);
+
+Route::get('/admin/deleteReport{id}', [
+    'uses' => 'AdminController@deleteReport'
+]);
+
+
+Route::get('/admin', [
+    'uses' => 'AdminController@getAdmin'
+]);
+
+Route::get('/admin/acceptReport{id}', [
+    'uses' => 'AdminController@acceptReport'
+]);
+
+Route::get('/admin/deleteReport{id}', [
+    'uses' => 'AdminController@deleteReport'
 ]);

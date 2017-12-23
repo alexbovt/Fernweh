@@ -27,4 +27,14 @@ class User extends Model implements Authenticatable
         ]);
     }
 
+    public static function deleteUser($id)
+    {
+
+    }
+
+    public static function blockUser($id)
+    {
+        User::where('id_user', $id)->update(['profile_status' => 'blocked']);
+    }
+
 }
