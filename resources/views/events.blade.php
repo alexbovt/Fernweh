@@ -4,7 +4,7 @@
 @endsection
 @section('left-block')
     <div class="container ">
-        <div class="event-info-col col-xs-8 col-sm-8 col-md-7">
+        <div class="event-info-col col-xs-12 col-sm-8 col-md-7">
             <div class="event col-xs-10 col-sm-10 col-md-11">Events in {{$address->city}}</div>
             <a id="elem"><span
                         class="add-event glyphicon glyphicon-plus-sign col-xs-2 col-sm-2 col-md-1"></span></a>

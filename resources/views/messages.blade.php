@@ -45,9 +45,15 @@
                                 {{ csrf_field() }}
                                 <textarea rows="1" name="inputMessage" placeholder="Write a message"
                                           id="new-message-area"></textarea>
+<<<<<<< HEAD
+                                <button type="submit"
+                                        formaction="/messages/sel={{1}}/sendMessage"><span
+                                            class="glyphicon glyphicon-send glyphicon-icons" id="send-message"></span></button>
+=======
                                 <button type="submit" id=".new-message"
                                         formaction="/messages/sel={{$companion->id_conversation}}/sendMessage"><span
                                             class="glyphicon glyphicon-send" id="send-message"></span></button>
+>>>>>>> 91cea473785643b12fc326fffc5f3e534b4503a9
                             </form>
                         </div>
                     @else

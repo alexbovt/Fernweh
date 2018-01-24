@@ -113,10 +113,8 @@
                                     </span>
                         @endif
                     </div>
-                    <div class="col-md-5">
-                        <button type="submit" formaction="{{route('registration')}}" class="btn btn-primary">Sign up
+                        <button type="submit" formaction="{{route('registration')}}" class="registration-btn btn btn-primary">Sign up
                         </button>
-                    </div>
                 </form>
             </div>
             <div class="col-md-2"></div>

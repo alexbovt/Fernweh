@@ -131,6 +131,57 @@ for ($i = 0; $i < 1000; $i++) {
         'type' => $event['type'],
         'notes' => $event['notes'],
     ]);
+<<<<<<< HEAD
+}
+*//*
+for ($i = 0; $i < 10; $i++) {
+    $r = rand(1, 2);
+    if($r==1){
+        $event['type']='meeting';
+    }
+    else $event['type']='travel';
+    $event['id_user'] = rand(48, 142);
+    $event['id_address_event'] = rand(12,110);
+    $event['event_name'] = $faker->sentence($nbWords = 4, $variableNWords = true);
+    $event['arrive_date'] = $faker->date($format = 'Y-m-d');
+    $event['notes'] = $faker->realText($maxNbChars = 200);
+    if ($event['type'] === 'meeting') {
+        $event['id_destination'] = rand(12,110);
+        $event['start_time'] = $faker->time();
+        $event['end_time'] = $faker->time();
+        $event['depart_date'] = null;
+    } else {
+        $event['depart_date'] = $faker->date();
+        $event['id_destination'] = null;
+        $event['start_time'] = null;
+        $event['end_time'] = null;
+    }
+    Event::create([
+        'id_user' => $event['id_user'],
+        'id_address_event' => $event['id_address_event'],
+        'id_destination' => $event['id_destination'],
+        'event_name' => $event['event_name'],
+        'arrive_date' => $event['arrive_date'],
+        'depart_date' => $event['depart_date'],
+        'start_time' => $event['start_time'],
+        'end_time' => $event['end_time'],
+        'type' => $event['type'],
+        'notes' => $event['notes'],
+    ]);
+}
+*/
+for ($i = 0; $i < 10; $i++) {
+    $comment['id_user_from_user_to_comment'] = rand(48, 142);
+    $comment['id_event_from_event_to_comment'] = rand(48, 142);
+    $comment['text'] = $faker->sentence($nbWords = 7, $variableNWords = true);
+
+    Comment::create([
+        'id_user_from_user_to_comment'=> $comment['id_user_from_user_to_comment'],
+        'id_event_from_event_to_comment'=> $comment['id_event_from_event_to_comment'],
+        'text' => $comment['text'],
+    ]);
+}
+=======
 }
 
 
@@ -145,3 +196,4 @@ for ($i = 0; $i < 1000; $i++) {
         'text' => $comment['text'],
     ]);
 }
+>>>>>>> 91cea473785643b12fc326fffc5f3e534b4503a9
