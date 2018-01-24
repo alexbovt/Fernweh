@@ -13,10 +13,15 @@
 
 
 use Illuminate\Support\Facades\Auth;
-
+/*
 Route::get('/', ['as' => 'welcome', function () {
     if ($user = session()->get('user')) return redirect()->to("id$user->id_user");
     else return view('welcome')->with('msg', '');
+}]);
+*/
+
+Route::get('/', ['as' => 'welcome', function () {
+    return view('welcome')->with('msg', '');
 }]);
 
 

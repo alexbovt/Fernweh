@@ -37,4 +37,11 @@ class User extends Model implements Authenticatable
         User::where('id_user', $id)->update(['profile_status' => 'blocked']);
     }
 
+    public static function getUsers($request)
+    {
+        return User::where('name', $request)
+            ->orWhere('surname', $request)
+            ->get();
+    }
+
 }

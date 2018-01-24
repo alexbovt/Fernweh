@@ -34,7 +34,6 @@ class Report extends Model
         ];
         Report::where('id_comment_from_comment_to_report', $id_comment)->delete();
         return Comment::deleteComment($data);
-
     }
 
     public static function deleteReport($id)

@@ -19,4 +19,10 @@ trait CreatesApplication
 
         return $app;
     }
+
+    public function login()
+    {
+        $user = User::first();
+        $this->be($user);
+    }
 }

@@ -13,7 +13,9 @@ class Message extends Model
 
     public static function getMessagesFromConversation($id)
     {
-        return Message::where('id_conversation_from_conversation', $id)->orderBy('created_at', 'asc')->get();
+        return Message::where('id_conversation_from_conversation', $id)
+            ->orderBy('created_at', 'asc')
+            ->get();
     }
 
     public static function getCompanion($id)

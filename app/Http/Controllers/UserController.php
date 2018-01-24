@@ -17,7 +17,7 @@ class UserController extends Controller
     public function getUser($id_user)
     {
         $user = User::where('id_user', $id_user)->first();
-        if(!$user) abort(404);
+        if (!$user) abort(404);
         $userPhoto = Photo::getUserImage(intval($user->id_user));
         $address = Address::where('id_address', $user->id_address)->first();
         $friends = Friend::getFriends($id_user);

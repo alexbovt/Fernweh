@@ -21,6 +21,7 @@
     </div>
 @endsection
 @section('right-block')
+    Hello there
     <div class="forms col-md-5">
         <div class="login-form content col-md-12">
             {{ csrf_field() }}
@@ -30,7 +31,7 @@
                     {{ session('login_status') }}
                 </div>
             @endif
-            <form method="POST">
+            <form name="loginForm" method="POST">
                 {{ csrf_field() }}
                 @if($msg)
                     <h4>{{$msg}}</h4>
@@ -69,7 +70,7 @@
                 <div class="col-md-6">
                     <a href="">Forgot your password?</a>
                 </div>
-                    <button type="submit" formaction="{{route('login')}}" class="btn btn-primary btn-settings">Log in
+                    <button name = "Login" type="submit" formaction="{{route('login')}}" class="btn btn-primary btn-settings">Log in
                     </button>
             </form>
         </div>

@@ -45,7 +45,6 @@ class MessageController extends Controller
             $id_newConversation = Conversation::createConversation($user->id_user, $id);
             return redirect("/messages?sel=$id_newConversation");
         } else return redirect("/messages?sel=$id_conversation");
-
     }
 
 
