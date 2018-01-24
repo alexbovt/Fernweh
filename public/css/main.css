@@ -107,9 +107,13 @@ body {
     color: #636b6f;
 }
 
-.navbar-user > .dropdown-menu li a:hover {  background: #ffa786;  }
+.navbar-user > .dropdown-menu li a:hover {
+    background: #ffa786;
+}
 
-.navbar-user-name {  padding: 3%;  }
+.navbar-user-name {
+    padding: 3%;
+}
 
 .nav-photo {
     vertical-align: top;
@@ -140,15 +144,20 @@ body {
 }
 
 .content > h2,
-.content > h3{ padding: 0 2%;}
+.content > h3 {
+    padding: 0 2%;
+}
 
 .login-form form,
 .registration-form form {
     margin: 0 3%;
 }
 
-.login-form{    margin-bottom: 2%;}
+.login-form {
+    margin-bottom: 2%;
+}
 
+<<<<<<< HEAD
 .login-form button,
 .registration-form button { margin-bottom: 2%;}
 
@@ -157,6 +166,11 @@ body {
 .registration-btn{
     float: right;
     margin: 1.5% 0;
+=======
+.registration-form, .login-form {
+    margin-bottom: 2%;
+    padding: 1%;
+>>>>>>> 91cea473785643b12fc326fffc5f3e534b4503a9
 }
 
 .registration-form label{
@@ -198,7 +212,9 @@ body {
 }
 
 .user-col > .btn-info,
-.user-col > .btn-danger {  border-radius: 0;  }
+.user-col > .btn-danger {
+    border-radius: 0;
+}
 
 .user-info-col,
 .event-info-col,
@@ -222,7 +238,9 @@ body {
     margin: 2%;
 }
 
-.user-about {  margin-top: 20px;  }
+.user-about {
+    margin-top: 20px;
+}
 
 .user-friends-title,
 .user-events-title,
@@ -233,7 +251,9 @@ body {
 }
 
 .user-friends-title,
-.user-events-title{    border-bottom: 1px solid #eae9c2;}
+.user-events-title {
+    border-bottom: 1px solid #eae9c2;
+}
 
 .user-friends {
     border: 1px solid #eae9c2;
@@ -244,7 +264,9 @@ body {
     padding: 0 7px 7px 0;
 }
 
-.user-friends a{padding: 0;}
+.user-friends a {
+    padding: 0;
+}
 
 .user-friends img {
     width: 50px;
@@ -267,9 +289,13 @@ body {
     height: auto;
 }
 
-.us-ev {  padding: 0;  }
+.us-ev {
+    padding: 0;
+}
 
-.user-event-img {  padding: 3%;  }
+.user-event-img {
+    padding: 3%;
+}
 
 .user-event-name {
     font-size: 14px;
@@ -313,23 +339,25 @@ body {
     white-space: normal;
 }
 
-.event-info-col {  margin: 0 0.5% 1% 0;  }
+.event-info-col {
+    margin: 0 0.5% 1% 0;
+}
 
-
-
-.settings-title, .forms-title{ margin-bottom: 2%;}
+.settings-title, .forms-title {
+    margin-bottom: 2%;
+}
 
 .forms-title,
 .settings-title,
 .event-info-col > .event,
 .friends-title,
-.messages-title{
+.messages-title {
     float: left;
     font-size: 26px;
     padding: 0.7% 2%;
 }
 
-.btn-settings{
+.btn-settings {
     float: right;
     margin-top: 1.5%;
 }
@@ -350,7 +378,9 @@ body {
     height: auto;
 }
 
-.events-img {  padding: 15px 0;  }
+.events-img {
+    padding: 15px 0;
+}
 
 .event-name {
     font-size: 24px;
@@ -360,7 +390,9 @@ body {
     text-overflow: ellipsis;
 }
 
-.event-button-group {  float: right;  }
+.event-button-group {
+    float: right;
+}
 
 .join-event {
     margin: 0 1% 0 1%;
@@ -368,7 +400,7 @@ body {
     color: white;
 }
 
-.events > .join-event{
+.events > .join-event {
     color: #fff;
     float: right;
     margin: 0;
@@ -385,9 +417,13 @@ body {
     margin-bottom: 0.5%;
 }
 
-.user-event-name {  margin: 2%;  }
+.user-event-name {
+    margin: 2%;
+}
 
-.user-event-name > a {  color: #60697e;  }
+.user-event-name > a {
+    color: #60697e;
+}
 
 #overlay {
     z-index: 3;
@@ -418,7 +454,9 @@ body {
     z-index: 5;
 }
 
-.form-group>h4{padding: 0 3%;}
+.form-group > h4 {
+    padding: 0 3%;
+}
 
 #new-event-form .new-event-form-title,
 #delete-event-form .delete-event-form-title {
@@ -428,7 +466,9 @@ body {
     border-bottom: 1px solid #eae9c2;
 }
 
-#new-event-form #new-event-form-close:hover {  color: #8d0c00;  }
+#new-event-form #new-event-form-close:hover {
+    color: #8d0c00;
+}
 
 #new-event-form #new-event-form-close,
 #delete-event-form #delete-event-form-close {
@@ -441,7 +481,9 @@ body {
     display: block;
 }
 
-.form-group {  margin: 0;  }
+.form-group {
+    margin: 0;
+}
 
 #new-event-form label {
     padding: 0.5% 2%;
@@ -481,16 +523,22 @@ body {
     margin: 3% 9.5% 0 0;
 }
 
-.form-travel {  display: none;  }
+.form-travel {
+    display: none;
+}
 
-.event-img {  padding: 15px 0;  }
+.event-img {
+    padding: 15px 0;
+}
 
 .event-img img {
     width: 100%;
     height: 300px;
 }
 
-.event-info-col > .event-name {  padding: 0 1%;  }
+.event-info-col > .event-name {
+    padding: 0 1%;
+}
 
 .event-date > div,
 .event-place > div,
@@ -501,7 +549,9 @@ body {
 }
 
 .event-date,
-.event-place {  margin: 0 2% 0.5% 2%;  }
+.event-place {
+    margin: 0 2% 0.5% 2%;
+}
 
 .event-date .glyphicon-time,
 .event-place .glyphicon-map-marker,
@@ -512,7 +562,9 @@ body {
     margin-right: 0.5%;
 }
 
-.event-description-col {  margin: 0 0 1% 0;  }
+.event-description-col {
+    margin: 0 0 1% 0;
+}
 
 .left-event-block {
     min-width: 70%;
@@ -547,9 +599,13 @@ body {
     vertical-align: middle;
 }
 
-.event-people-list > div {  border-top: 1px solid #eae9c2;  }
+.event-people-list > div {
+    border-top: 1px solid #eae9c2;
+}
 
-.events{  border-top: 1px solid #eae9c2;  }
+.events {
+    border-top: 1px solid #eae9c2;
+}
 
 .events a {
     text-decoration: none;
@@ -561,11 +617,17 @@ body {
     color: #8d0c00;
 }
 
-.user-event-info-col {  margin: 0 1% 0.5% 1%;  }
+.user-event-info-col {
+    margin: 0 1% 0.5% 1%;
+}
 
-.user-event-name {  margin: 2%; }
+.user-event-name {
+    margin: 2%;
+}
 
-.user-event-name > a {  color: #60697e;  }
+.user-event-name > a {
+    color: #60697e;
+}
 
 #attending-people-list {
     width: 40%;
@@ -640,9 +702,13 @@ body {
     vertical-align: middle;
 }
 
-.event-people-info ul .comment-date {  font-size: 10px;  }
+.event-people-info ul .comment-date {
+    font-size: 10px;
+}
 
-.event-comments-title {  padding: 1.5% 1.5%;  }
+.event-comments-title {
+    padding: 1.5% 1.5%;
+}
 
 .event-comment {
     border-top: 1px solid #eae9c2;
@@ -650,7 +716,9 @@ body {
     width: 100%;
 }
 
-.event-comment > img {  margin-top: 2.5%;  }
+.event-comment > img {
+    margin-top: 2.5%;
+}
 
 .event-comment textarea {
     resize: vertical;
@@ -688,6 +756,14 @@ body {
     margin: 0 5%;
 }
 
+.message-text textarea {
+    margin: 0 10%;
+    min-width: 80%;
+    max-width: 80%;
+    min-height: 210px;
+    max-height: 210px;
+}
+
 .form-report .btn-primary {
     float: right;
     margin: 3% 7%;
@@ -698,21 +774,38 @@ body {
     margin: 3% 7%;
 }
 
-#delete-event-form {  display: none;  }
+#delete-event-form {
+    display: none;
+}
 
-.conversation-block {  border: 1px solid black;  }
+.conversation-block {
+    border: 1px solid black;
+}
 
-.messages-block {  border: 1px solid black;  }
+.messages-block {
+    border: 1px solid black;
+}
 
 .friends-right-col,
-.friends-left-col {  padding: 0;  }
-.friends-left-col{margin-bottom: 2%;}
+.friends-left-col {
+    padding: 0;
+}
 
-.friends-right-col{  margin-left: 14px;  }
+.friends-left-col {
+    margin-bottom: 2%;
+}
 
-.settings-title,.messages-title, .forms-title {  border-bottom: 1px solid #eae9c2;  }
+.friends-right-col {
+    margin-left: 14px;
+}
 
-.friends {  border-top: 1px solid #eae9c2;  }
+.settings-title, .messages-title, .forms-title {
+    border-bottom: 1px solid #eae9c2;
+}
+
+.friends {
+    border-top: 1px solid #eae9c2;
+}
 
 .friends-list,
 .messages-name {
@@ -743,14 +836,18 @@ body {
     color: #606968;
 }
 
-.friends-right-href {  padding: 3%;  }
+.friends-right-href {
+    padding: 3%;
+}
 
 /*.friends-right-href:hover{
     border-bottom: 2px solid #ff5537;
 }*/
 
 .friends-right-href:hover,
-.friends:hover {  background: #fccfbf;  }
+.friends:hover {
+    background: #fccfbf;
+}
 
 /*.message-text{
     margin: 2% 10%;
@@ -804,13 +901,21 @@ body {
     color: #fff;
 }
 
-.messages .other-message.start {  border-top-left-radius: 10px;  }
+.messages .other-message.start {
+    border-top-left-radius: 10px;
+}
 
-.messages .other-message.end {  border-bottom-left-radius: 10px;  }
+.messages .other-message.end {
+    border-bottom-left-radius: 10px;
+}
 
-.messages .my-message.start {  border-top-right-radius: 10px;  }
+.messages .my-message.start {
+    border-top-right-radius: 10px;
+}
 
-.messages .my-message.end {  border-bottom-right-radius: 10px;  }
+.messages .my-message.end {
+    border-bottom-right-radius: 10px;
+}
 
 .new-message {
     height: auto;
@@ -826,15 +931,23 @@ body {
     overflow-y: scroll;
 }
 
-.new-message textarea:focus, .new-message textarea:focus {  outline: none;  }
-
-.new-message .glyphicon-send {
-    font-size: 32px;
-    padding: 0;
-    display: none;
+.new-message textarea:focus, .new-message textarea:focus {
+    outline: none;
 }
 
-.messages::-webkit-scrollbar {  width: 10px;  }
+.new-message .glyphicon-send {
+    font-size: 20px;
+    padding: 0;
+}
+
+.new-message button {
+    background: inherit;
+    border: none;
+}
+
+.messages::-webkit-scrollbar {
+    width: 10px;
+}
 
 /* Track */
 .messages::-webkit-scrollbar-track {
@@ -858,22 +971,26 @@ table {
     table-layout: fixed;
 }
 
-table, th, td {  border: 1px solid #eae9c2;  }
+table, th, td {
+    border: 1px solid #eae9c2;
+}
 
 /*table, th, td, td > .admin-user-name,
 td > .admin-user-list ,{
 /*word-wrap: break-word*/
-  /*  white-space: nowrap;
+/*  white-space: nowrap;
 table, th, td, td > a {
-    white-space: nowrap;
-    overflow: hidden;
-    padding: 5px;
-    text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 5px;
+  text-overflow: ellipsis;
 }*/
 
 /*tr:hover{  background: #fccfbf;}*/
 
-.admin-notes{   word-wrap: break-word;}
+.admin-notes {
+    word-wrap: break-word;
+}
 
 td > a {
     text-decoration: none;
@@ -900,12 +1017,17 @@ td > a:hover {
     padding: 5% 13%;
 }
 
+.admin-action .glyphicon-ok:hover {
+    color: rgba(0, 190, 0, 0.57);
+}
 
-.admin-action .glyphicon-ok:hover {color: rgba(0, 190, 0, 0.57);}
+.admin-action .glyphicon-remove:hover {
+    color: rgba(255, 0, 0, 0.7);
+}
 
-.admin-action .glyphicon-remove:hover {color: rgba(255, 0, 0, 0.7);}
-
-.admin-action{  padding: 0;  }
+.admin-action {
+    padding: 0;
+}
 
 .admin-action .glyphicon-ok:hover {
     color: rgba(0, 190, 0, 0.57);
@@ -918,4 +1040,3 @@ td > a:hover {
 .admin-action {
     padding: 0;
 }
->>>>>>> ad2d45738222bd2a5eb300c50a9b7b536a312f22

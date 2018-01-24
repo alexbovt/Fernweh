@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Comment;
+use App\Report;
 use Illuminate\Http\Request;
 
 class CommentController extends Controller
@@ -36,13 +37,13 @@ class CommentController extends Controller
     {
         $user = session()->get("user");
         $data = [
-            'id_user_from_user_to_comment' => $user->id_user,
-            'id_event_from_event_to_comment' => $id,
-            'id_comment' => $id_comment,
+            'id_user_from_user_to_report' => intval($user->id_user),
+            'id_event_from_event_to_report' => intval($id),
+            'id_comment_from_comment_to_report' => intval($id_comment),
             'report_type' => $request->input('report_type'),
             'report_text' => $request->input('report_text')
         ];
-        Comment::reportComment($data);
+        Report::reportComment($data);
         return redirect()->back()->with('status', 'Comment has been reported');
     }
 }

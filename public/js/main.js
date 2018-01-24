@@ -130,12 +130,12 @@ $(document).ready(function () {
             this.style.height = (this.scrollHeight) + 'px';
         });
 
-        $('.new-message').each(function () {
+        $('#new-message').each(function () {
             $(this).find('textarea').keypress(function (e) {
                 document.getElementById('send-message').style.display = 'inline-block';
                 // Enter pressed
                 if (e.which == 10 || e.which == 13) {
-                    sendMessage()
+                    this.form.submit();
                 }
             });
             document.getElementById('send-message').addEventListener("click", sendMessage);
@@ -143,13 +143,9 @@ $(document).ready(function () {
             function sendMessage() {
                 if (event.preventDefault) event.preventDefault();
                 if (document.getElementById('new-message-area').value === '') {
-                    document.getElementById('new-message-area').style.background = 'pink';
-                    document.getElementById('send-message').style.display = 'none';
                 }
                 else {
                     //this.form.submit();
-                    document.getElementById('new-message-area').style.background = 'lightgreen';
-                    document.getElementById('send-message').style.display = 'none';
                 }
             }
         });

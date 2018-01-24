@@ -19,6 +19,7 @@ Route::get('/', ['as' => 'welcome', function () {
     else return view('welcome')->with('msg', '');
 }]);
 
+
 Route::get('/id{id}', [
     'uses' => 'UserController@getUser'
 ]);
@@ -85,7 +86,6 @@ Route::post('/edit', [
 ]);
 
 
-
 Route::get('/events', [
     'as' => 'showEvents',
     'uses' => 'EventController@showEvents'
@@ -144,6 +144,11 @@ Route::post('/event_id{id}/reportComment_id{id_comment}', [
 ]);
 
 
+Route::post('/createConversationWithMessage{id}', [
+    'as' => 'newConversationMessage',
+    'uses' => 'MessageController@createConversationWithMessage'
+]);
+
 Route::get('/createConversation{id}', [
     'uses' => 'MessageController@createConversationIfNotExist'
 ]);
@@ -192,7 +197,42 @@ Route::get('/requests', [
     'uses' => 'FriendsController@getRequests'
 ]);
 
+//admin
 
 Route::get('/admin', [
     'uses' => 'AdminController@getAdmin'
+]);
+
+Route::get('/admin/acceptReport{id}', [
+    'uses' => 'AdminController@acceptReport'
+]);
+
+Route::get('/admin/deleteReport{id}', [
+    'uses' => 'AdminController@deleteReport'
+]);
+
+
+Route::get('/admin', [
+    'uses' => 'AdminController@getAdmin'
+]);
+
+Route::get('/admin/acceptReport{id}', [
+    'uses' => 'AdminController@acceptReport'
+]);
+
+Route::get('/admin/deleteReport{id}', [
+    'uses' => 'AdminController@deleteReport'
+]);
+
+
+Route::get('/admin', [
+    'uses' => 'AdminController@getAdmin'
+]);
+
+Route::get('/admin/acceptReport{id}', [
+    'uses' => 'AdminController@acceptReport'
+]);
+
+Route::get('/admin/deleteReport{id}', [
+    'uses' => 'AdminController@deleteReport'
 ]);

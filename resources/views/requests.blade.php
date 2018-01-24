@@ -47,7 +47,8 @@
         @section('right-block')
             <div class="friends-right-col col-xs-12 col-sm-3 col-md-2">
                 <div class="friends-right-href"><a href="/friends">My friends</a></div>
-                <div class="friends-right-href" style="background: #f9b9a2;"><a href="/requests">Friends requests</a></div>
+                <div class="friends-right-href" style="background: #f9b9a2;"><a href="/requests">Friends requests</a>
+                </div>
             </div>
     </div>
 @endsection

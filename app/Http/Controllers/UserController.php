@@ -8,6 +8,7 @@ use App\Friend;
 use App\User;
 use App\Photo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 
 class UserController extends Controller
@@ -16,6 +17,7 @@ class UserController extends Controller
     public function getUser($id_user)
     {
         $user = User::where('id_user', $id_user)->first();
+        if(!$user) abort(404);
         $userPhoto = Photo::getUserImage(intval($user->id_user));
         $address = Address::where('id_address', $user->id_address)->first();
         $friends = Friend::getFriends($id_user);
@@ -27,13 +29,10 @@ class UserController extends Controller
         }
         //$user->photo = $userPhoto->imagePath;
         //$user->minPhoto = $userPhoto->minImagePath;
+        if ($user->profile_status === 'admin' and session()->get('user')->profile_status === 'admin')
+            return redirect()->to('/admin');
+
         return view('profile')->with(compact('user', 'address', 'friends', 'events', 'statusFriend', 'userPhoto'));
-        /*
-        ->with('address', $address)
-        ->with('friends', $friends)
-        ->with('events', $events)
-        ->with('statusFriend', $statusFriend);
-*/
     }
 
     public function dashboard(Request $request)

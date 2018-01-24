@@ -11,7 +11,7 @@ class User extends Model implements Authenticatable
 {
     use AuthenticableTrait;
     protected $table = 'user';
-    protected $fillable = array('id_user', 'id_address', 'login', 'email', 'password', 'name', 'surname', 'birth_date', 'sex');
+    protected $fillable = array('id_user', 'id_address', 'login', 'email', 'password', 'name', 'surname', 'birth_date', 'sex', 'profile_status');
 
     public static function registerUser($data)
     {
@@ -25,6 +25,16 @@ class User extends Model implements Authenticatable
             'birth_date' => $data['birth_date'],
             'sex' => $data['sex'],
         ]);
+    }
+
+    public static function deleteUser($id)
+    {
+
+    }
+
+    public static function blockUser($id)
+    {
+        User::where('id_user', $id)->update(['profile_status' => 'blocked']);
     }
 
 }
