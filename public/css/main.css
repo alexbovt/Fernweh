@@ -157,22 +157,6 @@ body {
     margin-bottom: 2%;
 }
 
-<<<<<<< HEAD
-.login-form button,
-.registration-form button { margin-bottom: 2%;}
-
-.registration-form, .login-form{  padding: 1% 1% 0 1%;  }
-
-.registration-btn{
-    float: right;
-    margin: 1.5% 0;
-=======
-.registration-form, .login-form {
-    margin-bottom: 2%;
-    padding: 1%;
->>>>>>> 91cea473785643b12fc326fffc5f3e534b4503a9
-}
-
 .registration-form label{
     margin: 0;
     padding: 0.5% 0;

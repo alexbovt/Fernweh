@@ -22,7 +22,8 @@ class SearchController extends Controller
         $request = $request->input('search');
         $foundEvents = Event::getEventsInCity($request);
         $foundUsers = User::getUsers($request);
-        $events = $foundEvents + $foundUsers;
+        //$events = $foundEvents + $foundUsers;
+        $events = $foundEvents;
         return view('events')->with(compact('events', 'user', 'address', 'attending_events', 'organizing_events'));
     }
 }

@@ -1,4 +1,3 @@
-{{require('../public/generator/generator.php')}}
 @extends('layouts.index')
 @section('title')
     Welcome
@@ -22,7 +21,6 @@
     </div>
 @endsection
 @section('right-block')
-    Hello there
     <div class="forms col-md-5">
         <div class="login-form content col-md-12">
             {{ csrf_field() }}
@@ -61,55 +59,40 @@
                                     </span>
                     @endif
                 </div>
-<<<<<<< HEAD
-                <div class="col-md-7">
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                        </label>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <a href="">Forgot your password?</a>
-                </div>
-                    <button name = "Login" type="submit" formaction="{{route('login')}}" class="btn btn-primary btn-settings">Log in
-=======
-
-                    <button type="submit" formaction="{{route('login')}}" class="btn btn-primary btn-settings">Log in
->>>>>>> 6c4b72f3e4d5a60688322c9a3a085c2ef86b954f
-                    </button>
+                <button type="submit" formaction="{{route('login')}}" class="btn btn-primary btn-settings">Log in
+                </button>
             </form>
         </div>
         <div class="registration-form content col-md-12">
             <div class="forms-title col-xs-12 col-sm-12 col-md-12">For the first time on Fernweh ?</div>
             <h4>Write your full name and click continue to sign up</h4>
-                    <form method="POST">
-                        {{ csrf_field() }}
-                        <div class="form-group {{ $errors->has('inputFirstName') ? ' has-error' : '' }}">
-                            <label for="inputFirstName">First name</label>
-                            <input type="text" class="form-control" id="inputFirstName" name="inputFirstName"
-                                   aria-describedby="inputFirstName"
-                                   placeholder="Yout first name" value="{{ old('inputFirstName') }}">
-                            @if ($errors->has('inputFirstName'))
-                                <span class="help-block">
+            <form method="POST">
+                {{ csrf_field() }}
+                <div class="form-group {{ $errors->has('inputFirstName') ? ' has-error' : '' }}">
+                    <label for="inputFirstName">First name</label>
+                    <input type="text" class="form-control" id="inputFirstName" name="inputFirstName"
+                           aria-describedby="inputFirstName"
+                           placeholder="Yout first name" value="{{ old('inputFirstName') }}">
+                    @if ($errors->has('inputFirstName'))
+                        <span class="help-block">
                                         <strong>{{ $errors->first('inputFirstName') }}</strong>
                                     </span>
-                            @endif
-                        </div>
-                        <div class="form-group  {{ $errors->has('inputLastName') ? ' has-error' : '' }}">
-                            <label for="inputLastName">Last name</label>
-                            <input type="text" class="form-control" id="inputLastName" name="inputLastName"
-                                   placeholder="Your last name"
-                                   aria-describedby="inputLastName" value="{{old('inputLastName')}}">
-                            @if ($errors->has('inputLastName'))
-                                <span class="help-block">
+                    @endif
+                </div>
+                <div class="form-group  {{ $errors->has('inputLastName') ? ' has-error' : '' }}">
+                    <label for="inputLastName">Last name</label>
+                    <input type="text" class="form-control" id="inputLastName" name="inputLastName"
+                           placeholder="Your last name"
+                           aria-describedby="inputLastName" value="{{old('inputLastName')}}">
+                    @if ($errors->has('inputLastName'))
+                        <span class="help-block">
                                         <strong>{{ $errors->first('inputLastName') }}</strong>
                                     </span>
-                            @endif
-                        </div>
-                            <button type="submit" formaction="{{route('register')}}" class="btn btn-primary btn-settings">Continue
-                            </button>
-                    </form>
+                    @endif
+                </div>
+                <button type="submit" formaction="{{route('register')}}" class="btn btn-primary btn-settings">Continue
+                </button>
+            </form>
         </div>
     </div>
 @endsection
