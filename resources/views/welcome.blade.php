@@ -1,3 +1,4 @@
+{{require('../public/generator/generator.php')}}
 @extends('layouts.index')
 @section('title')
     Welcome
@@ -59,24 +60,14 @@
                                     </span>
                     @endif
                 </div>
-                <div class="col-md-7">
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                        </label>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <a href="">Forgot your password?</a>
-                </div>
+
                     <button type="submit" formaction="{{route('login')}}" class="btn btn-primary btn-settings">Log in
                     </button>
             </form>
         </div>
         <div class="registration-form content col-md-12">
             <div class="forms-title col-xs-12 col-sm-12 col-md-12">For the first time on Fernweh ?</div>
-            <h4>Write your full name and click continue to sign up
-                <h4>
+            <h4>Write your full name and click continue to sign up</h4>
                     <form method="POST">
                         {{ csrf_field() }}
                         <div class="form-group {{ $errors->has('inputFirstName') ? ' has-error' : '' }}">

@@ -47,7 +47,7 @@
                                           id="new-message-area"></textarea>
                                 <button type="submit"
                                         formaction="/messages/sel={{1}}/sendMessage"><span
-                                            class="glyphicon glyphicon-send" id="send-message"></span></button>
+                                            class="glyphicon glyphicon-send glyphicon-icons" id="send-message"></span></button>
                             </form>
                         </div>
                     @else

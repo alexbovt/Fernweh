@@ -141,6 +141,8 @@ class EventController extends Controller
             'type' => $request->input('eventType'),
             'notes' => null
         ];
+        dd($data);
+
         Event::createEvent($data);
         return redirect()->back()->with('status', 'Success');
     }

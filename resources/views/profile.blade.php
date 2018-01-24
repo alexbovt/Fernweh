@@ -68,8 +68,8 @@
                             <div class="user-event-img col-xs-4 col-sm-4 col-md-5"><img
                                         src="{{asset('img/event1.jpg')}}">
                             </div>
-                            <div class="user-event-name col-xs-8 col-sm-8 col-md-6">{{$event->event_name}}</div>
-                            <div class="user-event-descr col-xs-8 col-sm-8 col-md-6">{{$event->id_address_event}}</div>
+                            <div class="user-event-name col-xs-7 col-sm-8 col-md-6">{{$event->event_name}}</div>
+                            <div class="user-event-descr col-xs-7 col-sm-8 col-md-6">Attending {{$event->id_address_event}}</div>
                         </div>
                     </a>
                 @endforeach
@@ -77,14 +77,15 @@
         </div>
         @endsection
         @section('right-block')
-            <div class="user-info-col col-xs-8 col-sm-8 col-md-7">
+            <div class="col-xs-12 col-sm-7 col-md-7">
+            <div class="user-info-col col-xs-12 col-sm-12 col-md-12">
                 <div class="user-fullname">
                     {{ucfirst($user->name)}}
                     {{ucfirst($user->surname)}}
                 </div>
-                <div class="user-info col-md-12">
-                    <div class="user-info-title col-md-2">Date of birth</div>
-                    <div class="user-info-info col-md-8">
+                <div class="user-info col-xs-12 col-sm-12 col-md-12">
+                    <div class="user-info-title col-xs-12 col-sm-12 col-md-2">Date of birth</div>
+                    <div class="user-info-info col-xs-12 col-sm-12 col-md-8">
                         {{$user->birth_date}}
                         (age: {{ (int)date('Y') - (int)substr($user->birth_date,0,4)}})
                     </div>
@@ -126,5 +127,6 @@
                     </div>
                 @endif
             </div>
+    </div>
     </div>
 @endsection
